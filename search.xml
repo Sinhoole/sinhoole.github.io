@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>廿元之教训</title>
+    <url>/2023/01/02/%E5%BB%BF%E5%85%83%E4%B9%8B%E6%95%99%E8%AE%AD/</url>
+    <content><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p><del><strong>在贪图QQ邮箱之后，被诈骗了20元</strong></del></p>
+<span id="more"></span>
+<h1 id="2023年01月03日-21时20分20秒"><a href="#2023年01月03日-21时20分20秒" class="headerlink" title="2023年01月03日 21时20分20秒"></a>2023年01月03日 21时20分20秒</h1><p><strong>原40元已经全部追回</strong></p>
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a><del>起因</del></h2><p><del>关于我账号QQ3226228874资料问题被封禁后，其对应的邮箱也失去了登陆权限，关于邮箱所对应的的虚拟资产，我一直在努力追回。但steam客服始终告诉我我无法提供有力证据，在多次申请无果后，我决定通过其他人的能力来帮助我实现。</del></p>
+<h2 id="商店"><a href="#商店" class="headerlink" title="商店"></a><del>商店</del></h2><p><del>我一急之下去了虚拟店铺，在看到“追回QQ”的时候，我再三思索，还是决定了购买（此时还是能够追回的）。但店家让我补差价20元，我才意识到可能受骗了。但我还是支付了这二十元。</del></p>
+<h2 id="手段"><a href="#手段" class="headerlink" title="手段"></a><del>手段</del></h2><p><del>店家首先发送给我一张卡卷(虚拟商品使用后在无法退款)，告诉我，让我把卡券发送给他，我发送给他之后，卡券使用，已经销毁。这已经证明我使用过了虚拟商品，店家通过这样的方式来防止我追回20元。</del></p>
+<h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a><del>后续</del></h2><p><del>由于补差价的商品并不属于虚拟商品范畴，在申请退款后便给了我。</del></p>
+<h2 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a><del>感悟</del></h2><p><del>三思而后行也！</del></p>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
+      <tags>
+        <tag>-杂谈 -诈骗 -教训</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>迟交的作业</title>
+    <url>/2023/01/03/%E8%BF%9F%E4%BA%A4%E7%9A%84%E4%BD%9C%E4%B8%9A/</url>
+    <content><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p><strong>作业提交的错误，一份作业二次提交</strong></p>
+<span id="more"></span>
+<h1 id="迟交的作业"><a href="#迟交的作业" class="headerlink" title="迟交的作业"></a>迟交的作业</h1><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>今天考试，英语作业是一套卷子，在考试开始时，老师将提交作业的任务发布，以便我们写完之后可以及时提交。但不知为何，其又再次发布一次，导致我以为只用提交一次。<br>以下为他当时的发送的信息。</p>
+<hr>
+<p>英语考试时间8:00一10:00，现在已11:30，以上这些学生还未交卷，不知学生在家干什么，家长为什么不管自己的孩子，你对老师的提醒无动于衷，你加入班级群或钉钉群已失去了意义，你自动退出算了</p>
+<p>对于上网课滥竽充数的学生，在家无人管的学生，我会连同家长一齐从班级群及钉钉群里删除</p>
+<hr>
+<p>当然，以上的信息已经被发送至微信，并且带有未提交的名单。</p>
+<h2 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a>感悟</h2><p>多看信息，勿忘何时何地做何事！</p>
+]]></content>
+      <categories>
+        <category>杂感</category>
+      </categories>
+      <tags>
+        <tag>作业,失误,教训</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/01/02/hello-world/</url>
+    <content><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p><strong>Welcome to Hexo! This is your very first post. Check documentation for more info.</strong></p>
+<span id="more"></span>
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any proble(<a href="https://github.com/hexojs/hexo/issues).ms">https://github.com/hexojs/hexo/issues).ms</a> when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on [GitHub]</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>会考/开学</title>
+    <url>/2023/01/03/%E4%BC%9A%E8%80%83-%E5%BC%80%E5%AD%A6/</url>
+    <content><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p><strong>舆论导向：提前开学？</strong></p>
+<span id="more"></span>
+<h1 id="讯息"><a href="#讯息" class="headerlink" title="讯息"></a>讯息</h1><p>这种消息的讯息来源总是比较杂乱无章，靠着一些截图，和佐证，但至于真假，是否在断章取义，无法判断。</p>
+<h1 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h1><p>无论会考推迟真假与否，最近的紧促感着实在上升，所以无论如何，在11号之前要把一切处理妥当。至于PAYDAY2,BF1,CSGO.先放在一边，别去搭理，放在假期时间娱乐，不要颠倒了主次。</p>
+<h1 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h1><p>先从数学，物理，化学开始，生物就一直做题来看吧，靠着零碎的拼接，兴许可以力挽狂澜。本来计划的一切，怎能有不实现的道理？</p>
+<h1 id="闲谈"><a href="#闲谈" class="headerlink" title="闲谈"></a>闲谈</h1><p>关于<code>hexo d</code>的网络代理错误，准备修复。<br>关于<strong>clash</strong>的ip固定，<strong>GitHub</strong>的ban。<br>关于<strong>sodoku</strong>还要不要继续做下去。<br>关于<strong>wordpress-xml</strong>文件的后续处理。<br>关于<strong>NEXT</strong>主题的bug修复。</p>
+<p>$Na_2CO_3$</p>
+]]></content>
+      <categories>
+        <category>/杂感</category>
+      </categories>
+      <tags>
+        <tag>舆论,消息,猜测</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>古人虽时有失自者</title>
+    <url>/2023/01/03/%E5%8F%A4%E4%BA%BA%E8%99%BD%E6%97%B6%E6%9C%89%E5%A4%B1%E8%87%AA%E8%80%85/</url>
+    <content><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p><strong>故人虽时有自失者，犹无以易恭节。自 失不足以难，以严驵则可</strong></p>
+<span id="more"></span>
+<h1 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h1><p>据当下互联网的翻译多数为此。</p>
+<p>所以，别人虽说时常有犯过失的，但自己还是不能改变谦虚恭敬待人的志度。别人犯过失不足以责难，用严厉骄横的态度待人则应该责难。 </p>
+<h1 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h1><h2 id="译文疑处"><a href="#译文疑处" class="headerlink" title="译文疑处"></a>译文疑处</h2><p>所以，别人虽说时常有犯过失的，<strong>但自己还是不能改变谦虚恭敬待人的志度</strong> 。别人犯过失不足以责难，用严厉骄横的态度待人则应该责难。</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>首先来看本卷译文(节选)</p>
+<blockquote>
+<p>公子沓当周国的相，申向劝说他时战栗不止。公子沓责备他说：“您劝说我时战粟不止，是困为我是相吧?”申向说：“我是很不贤德，虽说这样，但是您年纪二十岁就当了相，会见年老的人却让他战粟不止，请问这是谁的过错昵?”公子沓无话回答。战栗不止是因为不习惯见尊者，让人战栗不止是因为严厉骄横。倘或谦虚恭敬待人而别人还是战栗不止，那么责任就不在尊贵的人了。所以，别人虽说时常有犯过失的，但自己还是不能改变谦虚恭敬待人的志度。别人犯过失不足以责难，用严厉骄横的态度待人则应该责难。</p>
+</blockquote>
+<p>所以，别人虽说时常有犯过失的，但自己还是不能改变谦虚恭敬待人的志度[<strong>自己不能改变自己的志度，使自己谦虚恭敬待人</strong>]。别人犯过失不足以责难，用严厉骄横的态度待人则应该责难。<br>1.<strong>犹无以易恭节</strong><br>2.(自己)<strong>犹</strong>(还是)<strong>无</strong>(不能)<strong>以易</strong>(改变)<strong>恭节</strong>(谦虚恭敬待人)<br>3.<strong>自尚且弗能以恭节易之。</strong></p>
+]]></content>
+      <categories>
+        <category>/学术</category>
+      </categories>
+      <tags>
+        <tag>翻译,古文,问题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>迁移博客</title>
+    <url>/2023/01/04/%E8%BF%81%E7%A7%BB%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p><strong>测试mathjex时发现一个更严重的问题时hexo g时，无法生成新文件。</strong></p>
+<span id="more"></span>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>将博客配置文件，主题配置文件，Images，markdown文件，CNAME文件全部复制打包。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">npm i hexo-renderer-swig</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>也就是重新部署一次博客，具体有用的排查我并未找到。</p>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>$Na_2CO_3$</p>
+<h1 id="报错ERROR-Deployer-not-found-git"><a href="#报错ERROR-Deployer-not-found-git" class="headerlink" title="报错ERROR Deployer not found: git"></a>报错ERROR Deployer not found: git</h1><p>缺少deployer插件<br>执行以下命令即可</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>/计算机</category>
+      </categories>
+      <tags>
+        <tag>技术,电脑</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>往后一旬，请多指教</title>
+    <url>/2021/08/04/%E5%BE%80%E5%90%8E%E4%B8%80%E6%97%AC/</url>
+    <content><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p>从今以后就不用再受腾讯云的折磨了！</p>
+<span id="more"></span>
+<p>近年陆陆续续几个域名，七八个空间，四五台主机，两三种博客系统，很遗憾没一个能长久。<br>Github是个好东西，原谅我这么久才意识到，把网站托管在这，永久运行，这是穷学生的我不敢想象的。域名当然也可以用免费的一二级域名，诸如.tk、.eu.org，但始终不是属于自己，被人拿捏的感觉始终是难受的，于是买了一个.top的域名。<br>往后几年，我想在此写写心得、趣事，不为谁而写作，只希望几年后的我能回看这一旬，不虚此行。<br>第一次的typecho,第二次的wordpress,第三次的pagenet,第四次的hexo 。<br>之前总是为了下个月服务器二着急，如今托管了github,以后，都在也不需要了。</p>
+<p><img src="https://song.gushiwen.cn/mingjuImg/B38A17D34E9DADE12F5DBBBA0A9EF6BA.jpg" alt="城头铁鼓声犹震，匣里金刀血未干。"></p>
+]]></content>
+      <categories>
+        <category>/杂感</category>
+      </categories>
+      <tags>
+        <tag>追忆,以后,将来</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2022-缅怀</title>
+    <url>/2023/01/04/2022-%E7%BC%85%E6%80%80/</url>
+    <content><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p><strong>由于2022年任何文章都没有留下来，在这里陈述2022年的经过</strong></p>
+<span id="more"></span>
+
+<ul>
+<li>2022-1-17<a href="https://imgse.com/i/pSFMV81"><img src="https://s1.ax1x.com/2023/01/04/pSFMV81.jpg" alt="pSFMV81.jpg"></a></li>
+<li>2022-2-1东山行-壬寅之一日，余游东山，东山大寒，雪亦未融，沟中有村，有村人众，或村数人，路别马从，随路而行，车就径下循路，道皆泞。面来多半途废游者。遂至其巅，石奇，水澈，甚美。方圆十里徐去，惟予独在焉。若非家人督，吾岂不能饮酒居之数日哉！<a href="https://imgse.com/i/pSFMQVe"><img src="https://s1.ax1x.com/2023/01/04/pSFMQVe.jpg" alt="pSFMQVe.jpg"></a></li>
+<li>2022-2-11<a href="https://imgse.com/i/pSFMYxP"><img src="https://s1.ax1x.com/2023/01/04/pSFMYxP.jpg" alt="pSFMYxP.jpg"></a>接触爬虫</li>
+<li>2022-3-28<a href="https://imgse.com/i/pSFMwVg"><img src="https://s1.ax1x.com/2023/01/04/pSFMwVg.jpg" alt="pSFMwVg.jpg"></a>疫情网课</li>
+<li>2022-9-30 <a href="https://imgse.com/i/pSFM0aQ"><img src="https://s1.ax1x.com/2023/01/04/pSFM0aQ.jpg" alt="pSFM0aQ.jpg"></a>陶俊文琪(图中未显示)</li>
+<li>2022-12-1<a href="https://imgse.com/i/pSFMrPs"><img src="https://s1.ax1x.com/2023/01/04/pSFMrPs.jpg" alt="pSFMrPs.jpg"></a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>/杂感</category>
+      </categories>
+      <tags>
+        <tag>以后,将来</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo+github搭建博客</title>
+    <url>/2023/01/04/hexo-github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h1 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h1><p>腾讯云服务器一年大几百，在服务器到期之后，手上没有闲钱再去购买服务器，再去搭建博客了，但想起来github的pages托管，于是准备再次试一遍。</p>
+<span id="more"></span>
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=453413861&auto=1&height=66"></iframe>
+]]></content>
+      <categories>
+        <category>/hexo</category>
+      </categories>
+      <tags>
+        <tag>博客,搭建,hexo,github,教程</tag>
+      </tags>
+  </entry>
+</search>
