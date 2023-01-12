@@ -380,8 +380,8 @@
 <blockquote>
 <p>一般情况下，中国国家防火墙，即防火长城，主要指中华人民共和国政府用于过滤互联网国际出口上内容的软硬件系统的集合。例如中国政府将查获的特定网点阻断，造成大家所熟知的连线错误现象，因此防火墙不是该国特有的一个专门单位，是由分散部门的各服务器和路由器等设备，加上相关公司的应用程序所构成，是一个军民合作的大型信息管制系统。防火长城的作用是监控所有经过国际网关的通讯，对认为不符合中国官方要求的传输内容，进行干扰、阻断、屏蔽。由于中国网络审查广泛，中国大陆内含有“不合适”内容的网站，会受到政府直接的行政干预，被要求自我审查、自我监管，关闭，故防火长城主要作用在于分析和过滤中国境外网络的信息互相访问。</p>
 </blockquote>
-<h1 id="技术原理讲解"><a href="#技术原理讲解" class="headerlink" title="技术原理讲解"></a>技术原理讲解</h1><h2 id="·无GFW情况下访问请求"><a href="#·无GFW情况下访问请求" class="headerlink" title="·无GFW情况下访问请求"></a>·无GFW情况下访问请求</h2><p><a href="https://imgse.com/i/pSuD2jJ"><img src="https://s1.ax1x.com/2023/01/12/pSuD2jJ.png" alt="pSuD2jJ.png" border="0"></a><br> 接下来服务器会返回一个数据包，由于对理解GFW影响不大，这里不进行描述。</p>
-<h2 id="·有GFW的情况下进行访问"><a href="#·有GFW的情况下进行访问" class="headerlink" title="·有GFW的情况下进行访问"></a>·有GFW的情况下进行访问</h2><p> <a href="https://imgse.com/i/pSurt56"><img src="https://s1.ax1x.com/2023/01/12/pSurt56.png" alt="pSurt56.png" border="0"></a></p>
+<h1 id="技术原理讲解"><a href="#技术原理讲解" class="headerlink" title="技术原理讲解"></a>技术原理讲解</h1><h2 id="·无GFW情况下访问请求"><a href="#·无GFW情况下访问请求" class="headerlink" title="·无GFW情况下访问请求"></a>·无GFW情况下访问请求</h2><p><a href="https://imgse.com/i/pSuD2jJ"><img src="https://s1.ax1x.com/2023/01/12/pSuD2jJ.png" alt="pSuD2jJ.png" border="0"></a><br><a href="https://s1.ax1x.com/2023/01/12/pSuD2jJ.png">https://s1.ax1x.com/2023/01/12/pSuD2jJ.png</a><br>接下来服务器会返回一个数据包，由于对理解GFW影响不大，这里不进行描述。</p>
+<h2 id="·有GFW的情况下进行访问"><a href="#·有GFW的情况下进行访问" class="headerlink" title="·有GFW的情况下进行访问"></a>·有GFW的情况下进行访问</h2><p> <a href="https://imgse.com/i/pSurt56"><img src="https://s1.ax1x.com/2023/01/12/pSurt56.png" alt="pSurt56.png" border="0"></a><br><a href="https://s1.ax1x.com/2023/01/12/pSurt56.png">https://s1.ax1x.com/2023/01/12/pSurt56.png</a></p>
 <h2 id="·GFW的阻断方法"><a href="#·GFW的阻断方法" class="headerlink" title="·GFW的阻断方法"></a>·GFW的阻断方法</h2><p><strong>·关键字阻断<br>·DNS污染<br>·封锁IP<br>·封锁主机端口</strong></p>
 <blockquote>
 <p>再次声明，本文章只进行技术手段的讲解，不涉及教程内容。</p>
