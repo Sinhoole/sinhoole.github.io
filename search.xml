@@ -29,6 +29,31 @@
     
     
     <entry>
+      <title>记录如何使用Dpalyer</title>
+      <link href="/2023/08/08/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Dplayer/"/>
+      <url>/2023/08/08/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Dplayer/</url>
+      
+        <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>安装 hexo-tag-dplayer 插件十分简单，只需要在博客目录执行</p><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-<span class="keyword">tag</span>-dplayer -s</span><br></pre></td></tr></table></figure><h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><p>这是Markdown的语法格式</p><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="meta">%</span> dplayer <span class="string">&quot;url=https://dl.sm9.top/Video/2018/KeyCastOW.mp4&quot;</span> <span class="meta">%</span>&#125; </span><br></pre></td></tr></table></figure><p>其他配置示例。</p><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% dplayer <span class="string">&quot;url=https://dl.sm9.top/Video/2018/%E6%8E%98%E5%9C%B0%E6%B1%82%E5%8D%87_x264.mp4&quot;</span> <span class="string">&quot; screenshot&quot;</span> <span class="string">&quot;loop=yes&quot;</span> <span class="string">&quot;id=46190A32F63DFF2CF0A3BB0F3293636C&quot;</span> <span class="string">&quot;api=https://api.prprpr.me/dplayer/&quot;</span> <span class="string">&quot;addition=https://api.prprpr.me/dplayer/v3/bilibili?aid=17150441 &quot;</span> %&#125; </span><br></pre></td></tr></table></figure><p>附 表(转载)<br><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308082136377.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> /技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术,博客,教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2023/08/05/hello-world/"/>
       <url>/2023/08/05/hello-world/</url>
