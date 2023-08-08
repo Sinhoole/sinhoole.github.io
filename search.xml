@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2023/08/05/hello-world/"/>
+      <url>/2023/08/05/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>记一次被骗</title>
+      <link href="/2023/02/01/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%A2%AB%E9%AA%97/"/>
+      <url>/2023/02/01/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%A2%AB%E9%AA%97/</url>
+      
+        <content type="html"><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p><del>在贪图QQ邮箱之后，被诈骗了20元</del></p><p>2023年01月03日 21时20分20秒<br>原40元已经全部追回</p><h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p><del>关于我账号QQ3226228874资料问题被封禁后，其对应的邮箱也失去了登陆权限，关于邮箱所对应的的虚拟资产，我一直在努力追回。但steam客服始终告诉我我无法提供有力证据，在多次申请无果后，我决定通过其他人的能力来帮助我实现。</del></p><h1 id="商店"><a href="#商店" class="headerlink" title="商店"></a>商店</h1><p><del>我一急之下去了虚拟店铺，在看到“追回QQ”的时候，我再三思索，还是决定了购买（此时还是能够追回的）。但店家让我补差价20元，我才意识到可能受骗了。但我还是支付了这二十元。</del></p><h1 id="手段"><a href="#手段" class="headerlink" title="手段"></a>手段</h1><p><del>店家首先发送给我一张卡卷(虚拟商品使用后在无法退款)，告诉我，让我把卡券发送给他，我发送给他之后，卡券使用，已经销毁。这已经证明我使用过了虚拟商品，店家通过这样的方式来防止我追回20元。</del></p><h1 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h1><p><del>由于补差价的商品并不属于虚拟商品范畴，在申请退款后便给了我。</del></p><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> 而已 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 诈骗,教训 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>GFW是什么</title>
+      <link href="/2023/01/12/%E4%BB%80%E4%B9%88%E6%98%AFGFW/"/>
+      <url>/2023/01/12/%E4%BB%80%E4%B9%88%E6%98%AFGFW/</url>
+      
+        <content type="html"><![CDATA[<h1 id="防火墙-GFW"><a href="#防火墙-GFW" class="headerlink" title="防火墙/GFW"></a>防火墙/GFW</h1><h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><p>英文：GFW-Great Fire Wall<br>中文：中国防火长城<br>作用：分析和过滤境外咨询和互相访问<br>来源：以下信息来自百度百科</p><blockquote><p>新疆喀什八·四袭警案是2008年8月4日上午8时在新疆发生的恶性袭警事件。事件造成14位边防武警当场牺牲，还有两位武警在送院途中牺牲。另外16位武警受伤。其中一个肇事者腿部受伤，最终肇事人库尔班江·依明提和阿不都热合曼·阿扎提因依法被判处死刑。<br>事件经过为当日新疆喀什市边防支队集体出早操，行至怡金宾馆前时，突遭两名犯罪嫌疑人驾车袭击。两个肇事者开着一部废弃卡车，向正在操练的警方投掷了两枚手榴弹，之后冲进去用刀子乱砍。<br>2009年4月9日上午11时，遵照最高人民法院院长签发的执行死刑命令，两名罪犯被验明正身，押赴刑场，执行死刑。<br>注：本次恐怖袭击在Facebook平台策划</p></blockquote><p>根据此次情况，中国合理要求Facebook等公司配合审查，以防再次发生此事件，经沟通无果后，GFW逐渐建立。</p><p>以下内容来自WIKI百科</p><blockquote><p>一般情况下，中国国家防火墙，即防火长城，主要指中华人民共和国政府用于过滤互联网国际出口上内容的软硬件系统的集合。例如中国政府将查获的特定网点阻断，造成大家所熟知的连线错误现象，因此防火墙不是该国特有的一个专门单位，是由分散部门的各服务器和路由器等设备，加上相关公司的应用程序所构成，是一个军民合作的大型信息管制系统。防火长城的作用是监控所有经过国际网关的通讯，对认为不符合中国官方要求的传输内容，进行干扰、阻断、屏蔽。由于中国网络审查广泛，中国大陆内含有“不合适”内容的网站，会受到政府直接的行政干预，被要求自我审查、自我监管，关闭，故防火长城主要作用在于分析和过滤中国境外网络的信息互相访问。</p></blockquote><p>技术原理讲解<br>·无GFW情况下访问请求<br><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081801341.png" alt=""><br>接下来服务器会返回一个数据包，由于对理解GFW影响不大，这里不进行描述。</p><p>·有GFW的情况下进行访问</p><p><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081802624.png" alt=""></p><h2 id="GFW的阻断方法"><a href="#GFW的阻断方法" class="headerlink" title="GFW的阻断方法"></a>GFW的阻断方法</h2><p>·关键字阻断<br>·DNS污染<br>·封锁IP<br>·封锁主机端口</p><p>再次声明，本文章只进行技术手段的讲解，不涉及教程内容。</p><p>本文章所有图片底图来自<a href="https://youtu.be/k80cu16M-rw，明体内容由本人写入，如有侵权，联系删除。">https://youtu.be/k80cu16M-rw，明体内容由本人写入，如有侵权，联系删除。</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> GFW,技术,介绍 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>什么是steam?手把手教你注册！</title>
+      <link href="/2023/01/12/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%B3%A8%E5%86%8Csteam%EF%BC%8C%E4%BF%9D%E5%A7%86%E6%95%99%E7%A8%8B/"/>
+      <url>/2023/01/12/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%B3%A8%E5%86%8Csteam%EF%BC%8C%E4%BF%9D%E5%A7%86%E6%95%99%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p>Steam的注册，安装，下载，以及出现的问题。</p><h2 id="什么是Steam"><a href="#什么是Steam" class="headerlink" title="什么是Steam"></a>什么是Steam</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Steam是全球最大的PC数字游戏发行平台，由Valve公司开发设计，玩家可以在这个平台上购买正版游戏。</p><h3 id="体量"><a href="#体量" class="headerlink" title="体量"></a>体量</h3><p>steam商店搜索一共14218个结果，但这并不全是游戏，其中还有DLC、软件、视频。 通过筛选只选择游戏会有8373个结果。</p><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>1.方便快捷。支付而言，数字游戏贩售平台在某种意义上类似于游戏界的网店，而为了实现基本的购买需求，支付功能就是重中之重。V社在很早之前就支持了支付宝付款，微信，仅此一项Steam就赢得了国内用户的喜爱。使用方面，Steam购买后的游戏在厂商发布更新后会自动开始更新。</p><p>2.创意工坊。很早开始，许多游戏就有自定义地图这个设定，让玩家发挥自己的创意。暴雪首先迈出了新的一步，在War3中推出了WE工具，允许玩家自己编辑地图，甚至可以随意修改地图中的物品，属性乃至模型。而V社的创意工坊无疑是更进一步，给了玩家一个关于Mod、模型、地图乃至跟游戏有关的一切创意的一个官方交流平台，对此给予了足够的支持。通过这个平台，玩家能够更加方便的下载和更新来自民间的创意，甚至在一些游戏中，创意工坊中的内容占了举足轻重的分量。</p><p>3.使用体验。通过大数据信息的处理，Steam的使用体验变得越来越得心应手。喜爱的游戏类型，好友中推荐喜好，时下热门游戏，还包括各种的分类搜索，这些都让Steam的购买体验有了质的变化。</p><h2 id="如何注册steam"><a href="#如何注册steam" class="headerlink" title="如何注册steam"></a>如何注册steam</h2><h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><h4 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h4><p>Steam作为一款游戏平台，在当今网络知识严重缺乏的当代，盗版软件层出不穷，在下载steam的过程中一定要注意分辨Steam是否为正版，错误下载盗版之后，很有可能携带挖矿(使用显卡强烈计算专区虚拟货币)，木马，捆绑软件。</p><h4 id="进入官网"><a href="#进入官网" class="headerlink" title="进入官网"></a>进入官网</h4><p><a href="https://store.steampowered.com/">https://store.steampowered.com/</a><br><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081805722.png" alt=""></p><h4 id="进入首页"><a href="#进入首页" class="headerlink" title="进入首页"></a>进入首页</h4><p><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081809186.png" alt=""></p><h4 id="点击安装"><a href="#点击安装" class="headerlink" title="点击安装"></a>点击安装</h4><p><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081809403.png" alt=""><br><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081811381.png" alt=""><br>点击下载好的steamsetup.exe进行安装，在安装过程中一直同意即可，在安装路径时推荐用D盘或除C盘以外的其他盘符。路径务必是纯英文。</p><h3 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h3><h4 id="前情提要-1"><a href="#前情提要-1" class="headerlink" title="前情提要"></a>前情提要</h4><p>因为steam在注册中，与要用到国外服务，此时大陆用户无法正常访问，所以在使用时，需要进行更改网络环境 。</p><p>1.Clash进行更改【由于法律问题，这里不进行介绍】<br><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081812039.png" alt=""><br>2.使用UU加速器等加速器进行加速<br>在浏览器搜索UU加速器<br>点击进入<br><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081812643.png" alt=""><br>，在下载过程中一路点击确定即可(同样建议将安装路径更改为D盘或者其他盘符)，在下载登陆实名认证(需成年)之后，进入加速器首页进行加速Steam游戏商店<br>。</p><blockquote><p>Blockquote相关知识<br>QQ邮箱：XXXXXXX@qq.com<br>如果您的QQ账号为3226228874，则您的邮箱为3226228874@qq.com<br>您可以在QQ邮箱网页版登录您的QQ邮箱进行接受信件，也可以在手机客户端进行下载QQ邮箱。</p></blockquote><h3 id="注册STEAM"><a href="#注册STEAM" class="headerlink" title="注册STEAM"></a>注册STEAM</h3><p>1.在主页面点击-创建免费用户-<br><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081813893.png" alt=""><br>2.在此处输入您的QQ邮箱，这里采用演示QQ，点击继续<br><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081814095.png" alt=""><br>3.打开QQ邮箱，接受邮件，点击验证<br><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081814964.png" alt=""><br>4.出现此页面为正常<br><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081815933.png" alt=""><br>5.输入账户名称，这里的账户名称并不是昵称，类似您的微信号，尽量容易记，点击完成，并且根据提示，返回登陆窗口。<br><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081816735.png" alt=""><br>6.输入账户密码点击登录。<br><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081816020.png" alt=""></p><p>如何使用Steam</p><h3 id="页面介绍"><a href="#页面介绍" class="headerlink" title="页面介绍"></a>页面介绍</h3><p><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081819465.png" alt=""></p><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>1 首先，作为新玩家刚开始使用steam，以玩游戏为主，不要轻易添加联系方式。</p><p>2 其中需要注意的是不要随意点开一些网站。</p><p>3 然后是注意不要在一些，不安全的网络环境下登录steam账号。</p><p>4 再就是购买账号会有风险，并且在购买游戏时也需要多加注意，不要贪小便宜。</p><p>5 最后，就是需要事先了解一下，关于游戏退款的方法和退款要求。</p><p>6 搜索游戏时尽量先用用英文搜索</p><p>7 本体和DLC。第一个是本体，紫色斜条纹的都是dlc。没有本体的话，不能买DLC，没法玩。</p><p>5美金门槛<br>有不少功能必须在你消费5美金以上才能开启，充值steam钱包不买游戏也可以</p><p>无法发送好友邀请；<br>不能开启聊天组；<br>无法参与Steam市场的买卖；<br>在Steam讨论版上发言频率会受到限制；<br>无法获得Steam收益等级（等级将被锁定在0）和交换卡片；<br>不能向创意工坊提交作品；<br>无法在创意工坊的物品上跟帖留言；<br>无法访问Steam的网页API；<br>无法使用浏览器访问商店页和手机聊天。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> steam </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> steam,注册,教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>胡言乱语之烟花爆竹</title>
+      <link href="/2023/01/05/%E8%83%A1%E8%A8%80%E4%B9%B1%E8%AF%AD%E4%B9%8B%E7%83%9F%E8%8A%B1%E7%88%86%E7%AB%B9/"/>
+      <url>/2023/01/05/%E8%83%A1%E8%A8%80%E4%B9%B1%E8%AF%AD%E4%B9%8B%E7%83%9F%E8%8A%B1%E7%88%86%E7%AB%B9/</url>
+      
+        <content type="html"><![CDATA[<h1 id="猜测"><a href="#猜测" class="headerlink" title="猜测"></a>猜测</h1><p>个人评判，主观臆断</p><p>这几年的疫情，国家财政支出困难，地方通过收税来提高收入，由于普通人购买的商品中，增值税不进行标价，所以普通人感受不到税收的存在。<br>除了收税，还有一种情况就是，收罚款。通过画禁停线，收取交通管理费。如此看来，为什么禁燃烟花爆竹，不言而喻了。正是因为会有人燃放，才会去设置禁止令。这种情况，换个说法，就是苛捐杂税。</p><p>还有一种想法就是，人口压力较大，通过管理环境，来提高人口容纳量。大概可以想象一下。如果你是管理层，如果禁止他们燃放烟花爆竹，可以提高人口的容纳量，就会有人口红利，那你还会不会去管什么传统文化的保护呢？决策层都是短视的，流水又都被执行层吃净了，债最后都是落老百姓身上。</p><h1 id="请仙歌词详解"><a href="#请仙歌词详解" class="headerlink" title="请仙歌词详解"></a>请仙歌词详解</h1><p>因为我觉得，请仙说的事情，是传统三角结构的弊端。</p><p>一开始的词显而易懂，就是在描写仙的强大，有着实现各种事情的力量。<br>然后就是开始有人想请仙为他办事，予其庇护，还写出了一些请仙人请仙的心理——本质上就是想收买仙，也有着想利用仙惩恶扬善的准则来让仙为其所用的心理。从而片面得给仙灌输对手得恶行，又给各种好处想要收买仙。<br>跟着就是继续赞颂仙的强大<br>第二段开始讲仙的行动方式，他不入凡尘，而是通过神像观察世间，通过双耳听闻万物，紧接着就是讲出了这种行动方式的弊端——容易被迷雾障蔽、又容易被邪风扰乱，同时也就说明了若是请仙人心怀鬼胎，通过香薰迷雾，鼓动邪风便容易把仙误导。<br>接下来的一段，又补充了一点仙本身就是很难修成的，所以仙素质本质上就是万里挑一的，并且又说了庙宇难建，更是容易让不轨之人蒙蔽仙，进一步说仙这种以像观世，以耳闻物的行动方式带来的弊端。最后也就提出了一些思考，为什么这种不合理的行动方式会存在那么久？大概是因为，一是天道不循，没有意识到自己应该承要天道、其实要管仙，也就是天弃天，天弃仙，二是仙忘记了自己应当承天道，惩恶扬善，没有想到不当用此种片面的行动方式来行动，也就是仙逆天。最后仍是在说仙行动方式的弊端。<br>然乎写点自己的理解：<br>其实在这首歌，也是在用一个请仙者的身份唱的吧，歌曲就是他向仙沟通的文书，他相信仙一定能听到他，不再为像前迷雾蒙蔽，不再为邪风所扰，亲自下凡主持天道。其实隐隐之中就否定了天弃天、天弃仙。以及否定了仙逆天。祈求仙出来主持公道的请仙者的出现何尝不是天的安排？仙又怎么会听不到他？也就说不存在天弃仙，天弃天了。歌曲用了大幅篇幅描写仙被蒙蔽，由此可知并非是仙逆天，而是别有用心之人蒙蔽了仙，当歌曲中的请仙者开始歌唱，仙听到了真正的声音，必然会重新出来主持天道的。</p><p>这里的仙，是不是很像…..</p><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> 而已 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 胡言乱语 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>明天开学</title>
+      <link href="/2023/01/05/%E6%98%8E%E5%A4%A9%E5%BC%80%E5%AD%A6/"/>
+      <url>/2023/01/05/%E6%98%8E%E5%A4%A9%E5%BC%80%E5%AD%A6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p>明天开学</p><h1 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h1><p>什么都不会，疫情这么严重，复阳的死亡率这么高，不理解，无法理解！</p><h1 id="怎么做"><a href="#怎么做" class="headerlink" title="怎么做"></a>怎么做</h1><p>保护好自己</p><h1 id="感言"><a href="#感言" class="headerlink" title="感言"></a>感言</h1><p>操你妈的吕国民</p><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> 而已 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 开学,不 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>开学感言</title>
+      <link href="/2023/01/05/%E5%BC%80%E5%AD%A6%E6%84%9F%E8%A8%80/"/>
+      <url>/2023/01/05/%E5%BC%80%E5%AD%A6%E6%84%9F%E8%A8%80/</url>
+      
+        <content type="html"><![CDATA[<h1 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h1><p>经学生强烈反对，公车上书，学校决定在二十三日进行年假</p><h1 id="开学"><a href="#开学" class="headerlink" title="开学"></a>开学</h1><p>无法否定，无法阻止，无法否定的事，已经发生了。<br>痛定思痛，一心只觉得无能为力，在这种特殊情况下，学校决定开学，我无法理解。</p><h1 id="立场"><a href="#立场" class="headerlink" title="立场"></a>立场</h1><p>我思索了很久。</p><p>当聪明人开始做傻事，这时候就要考虑他是否是既得利益者。</p><p>想了很久，开学的既得利益者，但我还是很难思考的出来。是餐厅？学校超市？但他们似乎并不能左右一高。<br>莫非…..<br>应该是，开学之后，才能开始吃流水，水电费，网络维护费，洗了之后，都纳入囊中。<br>但这样的话，还是不能够信服，有种牵强的感觉，但是学校开学的既得利益者，我目前还无法想到。</p><p>为了以后几年这个帖子我忘记了，在这里标注一下情况：</p><blockquote><p>现在是2023年01月05日 22时23分48秒<br>根据现在的情况，奥密克戎肆虐，xbb也逐渐疯涨。<br>本病毒主要攻击上呼吸道(有攻击肺部导致肺部纤维化的情况)，二次感染致死率14%。本学校人口5000以上。经学校商定，腊月十四开学，于腊月二十八开学。</p></blockquote><p>很难接受这样的事实，也很难改变，无力回天，心有余力，无能为力。自己的安全被别人左右，加上最近，杂七杂八的新闻太多，无法理解这些决策层的心里想法。<br>无法理解被用的越发仓白，这里解释一下他的含义。</p><p>根据现有的情况，无法找到这件事成功后，他得到的利益。也无法找到他的压迫方。</p><p>然而就在此时，学校内还在讨论，28与14的问题。[是14日开学还是腊月28开学]<br>仿佛对于他们来说，开学已经是必然，而开学后必然会向他们想的一样安然无事。我当然是希望安然无事的，但我并不希望这回助长他们的气焰。回头想想也可笑，一个学校内的学生，都在仇恨这个学校。<br>别人担心的是，生命安全，而他们在乎的是开学的时间，荒诞啊。吕国民，你对得起你的名字吗。</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这次网课，时间很长，东西很多，我很摆烂。<br>开学后学的是新课，冥冥之中自有天意，我希望，这是最后一次网课。<br>我一直在痛恨学校，认为学校拖累了我，我一个人自学能如何如何，但事实，是学校的模式(我依然恨这个学校)再给我托底。<br>生活不尽人意，学业荒废，怎能如此？<br>悲然，徒然，坦然。<br>说到这里竟然有点辛酸，这么清晰的路，我却过的这么茫然。<br>很难过，以后。<br>希望自己称心如意，回想初三，过的才是人生。<br>希望这是我最后一次忏悔。<br>福生无量天尊。</p><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> 而已 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 感言,开学 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2022记录</title>
+      <link href="/2023/01/04/2022%E7%9A%84%E8%AE%B0%E5%BD%95/"/>
+      <url>/2023/01/04/2022%E7%9A%84%E8%AE%B0%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p>2022一年的所有博文全部丢失。留下些图片，自己看一看。<br>·2022-1-7<br><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081742894.png" alt=""></p><p>·2022-2-1<br>东山行<br>壬寅之一日，余游东山，东山大寒，雪亦未融，沟中有村，有村人众，或村数人，路别马从，随路而行，车就径下循路，道皆泞。面来多半途废游者。遂至其巅，石奇，水澈，甚美。方圆十里徐去，惟予独在焉。若非家人督，吾岂不能饮酒居之数日哉！</p><hr><p><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081744144.png" alt=""></p><p>·2022-2-11第一次接触爬虫。<br><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081746823.png" alt=""></p><p>·2022-3-28<br>可恨的疫情(图片来自徐文强)<br><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308081746552.png" alt=""></p><p>·2022-12-1<br>海贼王·红发<br><img src="https://markdown.xiaoshujiang.com/img/spinner.gif" alt="enter description here" title="[[[1691488070355]]]"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 而已 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 记录,回忆 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>分享一首歌《孤独患者》</title>
+      <link href="/2023/01/04/%E5%88%86%E4%BA%AB%E4%B8%80%E9%A6%96%E6%AD%8C%E3%80%8A%E5%AD%A4%E7%8B%AC%E6%82%A3%E8%80%85%E3%80%8B/"/>
+      <url>/2023/01/04/%E5%88%86%E4%BA%AB%E4%B8%80%E9%A6%96%E6%AD%8C%E3%80%8A%E5%AD%A4%E7%8B%AC%E6%82%A3%E8%80%85%E3%80%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p>分享一首歌《孤独患者》<br>可能需要关闭下方Aplayer播放器。</p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=64093&auto=1&height=66"></iframe><h1 id="歌词"><a href="#歌词" class="headerlink" title="歌词"></a>歌词</h1><p>欢笑声 欢呼声</p><p>炒热气氛 心却很冷</p><p>聚光灯 是种蒙恩</p><p>我却不能 喊等一等</p><p>我真佩服我 还能幽默</p><p>掉眼泪时 用笑掩过<br>怕人看破 顾虑好多</p><p>不谈寂寞 我们就都快活</p><p>我不唱声嘶力竭的情歌<br>不表示没有心碎的时刻</p><p>我不曾摊开伤口任宰割</p><p>愈合 就无人晓得</p><p>我内心挫折</p><p>活像个孤独患者 自我拉扯</p><p>外向的孤独患者 有何不可</p><p>笑越大声 越是残忍</p><p>挤满体温 室温更冷</p><p>万一关灯 空虚扰人</p><p>我却不能 喊等一等</p><p>你说你爱我 却一直说<br>说我不该 窝在角落</p><p>策划逃脱 这也有错</p><p>连我脆弱 的权利都掠夺</p><p>我不唱声嘶力竭的情歌</p><p>不表示没有心碎的时刻</p><p>我不曾摊开伤口任宰割</p><p>愈合 就无人晓得</p><p>我内心挫折</p><p>活像个孤独患者 自我拉扯</p><p>外向的孤独患者 有何不可</p><p>我不要声嘶力竭的情歌</p><p>来提示我需要你的时刻</p><p>表面镇定并不是保护色</p><p>反而 是要你懂得</p><p>我不知为何</p><p>活像个孤独患者 自我拉扯</p><p>外向的孤独患者 需要认可</p><h1 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h1><p>Forward: 让我想到村上春树的一句话，哪有人喜欢孤独啊，只是不想失望罢了。</p><p>2016年1月23日 23:38||82358</p><p>尙尙尙尙尙尙 : 孤独这两个字拆开看，有小孩，有水果，有走兽，有蚊蝇，足以撑起一个盛夏傍晚的巷子口，人味十足。</p><p>2015年11月28日 19:56||46637</p><p>云村村民 : “我天性不宜交际。在多数场合，我不是觉得对方乏味，就是害怕对方觉得我乏味。可是我既不愿忍受对方的乏味，也不愿费劲使自己显得有趣，那都太累了。我独处时最轻松，因为我不觉得自己乏味，即使乏味，也自己承受，不累及他人，无需感到不安。” by周国平</p><p>2016年4月2日 23:23||41921</p><p>不离天下溪 : 别人稍一注意你你就敞开心扉，你觉得这是坦率，其实这是孤独</p><p>2016年6月10日 21:48||37487</p><p>萍舟 : 我有两个社交账号，一个是真身份，说假故事。一个是假身份，说真故事。到后来，连我自己都不知道哪个才是真的我了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 而已 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 歌曲,孤独 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>没交作业？我交了啊！</title>
+      <link href="/2023/01/03/%E4%BD%9C%E4%B8%9A%EF%BC%9F%E6%88%91%E4%BA%A4%E4%BA%86%E5%95%8A%EF%BC%81/"/>
+      <url>/2023/01/03/%E4%BD%9C%E4%B8%9A%EF%BC%9F%E6%88%91%E4%BA%A4%E4%BA%86%E5%95%8A%EF%BC%81/</url>
+      
+        <content type="html"><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p>作业提交的错误，一份作业二次提交</p><h1 id="迟交的作业"><a href="#迟交的作业" class="headerlink" title="迟交的作业"></a>迟交的作业</h1><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>今天考试，英语作业是一套卷子，在考试开始时，老师将提交作业的任务发布，以便我们写完之后可以及时提交。但不知为何，其又再次发布一次，导致我以为只用提交一次。<br>以下为他当时的发送的信息。</p><blockquote><p>薛永军<br>英语考试时间8:00一10:00，现在已11:30，以上这些学生还未交卷，不知学生在家干什么，家长为什么不管自己的孩子，你对老师的提醒无动于衷，你加入班级群或钉钉群已失去了意义，你自动退出算了<br>对于上网课滥竽充数的学生，在家无人管的学生，我会连同家长一齐从班级群及钉钉群里删除</p></blockquote><p>当然，以上的信息已经被发送至微信，并且带有未提交的名单。</p><p>感悟<br>多看信息，勿忘何时何地做何事！</p><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> 而已 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ?,脑子 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>一个翻译</title>
+      <link href="/2023/01/03/%E4%B8%80%E4%B8%AA%E7%BF%BB%E8%AF%91/"/>
+      <url>/2023/01/03/%E4%B8%80%E4%B8%AA%E7%BF%BB%E8%AF%91/</url>
+      
+        <content type="html"><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p>今天一个朋友问我这句话的翻译：</p><blockquote><p>故人虽时有自失者，犹无以易恭节。自 失不足以难，以严驵则可</p></blockquote><h1 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h1><p>据当下互联网的翻译多数为此。</p><blockquote><p>所以，别人虽说时常有犯过失的，但自己还是不能改变谦虚恭敬待人的志度。别人犯过失不足以责难，用严厉骄横的态度待人则应该责难。</p></blockquote><h1 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h1><p>译文疑处</p><blockquote><p>所以，别人虽说时常有犯过失的，但自己还是不能改变谦虚恭敬待人的志度 。别人犯过失不足以责难，用严厉骄横的态度待人则应该责难。</p></blockquote><h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>首先来看本卷译文(节选)</p><blockquote><p>公子沓当周国的相，申向劝说他时战栗不止。公子沓责备他说：“您劝说我时战粟不止，是困为我是相吧?”申向说：“我是很不贤德，虽说这样，但是您年纪二十岁就当了相，会见年老的人却让他战粟不止，请问这是谁的过错昵?”公子沓无话回答。战栗不止是因为不习惯见尊者，让人战栗不止是因为严厉骄横。倘或谦虚恭敬待人而别人还是战栗不止，那么责任就不在尊贵的人了。所以，别人虽说时常有犯过失的，但自己还是不能改变谦虚恭敬待人的志度。别人犯过失不足以责难，用严厉骄横的态度待人则应该责难。</p></blockquote><p>所以，别人虽说时常有犯过失的，但自己还是不能改变谦虚恭敬待人的志度<strong>自己不能改变自己的志度，使自己谦虚恭敬待人</strong>。别人犯过失不足以责难，用严厉骄横的态度待人则应该责难。<br>1.犹无以易恭节<br>2.(自己)犹(还是)无(不能)以易(改变)恭节(谦虚恭敬待人)<br>3.自尚且弗能以恭节易之。</p><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> 古文 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 翻译,询问 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>往后一旬，请多指教</title>
+      <link href="/2021/08/04/%E5%BE%80%E5%90%8E%E4%B8%80%E6%97%AC%EF%BC%8C%E8%AF%B7%E5%A4%9A%E6%8C%87%E6%95%99/"/>
+      <url>/2021/08/04/%E5%BE%80%E5%90%8E%E4%B8%80%E6%97%AC%EF%BC%8C%E8%AF%B7%E5%A4%9A%E6%8C%87%E6%95%99/</url>
+      
+        <content type="html"><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p>一次拾遗，按周先生的文笔，大概是朝花夕拾了。</p><h1 id="文"><a href="#文" class="headerlink" title="文"></a>文</h1><p>从今以后就不用再受腾讯云的折磨了！</p><p>近年陆陆续续几个域名，七八个空间，四五台主机，两三种博客系统，很遗憾没一个能长久。<br>Github是个好东西，原谅我这么久才意识到，把网站托管在这，永久运行，这是穷学生的我不敢想象的。域名当然也可以用免费的一二级域名，诸如.tk、.eu.org，但始终不是属于自己，被人拿捏的感觉始终是难受的，于是买了一个.top的域名。<br>往后几年，我想在此写写心得、趣事，不为谁而写作，只希望几年后的我能回看这一旬，不虚此行。<br>第一次的typecho,第二次的wordpress,第三次的pagenet,第四次的hexo 。<br>之前总是为了下个月服务器二着急，如今托管了github,以后，都在也不需要了。</p><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> 而已 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 追忆,将来 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>迁移博客的问题记录</title>
+      <link href="/2021/01/04/%E4%B8%80%E6%AC%A1%E8%BF%81%E7%A7%BB%E5%8D%9A%E5%AE%A2%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+      <url>/2021/01/04/%E4%B8%80%E6%AC%A1%E8%BF%81%E7%A7%BB%E5%8D%9A%E5%AE%A2%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p>测试mathjex时发现一个更严重的问题时hexo g时，无法生成新文件。</p><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>将博客配置文件，主题配置文件，Images，markdown文件，CNAME文件全部复制打包。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">npm i hexo-renderer-swig</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure><p>也就是重新部署一次博客，具体有用的排查我并未找到。</p><p>报错ERROR Deployer not found: git<br>缺少deployer插件<br>执行以下命令即可</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure><hr><p>作者: 新火居士<br>本文来自于: <a href="https://sinhoole.github.io/">https://sinhoole.github.io/</a><br>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Math,记录,博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>会考？开学</title>
+      <link href="/2021/01/03/%E4%BC%9A%E8%80%83%EF%BC%9F%E5%BC%80%E5%AD%A6/"/>
+      <url>/2021/01/03/%E4%BC%9A%E8%80%83%EF%BC%9F%E5%BC%80%E5%AD%A6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p>舆论导向：提前开学？</p><h1 id="讯息"><a href="#讯息" class="headerlink" title="讯息"></a>讯息</h1><p>这种消息的讯息来源总是比较杂乱无章，靠着一些截图，和佐证，但至于真假，是否在断章取义，无法判断。</p><h1 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h1><p>无论会考推迟真假与否，最近的紧促感着实在上升，所以无论如何，在11号之前要把一切处理妥当。至于PAYDAY2,BF1,CSGO.先放在一边，别去搭理，放在假期时间娱乐，不要颠倒了主次。</p><h1 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h1><p>先从数学，物理，化学开始，生物就一直做题来看吧，靠着零碎的拼接，兴许可以力挽狂澜。本来计划的一切，怎能有不实现的道理？</p><h1 id="闲谈"><a href="#闲谈" class="headerlink" title="闲谈"></a>闲谈</h1><p>关于hexo d的网络代理错误，准备修复。<br>关于clash的ip固定，GitHub的ban。<br>关于sodoku还要不要继续做下去。<br>关于wordpress-xml文件的后续处理。<br>关于NEXT主题的bug修复。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 而已 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 传言,开学 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
