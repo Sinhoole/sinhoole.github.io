@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>如何添加外链视频</title>
+      <link href="/2023/08/11/%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E5%A4%96%E9%93%BE%E8%A7%86%E9%A2%91/"/>
+      <url>/2023/08/11/%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E5%A4%96%E9%93%BE%E8%A7%86%E9%A2%91/</url>
+      
+        <content type="html"><![CDATA[<h1 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h1><p>前些日子在捣鼓dplayer，但是没能成功，可还是想要把视频嵌入到博客上，可是b站本身的嵌入模式太恶心了，看了很多文章，得到了这种方法。</p><p>`<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"></p><p><iframe XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe>&lt;/div&gt;`</p><p>在一个正常的视频上点击嵌入代码。<br><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308111359130.png" alt=""></p><p>将代码中的XXX替换为高亮内容。<br><img src="https://cdn.jsdelivr.net/gh/Sinhoole/sincoscot/img/202308111401278.png" alt=""><br>接下来复制这串代码，你就能体会到比较好的播放体验。</p><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=955927689&bvid=BV1dW4y1o7dp&cid=1196863278&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> /技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术,博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>当时只道是寻常</title>
       <link href="/2023/08/10/%E8%B0%81%E5%BF%B5%E8%A5%BF%E9%A3%8E%E7%8B%AC%E8%87%AA%E5%87%89/"/>
       <url>/2023/08/10/%E8%B0%81%E5%BF%B5%E8%A5%BF%E9%A3%8E%E7%8B%AC%E8%87%AA%E5%87%89/</url>
