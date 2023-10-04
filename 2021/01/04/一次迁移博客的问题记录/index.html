@@ -209,7 +209,7 @@
   function initWaline () {
     const waline = Waline.init(Object.assign({
       el: '#waline-wrap',
-      serverURL: 'https://waline.lonelyhome.top',
+      serverURL: 'https://waline.sinhoole.online',
       pageview: false,
       dark: 'html[data-theme="dark"]',
       path: window.location.pathname,
@@ -276,7 +276,7 @@ if ('Waline' === 'Waline' || !false) {
 
   const getComment = async () => {
     try {
-      const res = await fetch('https://waline.lonelyhome.top/api/comment?type=recent&count=6', { method: 'GET' })
+      const res = await fetch('https://waline.sinhoole.online/api/comment?type=recent&count=6', { method: 'GET' })
       const result = await res.json()
       const walineArray = result.data.map(e => {
         return {
