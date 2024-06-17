@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>代理服务i其可能有问题，或地址不正确</title>
+      <link href="/2024/06/17/2024-06-17-%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1i%E5%85%B6%E5%8F%AF%E8%83%BD%E6%9C%89%E9%97%AE%E9%A2%98%EF%BC%8C%E6%88%96%E5%9C%B0%E5%9D%80%E4%B8%8D%E6%AD%A3%E7%A1%AE/"/>
+      <url>/2024/06/17/2024-06-17-%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1i%E5%85%B6%E5%8F%AF%E8%83%BD%E6%9C%89%E9%97%AE%E9%A2%98%EF%BC%8C%E6%88%96%E5%9C%B0%E5%9D%80%E4%B8%8D%E6%AD%A3%E7%A1%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Clash代理问题"><a href="#Clash代理问题" class="headerlink" title="Clash代理问题"></a>Clash代理问题</h1><p><img src="https://cdn.jsdelivr.net/gh/sinhoole/sincoscot@main/sincoscot/image-20240617102325616.png" alt="image-20240617102325616"></p><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>一般是由于代理软件在电脑关机的时候并未关闭取消代理所致。</p><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>重新打开代理软件，重复开关，然后网络便会恢复正常。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电脑代理 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Booster X :FPS的加速器</title>
       <link href="/2024/06/16/booster%20X/"/>
       <url>/2024/06/16/booster%20X/</url>
