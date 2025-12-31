@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPS 进化史：从字符到光追 | The Evolution of First-Person Shooters</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap');
+
+        :root {
+            --color-bg: #f5f5f4; /* Stone 100 */
+            --color-text: #1c1917; /* Stone 900 */
+            --color-accent: #ea580c; /* Orange 600 */
+            --color-accent-hover: #c2410c;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            overflow-x: hidden;
+        }
+
+        .font-mono {
+            font-family: 'Space Mono', monospace;
+        }
+
+        /* Chart Container Styling - MANDATORY */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+
+        /* Sticky HUD Styling */
+        .hud-panel {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.9);
+            border-left: 4px solid var(--color-accent);
+        }
+
+        /* Section Transitions */
+        .era-section {
+            opacity: 0.3;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease;
+            transform: scale(0.98);
+        }
+        .era-section.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Custom Interactive Elements */
+        .key-cap {
+            box-shadow: 0 4px 0 #44403c; /* Stone 700 */
+            transition: all 0.1s;
+        }
+        .key-cap:active, .key-cap.pressed {
+            transform: translateY(4px);
+            box-shadow: 0 0 0 #44403c;
+        }
+
+        .progress-bar-fill {
+            transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e7e5e4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #a8a29e;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #78716c;
+        }
+    </style>
+    <!-- Chosen Palette: Warm Neutrals (Stone) with Orange Accents. Background #f5f5f4. -->
+    <!-- Application Structure Plan: 
+         1. "The Upgrade Log" Concept: The page is designed as a vertical timeline where the user "upgrades" the FPS engine by scrolling.
+         2. Sticky HUD: A fixed sidebar (desktop) or top bar (mobile) displaying real-time stats of the current "Era" (Radar Chart) and "Tech Specs" (Text). This provides constant context.
+         3. Dynamic Sections: As the user scrolls, the active section triggers updates to the HUD.
+         4. Interactive Modules:
+            - 1973: Canvas-based "Wireframe" visualizer.
+            - 1996: "WASD vs Arrow Keys" interactive click test.
+            - Charts: Specific comparison charts for key eras (Wolf3D speed, Doom growth).
+         5. No embedded scrollbars for content; flow is natural and vertical.
+    -->
+    <!-- Visualization & Content Choices:
+         - HUD Radar Chart: Goal: Compare eras across 5 dimensions (Tech, Graphics, Story, Speed, Immersion).
+         - Wolf3D Bar Chart: Goal: Inform on the frame rate leap.
+         - Doom Bubble Chart: Goal: Organize the explosion of "Doom-clones".
+         - WASD Interactive: Goal: Change/Engage user to feel the control difference.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="relative">
+
+    <!-- Sticky HUD (Heads-Up Display) -->
+    <div id="hud" class="fixed z-50 right-0 top-20 md:top-1/4 w-full md:w-80 p-4 pointer-events-none flex flex-col items-end">
+        <div class="hud-panel w-full shadow-xl rounded-l-xl p-4 pointer-events-auto bg-white/95 border-stone-200 border border-l-4 border-l-orange-500">
+            <h3 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2 font-mono">Current Engine Status</h3>
+            <div class="flex justify-between items-end mb-4">
+                <div>
+                    <h2 id="hud-era-year" class="text-3xl font-black text-stone-800 leading-none">INIT</h2>
+                    <p id="hud-era-name" class="text-sm text-stone-600 font-medium">System Boot...</p>
+                </div>
+                <div class="text-right">
+                    <div class="text-xs text-stone-400 font-mono">TECH LEVEL</div>
+                    <div id="hud-tech-level" class="text-xl font-bold text-orange-600 font-mono">0%</div>
+                </div>
+            </div>
+            
+            <!-- Radar Chart Container -->
+            <div class="chart-container" style="height: 200px; max-height: 200px;">
+                <canvas id="hudRadarChart"></canvas>
+            </div>
+
+            <!-- Dynamic Specs Text -->
+            <div id="hud-specs" class="mt-4 space-y-1 text-xs font-mono text-stone-500 border-t border-stone-100 pt-2">
+                <div class="flex justify-between"><span>RENDER:</span> <span id="spec-render" class="text-stone-800">UNKNOWN</span></div>
+                <div class="flex justify-between"><span>INPUT:</span> <span id="spec-input" class="text-stone-800">UNKNOWN</span></div>
+                <div class="flex justify-between"><span>NETWORK:</span> <span id="spec-net" class="text-stone-800">OFFLINE</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div class="max-w-4xl mx-auto px-6 pb-24 md:pr-96"> <!-- Right padding allows space for HUD on desktop -->
+        
+        <!-- Hero Section -->
+        <header class="min-h-screen flex flex-col justify-center py-20">
+            <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-white bg-orange-600 rounded-full w-fit">FPS HISTORY LOG</div>
+            <h1 class="text-5xl md:text-7xl font-black text-stone-900 mb-6 leading-tight">
+                从 8KB<br>到 4K 光追
+            </h1>
+            <p class="text-xl md:text-2xl text-stone-600 leading-relaxed max-w-2xl mb-10">
+                1973年，几串代码构建了人类首个虚拟杀戮竞技场。没人预见到这个仅 8KB 的矢量迷宫会演变成如今数千亿美元的产业。
+            </p>
+            <div class="flex items-center gap-4 text-stone-400 animate-bounce">
+                <i class="fas fa-arrow-down"></i>
+                <span class="text-sm font-mono">向下滚动加载进化史</span>
+            </div>
+        </header>
+
+        <!-- 1973: Maze War -->
+        <section id="era-1973" class="era-section py-20 border-l-2 border-stone-200 pl-8 relative" data-index="0">
+            <div class="absolute -left-[9px] top-24 w-4 h-4 rounded-full bg-stone-300 border-4 border-white"></div>
+            
+            <div class="mb-6">
+                <span class="font-mono text-5xl font-bold text-stone-200">1973</span>
+                <h2 class="text-3xl font-bold text-stone-800 mt-2">迷宫战争 (Maze War)</h2>
+                <h3 class="text-lg text-orange-600 font-medium">FPS 的起源染色体</h3>
+            </div>
+
+            <p class="text-lg text-stone-600 mb-6 leading-relaxed">
+                为了测试计算机性能，作者突发奇想用字符构建了第一人称迷宫。尽管画面简陋且没有垂直轴向移动，但这套系统已经构建出 FPS 的核心定义：<strong>First Person</strong>。
+            </p>
+            
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-200 mb-8">
+                <h4 class="font-bold text-stone-800 mb-4">核心创新矩阵</h4>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex items-center gap-3 p-3 bg-stone-50 rounded-lg">
+                        <i class="fas fa-eye text-orange-500"></i>
+                        <span class="text-sm font-medium">第一人称视角</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-stone-50 rounded-lg">
+                        <i class="fas fa-network-wired text-orange-500"></i>
+                        <span class="text-sm font-medium">实时局域网对战</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-stone-50 rounded-lg">
+                        <i class="fas fa-robot text-orange-500"></i>
+                        <span class="text-sm font-medium">电脑 AI (Bots)</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-stone-50 rounded-lg">
+                        <i class="fas fa-video text-orange-500"></i>
+                        <span class="text-sm font-medium">观察者模式</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-stone-900 rounded-xl p-6 text-center">
+                <p class="text-stone-400 font-mono text-xs mb-2">VISUAL SIMULATION: 8KB VECTOR MAZE</p>
+                <div class="chart-container" style="height: 200px;">
+                    <canvas id="mazeCanvas"></canvas>
+                </div>
+                <p class="text-stone-500 text-xs mt-2">Screen refreshes frame-by-frame on move.</p>
+            </div>
+        </section>
+
+        <!-- 1992: Wolfenstein 3D -->
+        <section id="era-1992" class="era-section py-20 border-l-2 border-stone-200 pl-8 relative" data-index="1">
+            <div class="absolute -left-[9px] top-24 w-4 h-4 rounded-full bg-stone-300 border-4 border-white"></div>
+
+            <div class="mb-6">
+                <span class="font-mono text-5xl font-bold text-stone-200">1992</span>
+                <h2 class="text-3xl font-bold text-stone-800 mt-2">德军总部 3D</h2>
+                <h3 class="text-lg text-orange-600 font-medium">爽快感的诞生与斯金纳箱</h3>
+            </div>
+
+            <p class="text-lg text-stone-600 mb-6 leading-relaxed">
+                约翰·卡马克使用<strong>射线追踪 (Raycasting)</strong> 技术，极大简化了 3D 渲染，让游戏能以 20 帧/秒的速度运行。这种高速节奏配合隐藏房间的收集要素，建立了“斯金纳箱”式的正反馈循环。
+            </p>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-200">
+                <h4 class="font-bold text-stone-800 mb-4 text-center">渲染技术带来的帧率革命</h4>
+                <div class="chart-container">
+                    <canvas id="fpsChart"></canvas>
+                </div>
+                <p class="text-center text-sm text-stone-500 mt-4">射线追踪技术使得流畅的快节奏射击成为可能。</p>
+            </div>
+        </section>
+
+        <!-- 1993: Doom -->
+        <section id="era-1993" class="era-section py-20 border-l-2 border-stone-200 pl-8 relative" data-index="2">
+            <div class="absolute -left-[9px] top-24 w-4 h-4 rounded-full bg-stone-300 border-4 border-white"></div>
+
+            <div class="mb-6">
+                <span class="font-mono text-5xl font-bold text-stone-200">1993</span>
+                <h2 class="text-3xl font-bold text-stone-800 mt-2">毁灭战士 (Doom)</h2>
+                <h3 class="text-lg text-orange-600 font-medium">MOD 纪元与病毒式传播</h3>
+            </div>
+
+            <p class="text-lg text-stone-600 mb-6 leading-relaxed">
+                引擎升级带来了斜角墙壁和动态光影。更重要的是，Doom 率先构建了<strong>官方 MOD 工具</strong>。这一决定让游戏内容不再受限于开发商，引发了病毒式的传播，"Doom-like" 成为当时 FPS 的代名词。
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-stone-100 p-5 rounded-xl">
+                    <h4 class="font-bold text-stone-800 mb-2">动态光影引擎</h4>
+                    <p class="text-sm text-stone-600">不再是单调的平面光照，昏暗的走廊和闪烁的灯光让火星基地充满恐怖气息。</p>
+                </div>
+                <div class="bg-orange-50 p-5 rounded-xl border border-orange-100">
+                    <h4 class="font-bold text-orange-800 mb-2">官方 MOD 工具</h4>
+                    <p class="text-sm text-orange-700">允许玩家修改纹理、音效乃至关卡结构。游戏寿命被无限延长。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1994: System Shock -->
+        <section id="era-1994" class="era-section py-20 border-l-2 border-stone-200 pl-8 relative" data-index="3">
+            <div class="absolute -left-[9px] top-24 w-4 h-4 rounded-full bg-stone-300 border-4 border-white"></div>
+
+            <div class="mb-6">
+                <span class="font-mono text-5xl font-bold text-stone-200">1994</span>
+                <h2 class="text-3xl font-bold text-stone-800 mt-2">网络奇兵 (System Shock)</h2>
+                <h3 class="text-lg text-orange-600 font-medium">垂直自由与碎片化叙事</h3>
+            </div>
+
+            <p class="text-lg text-stone-600 mb-6 leading-relaxed">
+                开创了真正的垂直轴向自由（抬头、跳跃、攀爬）。引入了<strong>碎片化叙事</strong>：通过收集录音文档拼凑剧情。这一超前设计在 13 年后的《生化奇兵》中被发扬光大。
+            </p>
+
+             <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-200">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="flex-1 space-y-4">
+                        <div class="relative pt-1">
+                            <div class="flex mb-2 items-center justify-between">
+                                <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-orange-600 bg-orange-200">
+                                    垂直自由度 (Verticality)
+                                </span>
+                            </div>
+                            <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-stone-200">
+                                <div class="progress-bar-fill shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-orange-500" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="relative pt-1">
+                            <div class="flex mb-2 items-center justify-between">
+                                <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-blue-200">
+                                    叙事深度 (Narrative)
+                                </span>
+                            </div>
+                            <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-stone-200">
+                                <div class="progress-bar-fill shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 text-center text-stone-500 text-sm italic">
+                        "这一系统在当时过于超前..."
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1996: Quake -->
+        <section id="era-1996" class="era-section py-20 border-l-2 border-stone-200 pl-8 relative" data-index="4">
+            <div class="absolute -left-[9px] top-24 w-4 h-4 rounded-full bg-stone-300 border-4 border-white"></div>
+
+            <div class="mb-6">
+                <span class="font-mono text-5xl font-bold text-stone-200">1996</span>
+                <h2 class="text-3xl font-bold text-stone-800 mt-2">雷神之锤 (Quake)</h2>
+                <h3 class="text-lg text-orange-600 font-medium">真 3D、电竞与 WASD 的诞生</h3>
+            </div>
+
+            <p class="text-lg text-stone-600 mb-6 leading-relaxed">
+                卡马克投下的技术核弹。多边形建模、动态光影、硬件加速。首届线下大赛吸引了 2000 多名玩家，冠军 Thresh 凭借独特的 <strong>WASD + 鼠标</strong> 操作赢走了卡马克的法拉利 328 GTS。
+            </p>
+
+            <!-- WASD Interactive Module -->
+            <div class="bg-stone-800 rounded-xl p-8 text-center shadow-lg border-b-8 border-stone-900">
+                <h4 class="text-white font-bold mb-6 text-xl">Thresh 的法拉利挑战：WASD 模拟器</h4>
+                <div class="flex flex-col items-center gap-4">
+                    <div class="flex gap-2">
+                        <div id="key-w" class="key-cap w-14 h-14 bg-stone-200 rounded flex items-center justify-center font-bold text-stone-800 cursor-pointer select-none" onclick="triggerKey('w')">W</div>
+                    </div>
+                    <div class="flex gap-2">
+                        <div id="key-a" class="key-cap w-14 h-14 bg-stone-200 rounded flex items-center justify-center font-bold text-stone-800 cursor-pointer select-none" onclick="triggerKey('a')">A</div>
+                        <div id="key-s" class="key-cap w-14 h-14 bg-stone-200 rounded flex items-center justify-center font-bold text-stone-800 cursor-pointer select-none" onclick="triggerKey('s')">S</div>
+                        <div id="key-d" class="key-cap w-14 h-14 bg-stone-200 rounded flex items-center justify-center font-bold text-stone-800 cursor-pointer select-none" onclick="triggerKey('d')">D</div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-stone-900 rounded p-4 border border-stone-700">
+                    <p class="text-orange-500 font-mono text-sm mb-2">STATUS LOG</p>
+                    <div id="wasd-log" class="text-green-400 font-mono text-xs h-16 overflow-hidden">
+                        WAITING FOR INPUT...<br>
+                        > 
+                    </div>
+                </div>
+                <p class="text-stone-500 text-xs mt-4">大多数人还在用方向键时，WASD 带来了无与伦比的精准度。</p>
+            </div>
+        </section>
+
+        <!-- 1998: Half-Life -->
+        <section id="era-1998" class="era-section py-20 border-l-2 border-stone-200 pl-8 relative" data-index="5">
+            <div class="absolute -left-[9px] top-24 w-4 h-4 rounded-full bg-stone-300 border-4 border-white"></div>
+
+            <div class="mb-6">
+                <span class="font-mono text-5xl font-bold text-stone-200">1998</span>
+                <h2 class="text-3xl font-bold text-stone-800 mt-2">半条命 (Half-Life)</h2>
+                <h3 class="text-lg text-orange-600 font-medium">FPS 叙事载体的觉醒</h3>
+            </div>
+
+            <p class="text-lg text-stone-600 mb-6 leading-relaxed">
+                “原来 FPS 还能这样做。” 半条命将故事、氛围、角色巧妙融合。无数触发事件（如科学家遇袭）和无缝的关卡连接，让 FPS 从单纯的射击升华为成熟的<strong>叙事载体</strong>。
+            </p>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-200">
+                 <h4 class="font-bold text-stone-800 mb-4">进化完成度</h4>
+                 <div class="chart-container" style="height: 250px;">
+                    <canvas id="evolutionChart"></canvas>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-20 border-t border-stone-200 text-center text-stone-500">
+            <h2 class="text-2xl font-bold text-stone-800 mb-4">进化的阶梯</h2>
+            <p class="max-w-xl mx-auto mb-8">
+                正是这些早期的先锋者，为 FPS 的发展长街铺上了阶梯。许多巨人倒下了（如毁灭公爵的跳票），但他们的基因留存至今。
+            </p>
+            <div class="text-sm font-mono text-orange-600">
+                TO BE CONTINUED IN: CS LEGEND
+            </div>
+            <p class="text-xs mt-12 text-stone-400">基于提供的 FPS 历史报告生成</p>
+        </footer>
+
+    </div>
+
+    <!-- Logic Script -->
+    <script>
+        // --- Data Definitions ---
+        const eraData = [
+            {
+                year: '1973',
+                name: 'Maze War',
+                techLevel: 10,
+                specs: { render: 'WIRE/CHAR', input: 'KEYBOARD', net: 'LAN P2P' },
+                radar: [9, 1, 2, 8, 3] // Innovation, Graphics, Immersion, Multiplayer, Story
+            },
+            {
+                year: '1992',
+                name: 'Wolfenstein 3D',
+                techLevel: 35,
+                specs: { render: 'RAYCASTING', input: 'ARROWS', net: 'NONE' },
+                radar: [7, 4, 4, 1, 3]
+            },
+            {
+                year: '1993',
+                name: 'Doom',
+                techLevel: 55,
+                specs: { render: 'BSP TREE', input: 'ARROWS', net: 'MODEM/LAN' },
+                radar: [8, 6, 7, 7, 4]
+            },
+            {
+                year: '1994',
+                name: 'System Shock',
+                techLevel: 65,
+                specs: { render: 'TRUE 3D (PSEUDO)', input: 'MOUSELOOK', net: 'NONE' },
+                radar: [9, 5, 9, 1, 9]
+            },
+            {
+                year: '1996',
+                name: 'Quake',
+                techLevel: 85,
+                specs: { render: 'OPENGL POLY', input: 'WASD+MOUSE', net: 'TCP/IP' },
+                radar: [9, 9, 7, 10, 4]
+            },
+            {
+                year: '1998',
+                name: 'Half-Life',
+                techLevel: 100,
+                specs: { render: 'GOLDSRC', input: 'WASD', net: 'WON' },
+                radar: [8, 8, 10, 9, 10]
+            }
+        ];
+
+        // --- Chart Initialization ---
+        let hudChart = null;
+        let mazeChart = null;
+
+        function initCharts() {
+            // 1. HUD Radar Chart
+            const ctxHud = document.getElementById('hudRadarChart').getContext('2d');
+            hudChart = new Chart(ctxHud, {
+                type: 'radar',
+                data: {
+                    labels: ['创新度', '画面表现', '沉浸感', '多人竞技', '叙事深度'],
+                    datasets: [{
+                        label: 'Era Stats',
+                        data: [0,0,0,0,0],
+                        backgroundColor: 'rgba(234, 88, 12, 0.2)',
+                        borderColor: '#ea580c',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#ea580c',
+                        pointRadius: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            min: 0,
+                            max: 10,
+                            ticks: { display: false },
+                            grid: { color: '#e7e5e4' },
+                            pointLabels: {
+                                font: { size: 10, family: 'Noto Sans SC' },
+                                color: '#78716c'
+                            }
+                        }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            // 2. Maze War Canvas Visualizer
+            const mazeCanvas = document.getElementById('mazeCanvas');
+            // Simplified draw logic for demo
+            if(mazeCanvas) {
+                // Not a Chart.js, but a simple JS draw
+            }
+
+            // 3. Wolf3D FPS Bar Chart
+            const ctxFps = document.getElementById('fpsChart').getContext('2d');
+            new Chart(ctxFps, {
+                type: 'bar',
+                data: {
+                    labels: ['Maze War (1973)', 'Wolfenstein 3D (1992)', 'Modern FPS'],
+                    datasets: [{
+                        label: 'Frame Rate (FPS)',
+                        data: [1, 20, 144],
+                        backgroundColor: ['#d6d3d1', '#ea580c', '#44403c']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { title: {display: true, text: 'Frames Per Second'} }
+                    }
+                }
+            });
+
+             // 4. Half Life Evolution Chart
+            const ctxEvo = document.getElementById('evolutionChart').getContext('2d');
+            new Chart(ctxEvo, {
+                type: 'line',
+                data: {
+                    labels: ['1973', '1992', '1993', '1996', '1998'],
+                    datasets: [{
+                        label: '叙事复杂度',
+                        data: [1, 2, 3, 4, 10],
+                        borderColor: '#3b82f6',
+                        tension: 0.4
+                    }, {
+                        label: '画面真实度',
+                        data: [1, 4, 6, 9, 8],
+                        borderColor: '#ea580c',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                }
+            });
+        }
+
+        // --- Interaction Logic ---
+        
+        // 1. Scroll Observer for HUD Updates
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -50% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Activate visual style
+                    document.querySelectorAll('.era-section').forEach(s => s.classList.remove('active'));
+                    entry.target.classList.add('active');
+
+                    // Update HUD Data
+                    const idx = entry.target.getAttribute('data-index');
+                    updateHud(idx);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.era-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        function updateHud(index) {
+            const data = eraData[index];
+            if (!data) return;
+
+            // Update Text
+            document.getElementById('hud-era-year').textContent = data.year;
+            document.getElementById('hud-era-name').textContent = data.name;
+            document.getElementById('hud-tech-level').textContent = data.techLevel + '%';
+            document.getElementById('spec-render').textContent = data.specs.render;
+            document.getElementById('spec-input').textContent = data.specs.input;
+            document.getElementById('spec-net').textContent = data.specs.net;
+
+            // Update Chart
+            if (hudChart) {
+                hudChart.data.datasets[0].data = data.radar;
+                hudChart.update();
+            }
+        }
+
+        // 2. Maze War Visualizer Animation
+        const canvas = document.getElementById('mazeCanvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let frame = 0;
+            
+            function drawMaze() {
+                // Resize handling
+                canvas.width = canvas.parentElement.clientWidth;
+                canvas.height = canvas.parentElement.clientHeight;
+
+                ctx.fillStyle = '#000';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.strokeStyle = '#22c55e'; // Retro Green
+                ctx.lineWidth = 2;
+
+                // Simple perspective lines simulating Maze War
+                const cx = canvas.width / 2;
+                const cy = canvas.height / 2;
+                
+                // Animate perspective
+                const offset = (frame % 100) / 100 * 20;
+
+                ctx.beginPath();
+                // Inner square
+                ctx.rect(cx - 20 - offset, cy - 20 - offset, 40 + offset*2, 40 + offset*2);
+                // Outer square
+                ctx.rect(cx - 80, cy - 80, 160, 160);
+                
+                // Connecting lines
+                ctx.moveTo(cx - 80, cy - 80); ctx.lineTo(cx - 20 - offset, cy - 20 - offset);
+                ctx.moveTo(cx + 80, cy - 80); ctx.lineTo(cx + 20 + offset, cy - 20 - offset);
+                ctx.moveTo(cx + 80, cy + 80); ctx.lineTo(cx + 20 + offset, cy + 20 + offset);
+                ctx.moveTo(cx - 80, cy + 80); ctx.lineTo(cx - 20 - offset, cy + 20 + offset);
+                
+                ctx.stroke();
+
+                // Retro Text
+                ctx.font = '12px monospace';
+                ctx.fillStyle = '#22c55e';
+                ctx.fillText('EYE_POS: ' + frame, 10, 20);
+
+                frame++;
+                requestAnimationFrame(drawMaze);
+            }
+            drawMaze();
+        }
+
+        // 3. WASD Interactive
+        function triggerKey(key) {
+            const el = document.getElementById('key-' + key);
+            const log = document.getElementById('wasd-log');
+            
+            // Visual Press
+            el.classList.add('pressed');
+            el.classList.add('bg-orange-500', 'text-white');
+            
+            setTimeout(() => {
+                el.classList.remove('pressed');
+                el.classList.remove('bg-orange-500', 'text-white');
+            }, 100);
+
+            // Logic
+            const msgs = [
+                "Moving Forward... Speed: 320ups",
+                "Strafe Left. Dodged Rocket!",
+                "Backpedal. Enemy Spotted.",
+                "Strafe Right. Railgun Ready."
+            ];
+            
+            let msg = "";
+            if (key === 'w') msg = msgs[0];
+            if (key === 'a') msg = msgs[1];
+            if (key === 's') msg = msgs[2];
+            if (key === 'd') msg = msgs[3];
+
+            log.innerHTML += `> ${key.toUpperCase()}: ${msg}<br>`;
+            log.scrollTop = log.scrollHeight;
+        }
+
+        // Initialize everything on load
+        window.addEventListener('load', initCharts);
+
+    </script>
+</body>
+</html>
