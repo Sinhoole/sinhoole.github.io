@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERMINAL-B: Steam 套利核心指南</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Archivo+Black&display=swap');
+
+        :root {
+            --cream: #F5E6D3;
+            --mustard: #E1AD01;
+            --burnt-orange: #CC5500;
+            --warm-grey: #4A4A4A;
+            --charcoal: #2A2A2A;
+        }
+
+        body { 
+            background-color: var(--warm-grey);
+            font-family: 'Space Mono', monospace;
+            color: var(--charcoal);
+            padding: 2rem 1rem;
+        }
+
+        /* 纸张质感与半调效果 */
+        .manual-page {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: var(--cream);
+            padding: 3rem;
+            position: relative;
+            box-shadow: 20px 20px 0px 0px var(--charcoal);
+            border: 2px solid var(--charcoal);
+            background-image: radial-gradient(var(--charcoal) 0.5px, transparent 0.5px);
+            background-size: 3px 3px; /* 微小的半调点阵感 */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Archivo Black', sans-serif;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        h1 { font-size: 3.5rem; color: var(--burnt-orange); margin-bottom: 2rem; border-bottom: 8px solid var(--charcoal); }
+        h2 { font-size: 1.8rem; background: var(--mustard); display: inline-block; padding: 0.2rem 1rem; margin-bottom: 1.5rem; }
+        
+        .divider { border-top: 4px solid var(--charcoal); margin: 2rem 0; }
+
+        /* 复古控件样式 */
+        .control-panel {
+            border: 4px solid var(--charcoal);
+            background: #D9C5B2;
+            padding: 20px;
+            margin: 2rem 0;
+        }
+
+        .step-block {
+            background: var(--cream);
+            border: 2px solid var(--charcoal);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 8px 8px 0px var(--mustard);
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: var(--charcoal);
+            color: var(--cream);
+            padding: 0 10px;
+            font-weight: bold;
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .visual-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--charcoal);
+            color: var(--mustard);
+            padding: 2rem;
+            margin: 2rem 0;
+            clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+        }
+
+        .data-point { text-align: center; }
+        .data-point .value { font-size: 2rem; font-weight: bold; display: block; }
+        .data-point .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; }
+
+        .note-box {
+            background: var(--burnt-orange);
+            color: white;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-weight: bold;
+        }
+
+        /* 列表打字机效果 */
+        ul li { margin-bottom: 0.5rem; list-style-type: square; list-style-position: inside; }
+
+        .grid-layout { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+        @media (max-width: 640px) {
+            h1 { font-size: 2rem; }
+            .grid-layout { grid-template-columns: 1fr; }
+            .manual-page { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <article class="manual-page">
+        <header>
+            <div class="text-xs font-bold mb-2">RESTRICTED ACCESS // MANUAL REF: 04-ST-ARBITRAGE</div>
+            <h1>STEAM 套利指南</h1>
+            <p class="font-bold text-lg">SYSTEM LOG: 差价盈利简化版 v1.02</p>
+        </header>
+
+        <section>
+            <h2>前情提要 / CORE RULES</h2>
+            <p>在进入交易序列前，必须通过以下核心逻辑校验。忽视这些规则将导致资本流失。</p>
+            
+            <div class="grid-layout">
+                <div class="p-4 border-2 border-black bg-white">
+                    <span class="status-badge">PROTOCOL 01</span>
+                    <h3 class="mt-0">7天交易冷却期</h3>
+                    <p class="text-xs">无论来源，饰品需7天冷却期才可转售。周期是套利的必然变量。</p>
+                </div>
+                <div class="p-4 border-2 border-black bg-white">
+                    <span class="status-badge">PROTOCOL 02</span>
+                    <h3 class="mt-0">余额锁死/溢价</h3>
+                    <p class="text-xs">Steam 余额无法提现。为了覆盖手续费，市场价格被动推高。</p>
+                </div>
+                <div class="p-4 border-2 border-black bg-white">
+                    <span class="status-badge">PROTOCOL 03</span>
+                    <h3 class="mt-0">第三方低价区</h3>
+                    <p class="text-xs">支持法币提现，手续费极低。饰品价格通常比官方市场低 10%-50%。</p>
+                </div>
+                <div class="p-4 border-2 border-black bg-yellow-100">
+                    <span class="status-badge bg-orange-600">WARNING</span>
+                    <h3 class="mt-0">动态差价</h3>
+                    <p class="text-xs">汇率并非固定。核心是寻找“高差价 + 高周转率”的目标物件。</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>操作流程 / EXECUTION STEPS</h2>
+            <p>基于模拟数据：饰品 A [5-10], 饰品 B [10-9]。目标：本金 5 元，转化利润 4 元。</p>
+
+            <div class="visual-indicator">
+                <div class="data-point">
+                    <span class="label">Input</span>
+                    <span class="value">¥5.00</span>
+                </div>
+                <div class="text-2xl font-black">>></div>
+                <div class="data-point">
+                    <span class="label">Buffer A</span>
+                    <span class="value">¥10.00</span>
+                </div>
+                <div class="text-2xl font-black">>></div>
+                <div class="data-point text-white">
+                    <span class="label">Return</span>
+                    <span class="value">¥9.00</span>
+                </div>
+            </div>
+
+            <div class="step-block">
+                <h3 class="mt-0 text-orange-700">PHASE 01: 买入 A ➔ 充值</h3>
+                <ul>
+                    <li>第三方平台花费 5 元购入饰品 A。</li>
+                    <li><strong>等待 7 天交易锁定解除。</strong></li>
+                    <li>挂载 Steam 市场，以 10 元价格售出。</li>
+                    <li>资金存入 Steam 钱包余额。</li>
+                </ul>
+            </div>
+
+            <div class="step-block">
+                <h3 class="mt-0 text-orange-700">PHASE 02: 买入 B ➔ 套现</h3>
+                <ul>
+                    <li>调用 Steam 余额 10 元购买饰品 B。</li>
+                    <li><strong>等待 7 天交易锁定解除。</strong></li>
+                    <li>挂载第三方平台，以 9 元价格售出。</li>
+                    <li>资金提现至法币账户。</li>
+                </ul>
+            </div>
+
+            <div class="note-box">
+                [结算报告]：总周期 14 天 | 纯利 ¥4.00 | 收益率 80%
+            </div>
+        </section>
+
+        <section>
+            <h2>实操注意事项 / NOTES</h2>
+            <div class="control-panel">
+                <div class="mb-4">
+                    <span class="font-bold underline">01. 平台筛选:</span> 仅限官方授权平台（如 BUFF/5173）。禁止绕过系统进行私下协议。
+                </div>
+                <div class="mb-4">
+                    <span class="font-bold underline">02. 物件周转:</span> 优先选择热门竞技游戏（CS2等）中低端物件，确保交易深度。
+                </div>
+                <div class="mb-4">
+                    <span class="font-bold underline">03. 账户加固:</span> 必须启用移动令牌。禁止在未受信任的终端登录。
+                </div>
+                <div>
+                    <span class="font-bold underline">04. 环境监测:</span> 实时观察市场曲线。避免在价格剧烈波动期（如大促）盲目操作。
+                </div>
+            </div>
+        </section>
+
+        <footer class="mt-12 text-center border-t-2 border-black pt-4">
+            <p class="text-[10px] uppercase font-bold tracking-widest">
+                Data recorded by Terminal 80-Series // No guarantee of profit // Trade at your own risk
+            </p>
+        </footer>
+    </article>
+</body>
+</html>
