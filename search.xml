@@ -1082,4 +1082,16 @@
         <tag>随笔</tag>
       </tags>
   </entry>
+  <entry>
+    <title>测试读书笔记分类</title>
+    <url>/2026/01/08/test-reading-notes/</url>
+    <content><![CDATA[<p>这是一篇测试文章，用于生成读书笔记分类页面。</p>
+]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
 </search>
