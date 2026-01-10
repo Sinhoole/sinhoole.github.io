@@ -71,7 +71,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Deployer导入办法.已失效</title>
+    <title>Hexo博客DPlayer视频播放器插件安装与使用教程</title>
     <url>/2023/06/04/2023-06-05-bloghi/</url>
     <content><![CDATA[<p>可以说说你的故事：阻碍、努力、结果成果，意外与转折。</p>
 <p>安装</p>
@@ -89,6 +89,12 @@
       <tags>
         <tag>博客</tag>
         <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>DPlayer</tag>
+        <tag>视频播放器</tag>
+        <tag>插件</tag>
+        <tag>教程</tag>
+        <tag>安装</tag>
       </tags>
   </entry>
   <entry>
@@ -276,7 +282,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode</title>
+    <title>Leetcode twoSum函数详解 - Python算法入门教程</title>
     <url>/2024/11/16/2024-11-17-Leetcode/</url>
     <content><![CDATA[<h1 id="《对”twoSum”函数代码的详细讲解》"><a href="#《对”twoSum”函数代码的详细讲解》" class="headerlink" title="《对”twoSum”函数代码的详细讲解》"></a>《对”twoSum”函数代码的详细讲解》</h1><p>以下将针对这份代码进行详细讲解，旨在帮助零基础的初学者理解其功能及实现逻辑。</p>
 <h2 id="一、整体代码结构概述"><a href="#一、整体代码结构概述" class="headerlink" title="一、整体代码结构概述"></a>一、整体代码结构概述</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums, target</span>):</span><br><span class="line">        length = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(length):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(length):</span><br><span class="line">                <span class="keyword">if</span> nums[i] + nums[j] == target <span class="keyword">and</span> i!= j:</span><br><span class="line">                    <span class="keyword">return</span> [i, j]</span><br><span class="line">        <span class="keyword">return</span> []</span><br></pre></td></tr></table></figure>
@@ -323,6 +329,11 @@
       <tags>
         <tag>编程</tag>
         <tag>Python</tag>
+        <tag>Leetcode</tag>
+        <tag>算法</tag>
+        <tag>数组</tag>
+        <tag>函数</tag>
+        <tag>入门教程</tag>
       </tags>
   </entry>
   <entry>
@@ -610,7 +621,7 @@
       </categories>
   </entry>
   <entry>
-    <title>SteamTools+分流实现Steam游戏破解</title>
+    <title>SteamTools+分流实现Steam游戏破解 - 原理与风险分析</title>
     <url>/2025/09/21/2025-09-22-Steamtools/</url>
     <content><![CDATA[<h1 id="原理讲解-可跳过"><a href="#原理讲解-可跳过" class="headerlink" title="原理讲解 | 可跳过"></a>原理讲解 | 可跳过</h1><h2 id="先明确：“入库-分流下载”-不是真-“破解”，但可能踩违规红线"><a href="#先明确：“入库-分流下载”-不是真-“破解”，但可能踩违规红线" class="headerlink" title="先明确：“入库 + 分流下载” 不是真 “破解”，但可能踩违规红线"></a>先明确：“入库 + 分流下载” 不是真 “破解”，但可能踩违规红线</h2><p>首先得说清楚一个关键：用 “入库 + 分流下载” 玩未购买的游戏，本质不是传统意义的 “破解”（传统破解是破坏游戏加密、绕过所有授权），而是钻了 “平台本地识别漏洞” 的空子 —— 但不管怎么说，这么做大概率违反游戏平台协议（比如 Steam 用户协议），还可能涉及版权问题，先把风险讲在前面。</p>
 <h2 id="普通人理解的-“用这俩办法玩游戏”-的逻辑（易懂版）"><a href="#普通人理解的-“用这俩办法玩游戏”-的逻辑（易懂版）" class="headerlink" title="普通人理解的 “用这俩办法玩游戏” 的逻辑（易懂版）"></a>普通人理解的 “用这俩办法玩游戏” 的逻辑（易懂版）</h2><p>你可以把这个过程想象成 “假装自己买了游戏，骗电脑上的平台软件认账”，分两步走：</p>
@@ -639,10 +650,16 @@
       <tags>
         <tag>游戏</tag>
         <tag>破解</tag>
+        <tag>Steam</tag>
+        <tag>SteamTools</tag>
+        <tag>分流下载</tag>
+        <tag>游戏入库</tag>
+        <tag>版权风险</tag>
+        <tag>平台协议</tag>
       </tags>
   </entry>
   <entry>
-    <title>Law《中华人民共和国网络安全法》</title>
+    <title>中华人民共和国网络安全法 - 全文解读</title>
     <url>/2025/09/27/2025-09-28-Law/</url>
     <content><![CDATA[<h1 id="中华人民共和国网络安全法"><a href="#中华人民共和国网络安全法" class="headerlink" title="中华人民共和国网络安全法"></a>中华人民共和国网络安全法</h1><p>（2016 年 11 月 7 日第十二届全国人民代表大会常务委员会第二十四次会议通过）</p>
 <h2 id="目-录"><a href="#目-录" class="headerlink" title="目　　录"></a>目　　录</h2><ul>
@@ -781,6 +798,15 @@
       <categories>
         <category>技术</category>
       </categories>
+      <tags>
+        <tag>法律</tag>
+        <tag>网络安全法</tag>
+        <tag>网络安全</tag>
+        <tag>个人信息保护</tag>
+        <tag>关键信息基础设施</tag>
+        <tag>网络运行安全</tag>
+        <tag>网络信息安全</tag>
+      </tags>
   </entry>
   <entry>
     <title>悲画扇 - 关于情感变化与人心冷暖的诗意随笔</title>
@@ -872,7 +898,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Law《中华人民共和国反电信网络诈骗法》</title>
+    <title>中华人民共和国反电信网络诈骗法 - 全文解读</title>
     <url>/2025/09/27/2025-09-28-Law1/</url>
     <content><![CDATA[<h1 id="中华人民共和国反电信网络诈骗法"><a href="#中华人民共和国反电信网络诈骗法" class="headerlink" title="中华人民共和国反电信网络诈骗法"></a>中华人民共和国反电信网络诈骗法</h1><p>（2022 年 9 月 2 日第十三届全国人民代表大会常务委员会第三十六次会议通过）</p>
 <h2 id="目-录"><a href="#目-录" class="headerlink" title="目　录"></a>目　录</h2><ul>
@@ -975,6 +1001,15 @@
       <categories>
         <category>技术</category>
       </categories>
+      <tags>
+        <tag>法律</tag>
+        <tag>反电信网络诈骗</tag>
+        <tag>电信治理</tag>
+        <tag>金融治理</tag>
+        <tag>互联网治理</tag>
+        <tag>法律责任</tag>
+        <tag>诈骗防范</tag>
+      </tags>
   </entry>
   <entry>
     <title>西历年记 - 元旦郑州好友相聚回忆录</title>
@@ -1036,7 +1071,7 @@
       </tags>
   </entry>
   <entry>
-    <title>老君山游记</title>
+    <title>老君山游记 - 河南洛阳道教名山旅游攻略</title>
     <url>/2025/09/04/laojunshan-travel/</url>
     <content><![CDATA[<h1 id="老君山游记"><a href="#老君山游记" class="headerlink" title="老君山游记"></a>老君山游记</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>老君山，位于河南省洛阳市栾川县，是道教名山，也是国家5A级旅游景区。一直想去看看这座“云中仙境”，终于在这个周末实现了愿望。</p>
 <h2 id="行程安排"><a href="#行程安排" class="headerlink" title="行程安排"></a>行程安排</h2><ul>
@@ -1063,10 +1098,17 @@
         <tag>记录</tag>
         <tag>旅游</tag>
         <tag>老君山</tag>
+        <tag>河南</tag>
+        <tag>洛阳</tag>
+        <tag>道教名山</tag>
+        <tag>旅游攻略</tag>
+        <tag>云海</tag>
+        <tag>金顶</tag>
+        <tag>十里画屏</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
+    <title>Hexo入门指南 - Hello World博客搭建教程</title>
     <url>/2025/09/03/hello-world/</url>
     <content><![CDATA[<h1 id="欢迎使用-Hexo！"><a href="#欢迎使用-Hexo！" class="headerlink" title="欢迎使用 Hexo！"></a>欢迎使用 Hexo！</h1><p>这是你的第一篇文章。你可以通过修改 <code>source/_posts/hello-world.md</code> 来编辑它。</p>
 <h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建一篇新文章"><a href="#创建一篇新文章" class="headerlink" title="创建一篇新文章"></a>创建一篇新文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
@@ -1088,10 +1130,14 @@
       <tags>
         <tag>博客</tag>
         <tag>Hexo</tag>
+        <tag>教程</tag>
+        <tag>入门指南</tag>
+        <tag>博客搭建</tag>
+        <tag>静态博客</tag>
       </tags>
   </entry>
   <entry>
-    <title>SteamTools使用指南</title>
+    <title>SteamTools使用指南 - 游戏解锁与分流下载教程</title>
     <url>/2025/09/22/steamtools-usage/</url>
     <content><![CDATA[<h1 id="SteamTools使用指南"><a href="#SteamTools使用指南" class="headerlink" title="SteamTools使用指南"></a>SteamTools使用指南</h1><h2 id="什么是SteamTools"><a href="#什么是SteamTools" class="headerlink" title="什么是SteamTools"></a>什么是SteamTools</h2><p>SteamTools是一款功能强大的Steam辅助工具，它提供了多种实用功能，帮助用户更好地管理和使用Steam平台。</p>
 <h2 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h2><h3 id="1-游戏解锁"><a href="#1-游戏解锁" class="headerlink" title="1. 游戏解锁"></a>1. 游戏解锁</h3><p>SteamTools可以帮助用户解锁Steam上的某些限制，让用户能够更自由地玩游戏。</p>
@@ -1134,6 +1180,10 @@
         <tag>游戏</tag>
         <tag>Steam</tag>
         <tag>工具</tag>
+        <tag>SteamTools</tag>
+        <tag>教程</tag>
+        <tag>分流下载</tag>
+        <tag>游戏解锁</tag>
       </tags>
   </entry>
   <entry>
