@@ -1168,92 +1168,193 @@
     <content><![CDATA[<hr>
 <h2 id="title-SteamTools使用指南date-2026-1-10-13-00-00updated-2026-1-10-13-00-00description-详细介绍SteamTools的功能和使用方法author-Ta0X1tags-随笔-工具-游戏categories-技术"><a href="#title-SteamTools使用指南date-2026-1-10-13-00-00updated-2026-1-10-13-00-00description-详细介绍SteamTools的功能和使用方法author-Ta0X1tags-随笔-工具-游戏categories-技术" class="headerlink" title="title: SteamTools使用指南date: 2026-1-10 13:00:00updated: 2026-1-10 13:00:00description: 详细介绍SteamTools的功能和使用方法author: Ta0X1tags:  - 随笔  - 工具  - 游戏categories:  - 技术"></a>title: SteamTools使用指南<br>date: 2026-1-10 13:00:00<br>updated: 2026-1-10 13:00:00<br>description: 详细介绍SteamTools的功能和使用方法<br>author: Ta0X1<br>tags:<br>  - 随笔<br>  - 工具<br>  - 游戏<br>categories:<br>  - 技术</h2><h1 id="SteamTools使用指南"><a href="#SteamTools使用指南" class="headerlink" title="SteamTools使用指南"></a>SteamTools使用指南</h1><audio id="audio" controls="" preload="none">
       <source id="mp3" src="https://po1.taoxi.ink//M500001HWlth1My6bT%20(1).mp3">
-</audio>
+</think_never_used_51bce0c785ca2f68081bfa7d91973934>
 
 <blockquote>
 <p>本指南主要介绍SteamTools的功能和使用方法，如果你想要了解其原理，请参考本文末尾的原理部分。<br>本文任何文字均为个人经验，转载注明出处！</p>
 </blockquote>
-<h2 id="下载Steamtools"><a href="#下载Steamtools" class="headerlink" title="下载Steamtools"></a>下载Steamtools</h2><ol>
-<li>从官方网站下载SteamTools安装包</li>
-</ol>
+<h2 id="一、下载SteamTools"><a href="#一、下载SteamTools" class="headerlink" title="一、下载SteamTools"></a>一、下载SteamTools</h2><p>SteamTools是一款用于管理Steam游戏的工具，通过它可以实现游戏的快速解锁和下载。下面是详细的下载和安装步骤：</p>
+<h3 id="1-访问官方网站下载安装包"><a href="#1-访问官方网站下载安装包" class="headerlink" title="1. 访问官方网站下载安装包"></a>1. 访问官方网站下载安装包</h3><p>首先，我们需要从官方网站获取SteamTools的最新安装包。</p>
 <a class="btn-beautify block center" href="https://www.steamtools.net/download" title="Steamtools"><i class="far fa-hand-point-right"></i><span>Steamtools</span></a>
 <p><img src="https://po1.taoxi.ink//20260110140717003.png"></p>
 <blockquote>
-<p>点击下载**安装版(推荐)**即可。如果因为网络原因无法访问，本站末尾将会提供备用下载链接。</p>
+<p>点击下载页面中的「安装版(推荐)」即可开始下载。如果因为网络原因无法访问官方网站，本站末尾将会提供备用下载链接。</p>
 </blockquote>
-<ol start="2">
-<li><p>运行安装程序，按照提示完成安装<br>本问建议持续点击下一步进行安装，注意安装目录不要出现中文以防出现错误。<br><img src="https://po1.taoxi.ink//20260110140858004.png"></p>
-</li>
-<li><p>启动SteamTools<br>此时已经安装完毕，勾选运行即可安装。<br><img src="https://po1.taoxi.ink//20260110141014651.png"></p>
-</li>
-<li><p>一些问题</p>
+<h3 id="2-运行安装程序"><a href="#2-运行安装程序" class="headerlink" title="2. 运行安装程序"></a>2. 运行安装程序</h3><p>下载完成后，找到下载的安装文件，双击运行它。</p>
 <ul>
-<li>电脑上出现的悬浮窗就是steamtools插件，右键能够进行一些操作，本文中所需的仅仅是重启Steam，不使用状态下请隐藏悬浮窗或者是关闭。<br><img src="https://po1.taoxi.ink//20260110141337386.png"></li>
+<li>安装过程非常简单，建议直接点击「下一步」完成安装</li>
+<li><strong>重要提示</strong>：安装目录请不要使用中文，以免出现兼容性问题</li>
 </ul>
-</li>
-</ol>
-<h2 id="下载Onekey"><a href="#下载Onekey" class="headerlink" title="下载Onekey"></a>下载Onekey</h2><ol>
-<li>从Onekey的GitHub页面下载最新版本的Onekey<br>国外链接。<a class="btn-beautify block center" href="https://github.com/ikunshare/Onekey/releases" title="Onekey"><i class="far fa-hand-point-right"></i><span>Onekey</span></a>
-国内链接。<a class="btn-beautify block center" href="https://gitee.com/ikun0014/Onekey/releases" title="Onekey"><i class="far fa-hand-point-right"></i><span>Onekey</span></a></li>
-</ol>
-<blockquote>
-<p>同样如果你遇到网络问题，本文末尾有备用下载链接，点击下载最新版本的Onekey即可。</p>
-</blockquote>
-<p><img src="https://po1.taoxi.ink//20260110142022074.png">、</p>
-<ol start="2">
-<li><p>将Onekey拖拽至桌面。<br>由于下载文件就是一个.exe文件，所以直接拖拽即可。<br><img src="https://po1.taoxi.ink//20260110142250223.png"><br>鼠标左键对准文件后长按拖拽到你的桌面即可。<br><img src="https://po1.taoxi.ink//20260110142423623.png"></p>
-</li>
-<li><p>运行Onekey</p>
-</li>
-</ol>
+<p><img src="https://po1.taoxi.ink//20260110140858004.png"></p>
+<h3 id="3-启动SteamTools"><a href="#3-启动SteamTools" class="headerlink" title="3. 启动SteamTools"></a>3. 启动SteamTools</h3><p>安装完成后，会出现安装成功的提示窗口。</p>
 <ul>
-<li>双击桌面上的Onekey文件即可运行,第一次运行后会加载配置文件在桌面，不动即可，点按任意键关闭。<br><img src="https://po1.taoxi.ink//20260110142544443.png"></li>
-<li>再次双击运行Onekey购买卡密。<br>本次点击后会跳转到Onekey的主界面，需要购买Onekey分流下载功能的CDKEY。<br><img src="https://po1.taoxi.ink//20260110142644326.png"><blockquote>
-<p>本项目的分流下载完全依靠与Onekey分流下载功能，所以请确保你已经购买了Onekey的分流下载功能的CDKEY。<br>声明：<strong>本人收不到半点你购买CDKEY的利润，仅仅作为分享。如果ONEKEY项目已挂，本项目也不会提供任何技术支持。</strong><br>声明：<strong>本人收不到半点你购买CDKEY的利润，仅仅作为分享。如果ONEKEY项目已挂，本项目也不会提供任何技术支持。</strong><br>声明：<strong>本人收不到半点你购买CDKEY的利润，仅仅作为分享。如果ONEKEY项目已挂，本项目也不会提供任何技术支持。</strong><br><img src="https://po1.taoxi.ink//20260110143627299.png"><br>注意付款金额不要设置错误，否则可能出现支付但是发货失败的情况。<br><img src="https://po1.taoxi.ink//20260110144011780.png"></p>
-</blockquote>
-<a class="btn-beautify block center" href="https://shop.ikunshare.com/item?id=98" title="Onekey购买"><i class="far fa-hand-point-right"></i><span>Onekey购买</span></a></li>
-<li>购买卡密以后输入到Onekey主界面的CDKEY输入框中点击验证卡密即可。<br><img src="https://po1.taoxi.ink//20260110144245946.png"><br>点击开始使用即可进入主界面。<br><img src="https://po1.taoxi.ink//20260110144345707.png"></li>
+<li>勾选「运行SteamTools」选项，然后点击「完成」按钮</li>
+<li>这样SteamTools就会自动启动</li>
 </ul>
-<h2 id="解锁游戏"><a href="#解锁游戏" class="headerlink" title="解锁游戏"></a>解锁游戏</h2><blockquote>
-<p>本文以TownCcaper游戏为例，其他游戏解锁方法类似。<br><img src="https://po1.taoxi.ink//20260110144834820.png"></p>
-</blockquote>
-<h3 id="找到游戏的SteamID"><a href="#找到游戏的SteamID" class="headerlink" title="找到游戏的SteamID"></a>找到游戏的SteamID</h3><p>在游戏的Steam商店页面左上角有游戏的ID，复制即可。<br>比如此游戏的【https &#x2F;&#x2F;store steampowered com&#x2F;app&#x2F;<strong>1291340</strong>&#x2F;_&#x2F;】<br>记住这里的【1291340】</p>
-<h3 id="填写游戏ID"><a href="#填写游戏ID" class="headerlink" title="填写游戏ID"></a>填写游戏ID</h3><p><img src="https://po1.taoxi.ink//20260110145028211.png"><br>在主页面输入你的ID，勾选上STEAMTOOLS,选中DLC即可。<br><img src="https://po1.taoxi.ink//20260110145434151.png"></p>
-<h3 id="点击解锁"><a href="#点击解锁" class="headerlink" title="点击解锁"></a>点击解锁</h3><p>点击解锁后，观察日志输出。出现下面文本即为解锁成功。</p>
+<p><img src="https://po1.taoxi.ink//20260110141014651.png"></p>
+<h3 id="4-了解SteamTools悬浮窗"><a href="#4-了解SteamTools悬浮窗" class="headerlink" title="4. 了解SteamTools悬浮窗"></a>4. 了解SteamTools悬浮窗</h3><p>启动后，你会看到电脑桌面上出现一个SteamTools的悬浮窗。</p>
+<ul>
+<li><p>这个悬浮窗是SteamTools的主要控制界面</p>
+</li>
+<li><p>右键点击悬浮窗可以进行各种操作，本文中我们主要会用到「重启Steam」功能</p>
+</li>
+<li><p>不使用时，可以隐藏悬浮窗或关闭程序，避免占用系统资源</p>
+<p> <img src="https://po1.taoxi.ink//20260110141337386.png"></p>
+</li>
+</ul>
+<h2 id="二、下载Onekey"><a href="#二、下载Onekey" class="headerlink" title="二、下载Onekey"></a>二、下载Onekey</h2><p>Onekey是一款配合SteamTools使用的辅助工具，它能够帮助我们获取游戏的清单文件，实现游戏的解锁和下载。下面是详细的下载和配置步骤：</p>
+<h3 id="1-下载Onekey工具"><a href="#1-下载Onekey工具" class="headerlink" title="1. 下载Onekey工具"></a>1. 下载Onekey工具</h3><p>你可以通过以下链接下载最新版本的Onekey：</p>
+<p>国外官方链接：</p>
+<a class="btn-beautify block center" href="https://github.com/ikunshare/Onekey/releases" title="Onekey"><i class="far fa-hand-point-right"></i><span>Onekey</span></a>
+
+<p>国内镜像链接：</p>
+<a class="btn-beautify block center" href="https://gitee.com/ikun0014/Onekey/releases" title="Onekey"><i class="far fa-hand-point-right"></i><span>Onekey</span></a>
+
 <blockquote>
-<p><strong>游戏解锁配置成功！</strong><br><strong>重启Steam后生效</strong></p>
+<p>如果你遇到网络问题无法访问上述链接，本文末尾提供了备用下载链接，你可以点击下载最新版本的Onekey。</p>
 </blockquote>
+<p><img src="https://po1.taoxi.ink//20260110142022074.png"></p>
+<h3 id="2-将Onekey文件放置到桌面"><a href="#2-将Onekey文件放置到桌面" class="headerlink" title="2. 将Onekey文件放置到桌面"></a>2. 将Onekey文件放置到桌面</h3><p>Onekey下载后直接是一个.exe可执行文件，不需要安装。为了使用方便，建议将它拖拽到桌面上：</p>
+<ol>
+<li>找到下载好的Onekey.exe文件</li>
+<li>按住鼠标左键不放，将文件拖拽到你的桌面</li>
+<li>松开鼠标左键，文件就会复制到桌面上</li>
+</ol>
+<p><img src="https://po1.taoxi.ink//20260110142250223.png"><br><img src="https://po1.taoxi.ink//20260110142423623.png"></p>
+<h3 id="3-运行Onekey并配置"><a href="#3-运行Onekey并配置" class="headerlink" title="3. 运行Onekey并配置"></a>3. 运行Onekey并配置</h3><p>现在让我们来运行Onekey并进行初始化配置：</p>
+<h4 id="第一次运行-初始化配置"><a href="#第一次运行-初始化配置" class="headerlink" title="第一次运行 - 初始化配置"></a>第一次运行 - 初始化配置</h4><ul>
+<li>双击桌面上的Onekey.exe文件</li>
+<li>第一次运行时，程序会自动在桌面生成配置文件</li>
+<li>等待程序加载完成后，按任意键关闭即可</li>
+</ul>
+<p><img src="https://po1.taoxi.ink//20260110142906768.png"></p>
+<h4 id="第二次运行-购买和激活卡密"><a href="#第二次运行-购买和激活卡密" class="headerlink" title="第二次运行 - 购买和激活卡密"></a>第二次运行 - 购买和激活卡密</h4><ul>
+<li>再次双击运行Onekey.exe</li>
+<li>这次会进入Onekey的主界面，你需要购买一个CDKEY来激活分流下载功能</li>
+</ul>
+<p>购买卡密链接：</p>
+<a class="btn-beautify block center" href="https://shop.ikunshare.com/item?id=98" title="Onekey购买"><i class="far fa-hand-point-right"></i><span>Onekey购买</span></a>
+
+<p><img src="https://po1.taoxi.ink//20260110143135859.png"></p>
+<blockquote>
+<p>本项目的分流下载功能完全依赖于Onekey的服务，所以请确保你已经购买了Onekey的分流下载功能CDKEY。</p>
+</blockquote>
+<blockquote>
+<p>声明：<strong>本人收不到半点你购买CDKEY的利润，仅仅作为分享。如果ONEKEY项目已挂，本项目也不会提供任何技术支持。</strong><br>声明：<strong>本人收不到半点你购买CDKEY的利润，仅仅作为分享。如果ONEKEY项目已挂，本项目也不会提供任何技术支持。</strong><br>声明：<strong>本人收不到半点你购买CDKEY的利润，仅仅作为分享。如果ONEKEY项目已挂，本项目也不会提供任何技术支持。</strong></p>
+</blockquote>
+<ul>
+<li>购买时请仔细核对付款金额，确保金额正确，否则可能出现支付成功但无法收到卡密的情况</li>
+</ul>
+<p><img src="https://po1.taoxi.ink//20260110143627299.png"><br><img src="https://po1.taoxi.ink//20260110144011780.png"></p>
+<h4 id="激活卡密"><a href="#激活卡密" class="headerlink" title="激活卡密"></a>激活卡密</h4><ul>
+<li>购买成功后，你会收到一个CDKEY</li>
+<li>将这个CDKEY输入到Onekey主界面的CDKEY输入框中</li>
+<li>点击「验证卡密」按钮</li>
+<li>验证成功后，点击「开始使用」即可进入Onekey的主界面</li>
+</ul>
+<p><img src="https://po1.taoxi.ink//20260110144245946.png"><br><img src="https://po1.taoxi.ink//20260110144345707.png"></p>
+<h2 id="三、解锁游戏"><a href="#三、解锁游戏" class="headerlink" title="三、解锁游戏"></a>三、解锁游戏</h2><p>现在我们已经准备好所有工具，接下来就可以开始解锁游戏了。本文以《Townscaper》（城镇叠叠乐）游戏为例，其他游戏的解锁方法基本相同。</p>
+<h3 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h3><p>首先，打开Steam商店，并找到你想要解锁的游戏页面：</p>
+<p><img src="https://po1.taoxi.ink//20260110144834820.png"></p>
+<h3 id="2-查找游戏的SteamID"><a href="#2-查找游戏的SteamID" class="headerlink" title="2. 查找游戏的SteamID"></a>2. 查找游戏的SteamID</h3><p>每个Steam游戏都有一个唯一的ID，我们需要找到这个ID才能进行解锁操作：</p>
+<ul>
+<li>在游戏的Steam商店页面中，查看浏览器地址栏</li>
+<li>地址的格式通常是：<code>https://store.steampowered.com/app/[游戏ID]/</code></li>
+<li>例如，《城镇叠叠乐》的地址是：<code>https://store.steampowered.com/app/1291340/Townscaper/</code></li>
+<li>这里的 <code>1291340</code> 就是该游戏的SteamID</li>
+</ul>
+<p><img src="https://po1.taoxi.ink//20260110145028211.png"></p>
+<p>请记住或复制这个SteamID，我们稍后会用到它。</p>
+<h3 id="3-在Onekey中配置解锁信息"><a href="#3-在Onekey中配置解锁信息" class="headerlink" title="3. 在Onekey中配置解锁信息"></a>3. 在Onekey中配置解锁信息</h3><p>现在，让我们打开Onekey工具，并进行解锁配置：</p>
+<ol>
+<li>确保SteamTools已经运行（桌面上有SteamTools悬浮窗）</li>
+<li>打开Onekey主界面</li>
+<li>在「游戏ID」输入框中，输入刚才找到的SteamID（例如：1291340）</li>
+<li>勾选「STEAMTOOLS」选项</li>
+<li>如果游戏有DLC，可以勾选「DLC」选项</li>
+</ol>
+<p><img src="https://po1.taoxi.ink//20260110145434151.png"></p>
+<h3 id="4-执行解锁操作"><a href="#4-执行解锁操作" class="headerlink" title="4. 执行解锁操作"></a>4. 执行解锁操作</h3><p>配置完成后，点击「解锁」按钮，Onekey会开始执行解锁操作：</p>
+<ul>
+<li>观察Onekey界面下方的日志输出</li>
+<li>当出现以下日志信息时，说明解锁成功：</li>
+</ul>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">卡密类型: 永久卡</span><br><span class="line">正在获取游戏 1291340 的信息...</span><br><span class="line">游戏名称: 城镇叠叠乐</span><br><span class="line">Depot数量: 1</span><br><span class="line">正在下载清单: 1291341_3218368929862251450</span><br><span class="line">清单处理成功: 1291341_3218368929862251450.manifest</span><br><span class="line">选择的解锁工具: steamtools</span><br><span class="line">游戏解锁配置成功！</span><br><span class="line">重启Steam后生效</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://po1.taoxi.ink//20260110145648886.png"></p>
-<h3 id="重启Steam"><a href="#重启Steam" class="headerlink" title="重启Steam"></a>重启Steam</h3><p>解锁完成后，需要重启Steam才能生效。<br>右键steamtools的悬浮窗，选择重启Steam即可。如果你隐藏了悬浮窗，在状态栏的图标上右键重新打开悬浮窗，也能够选择重启Steam。<br><img src="https://po1.taoxi.ink//20260110150029897.png"></p>
-<h3 id="下载你的游戏"><a href="#下载你的游戏" class="headerlink" title="下载你的游戏"></a>下载你的游戏</h3><p>在你的Steam库中寻找你的游戏，如果一次未能成功，可尝试重复解锁一次并重启你的Steam。<br><img src="https://po1.taoxi.ink//20260110150337136.png"><br>点击下载即可安装。安装速度等同于Steam购买付款的下载速度，主要关系于你的网络环境。<br><img src="https://po1.taoxi.ink//20260110150527219.png"></p>
-<h3 id="安装完成"><a href="#安装完成" class="headerlink" title="安装完成"></a>安装完成</h3><p>安装完成后，你可以在Steam库中找到并启动游戏。<br><img src="https://po1.taoxi.ink//20260110150656540.png"></p>
-<h2 id="原理部分"><a href="#原理部分" class="headerlink" title="原理部分"></a>原理部分</h2><ol>
-<li>伪造入库凭证 (Ticket Injection)<br>Steam 客户端本地会检查你是否拥有某个游戏的授权（License）。这类工具通过“内存补丁”或“DLL 注入”，修改了 Steam 运行时的逻辑，强行告诉客户端：“这个账号拥有该 AppID 的永久授权”。</li>
+<h3 id="5-重启Steam"><a href="#5-重启Steam" class="headerlink" title="5. 重启Steam"></a>5. 重启Steam</h3><p>解锁成功后，我们需要重启Steam才能使解锁生效：</p>
+<ul>
+<li>右键点击SteamTools悬浮窗</li>
+<li>在弹出的菜单中，选择「重启Steam」选项</li>
+<li>如果你的悬浮窗被隐藏了，可以在任务栏找到SteamTools图标，右键点击并选择「显示悬浮窗」，然后再重启Steam</li>
+</ul>
+<p><img src="https://po1.taoxi.ink//20260110150029897.png"></p>
+<h3 id="6-下载并安装游戏"><a href="#6-下载并安装游戏" class="headerlink" title="6. 下载并安装游戏"></a>6. 下载并安装游戏</h3><p>Steam重启后，你就可以在Steam库中找到刚刚解锁的游戏了：</p>
+<ol>
+<li>打开Steam客户端</li>
+<li>切换到「库」标签页</li>
+<li>找到你刚刚解锁的游戏（例如：《城镇叠叠乐》）</li>
+<li>点击「安装」按钮开始下载</li>
+<li>下载速度取决于你的网络环境，与正常购买的游戏速度相同</li>
 </ol>
-<p>结果： 你的 Steam 库里会出现这个游戏，且“安装”按钮变亮。</p>
-<ol start="2">
-<li>获取清单文件 (Manifest Sharing)<br>光有按钮没法下载，因为 Steam 下载需要 Manifest 文件（相当于游戏的“文件索引地图”）。</li>
-</ol>
-<p>通常情况下，只有买过的人才能从服务器获取。</p>
-<p>做法： 开发者或购买过该游戏的志愿者，会将自己的 Manifest 文件提取出来并上传到工具的数据库。当你点击下载时，工具会自动匹配并“塞给”你的 Steam 客户端。</p>
-<ol start="3">
-<li>直连官方 CDN<br>有了“伪造的授权”和“别人的地图”，Steam 客户端就会认为下载是合法的，直接从 Steam 官方服务器 (CDN) 搬运加密的游戏数据包到你电脑上。</li>
-</ol>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>无区别的:<br>单机游戏：绝大多数只使用了 Steam 自带加密（Steamworks）的单机游戏。<br>独立游戏：这类游戏通常没有复杂的二次加密，只要绕过 Steam 的入库检查就能跑。<br>部分支持局域网或 P2P 联机的游戏：有些联机游戏不经过官方中心服务器验证，也能玩。</p>
-<p>无法游玩：<br>D密游戏 (Denuvo)：比如《生化危机》、《全战》系列。D 密需要从官方获取一个唯一的“激活令牌”，假入库给不了这个令牌，游戏打不开。<br>自带第三方启动器的：比如 EA 、Ubisoft Connect、Rockstar 的游戏（《赛博朋克 2077》除外，它没加密）。这些启动器会进行二次账号验证。<br>大型网游&#x2F;官方服务器联机： 比如《Apex》、《CS2》、《绝地求生》。服务器端会实时比对你的账号清单，发现你没买，直接拒绝连接或封号</p>
-<h2 id="备用下载链接"><a href="#备用下载链接" class="headerlink" title="备用下载链接"></a>备用下载链接</h2><blockquote>
-<p>可能存在版本过时。</p>
+<p><img src="https://po1.taoxi.ink//20260110150337136.png"><br><img src="https://po1.taoxi.ink//20260110150527219.png"></p>
+<h3 id="7-启动游戏"><a href="#7-启动游戏" class="headerlink" title="7. 启动游戏"></a>7. 启动游戏</h3><p>安装完成后，游戏状态会变为「已安装」，点击「开始」按钮即可启动游戏：</p>
+<p><img src="https://po1.taoxi.ink//20260110150656540.png"></p>
+<p>恭喜你！你已经成功解锁并安装了游戏。</p>
+<h2 id="四、原理部分"><a href="#四、原理部分" class="headerlink" title="四、原理部分"></a>四、原理部分</h2><p>为了让大家更清楚地了解SteamTools的工作原理，下面我们简单介绍一下它的核心工作机制：</p>
+<h3 id="1-伪造入库凭证-Ticket-Injection"><a href="#1-伪造入库凭证-Ticket-Injection" class="headerlink" title="1. 伪造入库凭证 (Ticket Injection)"></a>1. 伪造入库凭证 (Ticket Injection)</h3><p>Steam客户端在本地运行时，会检查你的账号是否拥有某个游戏的授权（License）。SteamTools通过以下方式绕过这个检查：</p>
+<ul>
+<li>使用「内存补丁」或「DLL注入」技术</li>
+<li>修改Steam客户端的运行时逻辑</li>
+<li>向Steam客户端发送虚假信息：「该账号拥有此游戏的永久授权」</li>
+</ul>
+<p><strong>结果</strong>：你的Steam库中会出现这个游戏，并且「安装」按钮变为可点击状态。</p>
+<h3 id="2-获取清单文件-Manifest-Sharing"><a href="#2-获取清单文件-Manifest-Sharing" class="headerlink" title="2. 获取清单文件 (Manifest Sharing)"></a>2. 获取清单文件 (Manifest Sharing)</h3><p>仅仅让「安装」按钮变亮还不够，因为Steam下载游戏需要Manifest文件（相当于游戏的「文件索引地图」）：</p>
+<ul>
+<li>Manifest文件包含了游戏所有文件的名称、大小、哈希值等信息</li>
+<li>通常情况下，只有购买过游戏的用户才能从Steam服务器获取到Manifest文件</li>
+</ul>
+<p><strong>解决方案</strong>：</p>
+<ul>
+<li>开发者或购买过游戏的志愿者，会将自己的Manifest文件提取出来</li>
+<li>这些Manifest文件会被上传到工具的数据库中</li>
+<li>当你点击「安装」时，工具会自动匹配并提供相应的Manifest文件给你的Steam客户端</li>
+</ul>
+<h3 id="3-直连官方CDN"><a href="#3-直连官方CDN" class="headerlink" title="3. 直连官方CDN"></a>3. 直连官方CDN</h3><p>有了「伪造的授权」和「获取到的Manifest文件」，Steam客户端就会认为你的下载请求是合法的：</p>
+<ul>
+<li>直接从Steam官方服务器（CDN）下载加密的游戏数据包</li>
+<li>下载速度与正常购买的游戏相同</li>
+<li>所有数据都来自Steam官方服务器，安全性较高</li>
+</ul>
+<h2 id="五、注意事项"><a href="#五、注意事项" class="headerlink" title="五、注意事项"></a>五、注意事项</h2><p>虽然SteamTools可以帮助我们解锁和下载游戏，但并不是所有游戏都能完美运行。下面是一些重要的注意事项：</p>
+<h3 id="可以正常游玩的游戏"><a href="#可以正常游玩的游戏" class="headerlink" title="可以正常游玩的游戏"></a>可以正常游玩的游戏</h3><ul>
+<li><strong>单机游戏</strong>：绝大多数只使用了Steam自带加密（Steamworks）的单机游戏</li>
+<li><strong>独立游戏</strong>：这类游戏通常没有复杂的二次加密，绕过Steam的入库检查就能运行</li>
+<li><strong>部分局域网&#x2F;P2P联机游戏</strong>：有些联机游戏不经过官方中心服务器验证，也能正常游玩</li>
+</ul>
+<h3 id="无法正常游玩的游戏"><a href="#无法正常游玩的游戏" class="headerlink" title="无法正常游玩的游戏"></a>无法正常游玩的游戏</h3><ul>
+<li><strong>Denuvo加密游戏</strong>：如《生化危机》、《全面战争》系列等。Denuvo需要从官方获取唯一的「激活令牌」，而假入库无法提供这个令牌</li>
+<li><strong>自带第三方启动器的游戏</strong>：如EA、Ubisoft Connect、Rockstar的游戏（《赛博朋克2077》除外）。这些启动器会进行二次账号验证</li>
+<li><strong>大型网游&#x2F;官方服务器联机游戏</strong>：如《Apex英雄》、《CS2》、《绝地求生》等。服务器端会实时检查你的账号是否真正购买了游戏，发现未购买会直接拒绝连接。</li>
+</ul>
+<h2 id="六、备用下载链接"><a href="#六、备用下载链接" class="headerlink" title="六、备用下载链接"></a>六、备用下载链接</h2><blockquote>
+<p>注意：备用链接可能存在版本过时的情况，建议优先使用官方链接下载。</p>
 </blockquote>
 <ul>
-<li><p>ONEKEY</p>
+<li><p><strong>ONEKEY</strong></p>
 <a class="btn-beautify block center" href="https://wwbdz.lanzoum.com/iGZHQ3froccj" title="密码:gfvm"><i class="far fa-hand-point-right"></i><span>密码:gfvm</span></a>
 </li>
-<li><p>STEAMTOOLS</p>
-</li>
+<li><p><strong>STEAMTOOLS</strong></p>
+<a class="btn-beautify block center" href="https://wwbdz.lanzoum.com/iSDAY3froedc" title="密码:dzmn"><i class="far fa-hand-point-right"></i><span>密码:dzmn</span></a></li>
 </ul>
-<a class="btn-beautify block center" href="https://wwbdz.lanzoum.com/iSDAY3froedc" title="密码:dzmn"><i class="far fa-hand-point-right"></i><span>密码:dzmn</span></a>
-<h2 id="写在后面的话"><a href="#写在后面的话" class="headerlink" title="写在后面的话"></a>写在后面的话</h2><p>本文写作不易，而且我也不是专业的开发者，所以难免会有错误。<br>如果您在使用过程中遇到问题，欢迎在评论区留言，我会尽力回答。<br>本文仅做学习交流，请勿做违法犯罪行为。</p>
+<h2 id="七、写在后面的话"><a href="#七、写在后面的话" class="headerlink" title="七、写在后面的话"></a>七、写在后面的话</h2><p>本文详细介绍了SteamTools的下载、安装和使用方法，希望能够帮助到大家。</p>
+<ul>
+<li>本文中的所有内容均为个人经验分享，可能存在错误或过时信息</li>
+<li>如果您在使用过程中遇到问题，欢迎在评论区留言，我会尽力回答</li>
+<li>请严格遵守相关法律法规，本文仅用于学习交流，请勿用于违法犯罪行为</li>
+<li>支持正版游戏，是对游戏开发者最好的鼓励</li>
+</ul>
+<p>感谢您的阅读！</p>
 ]]></content>
   </entry>
 </search>
