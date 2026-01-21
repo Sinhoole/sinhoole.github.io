@@ -1,0 +1,406 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo博客一键部署脚本 - 小白也能轻松搭建 | Ta0X1 | 一年写</title><meta name="author" content="Ta0X1"><meta name="copyright" content="Ta0X1"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="详细介绍Hexo博客一键部署脚本的使用方法，帮助小白用户轻松搭建自己的GitHub Pages博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo博客一键部署脚本 - 小白也能轻松搭建">
+<meta property="og:url" content="https://blog.taoxi.ink/2026/01/21/2026-01-21-hexo-auto-deploy/index.html">
+<meta property="og:site_name" content="Ta0X1 | 一年写">
+<meta property="og:description" content="详细介绍Hexo博客一键部署脚本的使用方法，帮助小白用户轻松搭建自己的GitHub Pages博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://po1.taoxi.ink//26ca7949b3b1583cbdaeb49a0b5ec039.jpg">
+<meta property="article:published_time" content="2026-01-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-20T16:00:00.000Z">
+<meta property="article:author" content="Ta0X1">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="一键部署">
+<meta property="article:tag" content="脚本">
+<meta property="article:tag" content="GitHub Pages">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://po1.taoxi.ink//26ca7949b3b1583cbdaeb49a0b5ec039.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Hexo博客一键部署脚本 - 小白也能轻松搭建",
+  "url": "https://blog.taoxi.ink/2026/01/21/2026-01-21-hexo-auto-deploy/",
+  "image": "https://po1.taoxi.ink//26ca7949b3b1583cbdaeb49a0b5ec039.jpg",
+  "datePublished": "2026-01-20T16:00:00.000Z",
+  "dateModified": "2026-01-20T16:00:00.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Ta0X1",
+      "url": "https://blog.taoxi.ink"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://po1.taoxi.ink//26ca7949b3b1583cbdaeb49a0b5ec039.jpg"><link rel="canonical" href="https://blog.taoxi.ink/2026/01/21/2026-01-21-hexo-auto-deploy/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.3"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":"truehexo"},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: Ta0X1","link":"链接: ","source":"来源: Ta0X1 | 一年写","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyloadPlugin: false,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo博客一键部署脚本 - 小白也能轻松搭建',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="bg-animation" id="web_bg" style="background: linear-gradient(135deg,;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://po1.taoxi.ink//26ca7949b3b1583cbdaeb49a0b5ec039.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">131</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-home"></i><span> 首页</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/photo/"><i class="fa-fw fas fa-camera"></i><span> 相册</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-map-marker-alt"></i><span> 大年记</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/tour/"><i class="fa-fw fas fa-map-marker-alt"></i><span> 丙戌第十九年</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-calendar"></i><span> 西历年计</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/html/2026.html"><i class="fa-fw fas fa-calendar-alt"></i><span> 西历二零二六</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-chart-line"></i><span> 计全</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/financial-report/"><i class="fa-fw fas fa-file-invoice-dollar"></i><span> 财务报告</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-briefcase"></i><span> 项目</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/projects/rdtl.html"><i class="fa-fw fas fa-industry"></i><span> 大份制造机</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/post/"><i class="fa-fw fas fa-heart"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="https://po1.taoxi.ink//26ca7949b3b1583cbdaeb49a0b5ec039.jpg" alt="Logo"><span class="site-name">Ta0X1 | 一年写</span></a><a class="nav-page-title" href="/"><span class="site-name">Hexo博客一键部署脚本 - 小白也能轻松搭建</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-home"></i><span> 首页</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/photo/"><i class="fa-fw fas fa-camera"></i><span> 相册</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-map-marker-alt"></i><span> 大年记</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/tour/"><i class="fa-fw fas fa-map-marker-alt"></i><span> 丙戌第十九年</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-calendar"></i><span> 西历年计</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/html/2026.html"><i class="fa-fw fas fa-calendar-alt"></i><span> 西历二零二六</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-chart-line"></i><span> 计全</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/financial-report/"><i class="fa-fw fas fa-file-invoice-dollar"></i><span> 财务报告</span></a></li></ul></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-briefcase"></i><span> 项目</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/projects/rdtl.html"><i class="fa-fw fas fa-industry"></i><span> 大份制造机</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/post/"><i class="fa-fw fas fa-heart"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Hexo博客一键部署脚本 - 小白也能轻松搭建</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-01-20T16:00:00.000Z" title="发表于 2026-01-21 00:00:00">2026-01-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-01-20T16:00:00.000Z" title="更新于 2026-01-21 00:00:00">2026-01-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">2.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;It has been&quot;,&quot;messageNext&quot;:&quot;days since the last update, the content of the article may be outdated.&quot;,&quot;postUpdate&quot;:&quot;2026-01-21 00:00:00&quot;}" hidden></div><h1 id="Hexo博客一键部署脚本"><a href="#Hexo博客一键部署脚本" class="headerlink" title="Hexo博客一键部署脚本"></a>Hexo博客一键部署脚本</h1><h2 id="小白也能轻松搭建的GitHub-Pages博客"><a href="#小白也能轻松搭建的GitHub-Pages博客" class="headerlink" title="小白也能轻松搭建的GitHub Pages博客"></a>小白也能轻松搭建的GitHub Pages博客</h2><h3 id="什么是Hexo一键部署脚本？"><a href="#什么是Hexo一键部署脚本？" class="headerlink" title="什么是Hexo一键部署脚本？"></a>什么是Hexo一键部署脚本？</h3><p>Hexo一键部署脚本是一个自动化工具，能够帮助你在几分钟内完成从环境配置到博客上线的全过程。这个脚本特别适合刚接触博客搭建的小白用户，无需手动输入复杂命令，只需按照提示填写几个信息，就能轻松拥有自己的GitHub Pages博客。</p>
+<h3 id="脚本功能与优势"><a href="#脚本功能与优势" class="headerlink" title="脚本功能与优势"></a>脚本功能与优势</h3><ul>
+<li>🚀 <strong>全自动部署</strong>：从环境检查到博客上线，全程自动化</li>
+<li>📦 <strong>自动安装依赖</strong>：自动检查并安装Git和Node.js</li>
+<li>🔧 <strong>智能配置</strong>：自动配置Git身份、Hexo设置和SSH密钥</li>
+<li>🌐 <strong>网络优化</strong>：使用国内镜像加速，解决网络连接问题</li>
+<li>💡 <strong>错误处理</strong>：提供清晰的错误提示和解决方案</li>
+<li>📱 <strong>小白友好</strong>：只需输入GitHub用户名和邮箱，其余全自动化</li>
+</ul>
+<h3 id="脚本工作原理"><a href="#脚本工作原理" class="headerlink" title="脚本工作原理"></a>脚本工作原理</h3><ol>
+<li><strong>环境检查</strong>：检查并安装Git和Node.js</li>
+<li><strong>Git配置</strong>：设置Git用户名、邮箱和SSL配置</li>
+<li><strong>Hexo初始化</strong>：创建Hexo博客项目</li>
+<li><strong>依赖安装</strong>：安装必要的npm包</li>
+<li><strong>配置修改</strong>：自动修改Hexo配置文件</li>
+<li><strong>SSH处理</strong>：生成SSH密钥并复制到剪贴板</li>
+<li><strong>部署发布</strong>：生成静态文件并部署到GitHub Pages</li>
+</ol>
+<h3 id="详细使用步骤"><a href="#详细使用步骤" class="headerlink" title="详细使用步骤"></a>详细使用步骤</h3><h4 id="步骤1：准备工作"><a href="#步骤1：准备工作" class="headerlink" title="步骤1：准备工作"></a>步骤1：准备工作</h4><ol>
+<li>确保你的电脑是Windows系统（脚本仅支持Windows）</li>
+<li>拥有一个GitHub账号（没有的话先去注册）</li>
+<li>稳定的网络连接（建议使用VPN，因为需要访问GitHub）</li>
+</ol>
+<h4 id="步骤2：创建脚本文件"><a href="#步骤2：创建脚本文件" class="headerlink" title="步骤2：创建脚本文件"></a>步骤2：创建脚本文件</h4><ol>
+<li>在桌面上创建一个新的文本文件</li>
+<li>将下面的完整源代码复制粘贴到文本文件中</li>
+<li>将文件扩展名从<code>.txt</code>改为<code>.bat</code>（例如：<code>hexo-deploy.bat</code>）</li>
+</ol>
+<h4 id="步骤3：运行脚本"><a href="#步骤3：运行脚本" class="headerlink" title="步骤3：运行脚本"></a>步骤3：运行脚本</h4><ol>
+<li>右键点击创建好的<code>.bat</code>文件</li>
+<li>选择”以管理员身份运行”（重要！否则可能无法安装软件）</li>
+<li>按照屏幕提示输入信息：<ul>
+<li>GitHub用户名：你的GitHub账号名称</li>
+<li>GitHub邮箱：你的GitHub注册邮箱</li>
+<li>仓库名：直接回车使用默认的<code>用户名.github.io</code></li>
+</ul>
+</li>
+</ol>
+<h4 id="步骤4：等待部署完成"><a href="#步骤4：等待部署完成" class="headerlink" title="步骤4：等待部署完成"></a>步骤4：等待部署完成</h4><p>脚本会自动执行以下操作：</p>
+<ol>
+<li>安装Git和Node.js（如果没有的话）</li>
+<li>初始化Hexo博客</li>
+<li>配置GitHub连接</li>
+<li>生成并复制SSH密钥</li>
+</ol>
+<h4 id="步骤5：添加SSH密钥到GitHub"><a href="#步骤5：添加SSH密钥到GitHub" class="headerlink" title="步骤5：添加SSH密钥到GitHub"></a>步骤5：添加SSH密钥到GitHub</h4><p>当脚本提示你需要添加SSH密钥时：</p>
+<ol>
+<li>浏览器会自动打开GitHub的SSH密钥设置页面</li>
+<li>点击”New SSH key”按钮</li>
+<li>在”Title”字段输入一个名称（例如：<code>My PC</code>）</li>
+<li>在”Key”字段粘贴已复制的SSH密钥（脚本已经自动复制到剪贴板）</li>
+<li>点击”Add SSH key”保存</li>
+<li>回到脚本窗口，按任意键继续</li>
+</ol>
+<h4 id="步骤6：完成部署"><a href="#步骤6：完成部署" class="headerlink" title="步骤6：完成部署"></a>步骤6：完成部署</h4><ol>
+<li>脚本会自动部署博客到GitHub Pages</li>
+<li>部署完成后，浏览器会打开GitHub Pages设置页面</li>
+<li>确保”Branch”选择为<code>main</code>，然后点击”Save”</li>
+<li>等待约1分钟后，博客即可访问</li>
+</ol>
+<h3 id="完整源代码"><a href="#完整源代码" class="headerlink" title="完整源代码"></a>完整源代码</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line">:: 使用 <span class="number">65001</span> 强制 UTF-<span class="number">8</span> 编码，防止乱码导致命令碎裂</span><br><span class="line"><span class="built_in">chcp</span> <span class="number">65001</span> &gt;<span class="built_in">nul</span></span><br><span class="line"><span class="built_in">title</span> Hexo 博客全自动助手 - 稳定修复版</span><br><span class="line"><span class="built_in">color</span> <span class="number">0</span>b</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> ======================================================</span><br><span class="line"><span class="built_in">echo</span>           🚀 Hexo + GitHub 博客一键搭建助手.Ta0X1</span><br><span class="line"><span class="built_in">echo</span> ======================================================</span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">:: <span class="number">1</span>. 采集信息</span><br><span class="line"><span class="built_in">set</span> /p githubUser= [?] <span class="number">1</span>. 请输入 GitHub 用户名: </span><br><span class="line"><span class="built_in">set</span> /p githubEmail= [?] <span class="number">2</span>. 请输入 GitHub 邮箱: </span><br><span class="line"><span class="built_in">set</span> /p repoName= [?] <span class="number">3</span>. 请输入仓库名 (直接回车为 <span class="variable">%githubUser%</span>.github.io): </span><br><span class="line"><span class="keyword">if</span> &quot;<span class="variable">%repoName%</span>&quot;==&quot;&quot; <span class="built_in">set</span> repoName=<span class="variable">%githubUser%</span>.github.io</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> ------------------------------------------------------</span><br><span class="line"><span class="built_in">echo</span> [<span class="number">1</span>/<span class="number">7</span>] 正在检查环境 (Git 和 Node.js)...</span><br><span class="line"><span class="built_in">echo</span> [进度: ■□□□□□□ <span class="number">15</span><span class="variable">%%]</span></span><br><span class="line"></span><br><span class="line">:: 环境检查与实时刷新 <span class="built_in">Path</span></span><br><span class="line">where node &gt;<span class="built_in">nul</span> <span class="number">2</span>&gt;<span class="built_in">nul</span> || (<span class="built_in">echo</span>    - 安装 Node.js... &amp;&amp; winget install OpenJS.NodeJS --source winget --quiet)</span><br><span class="line">where git &gt;<span class="built_in">nul</span> <span class="number">2</span>&gt;<span class="built_in">nul</span> || (<span class="built_in">echo</span>    - 安装 Git... &amp;&amp; winget install Git.Git --source winget --quiet)</span><br><span class="line"><span class="built_in">set</span> &quot;<span class="built_in">PATH</span>=<span class="variable">%ProgramFiles%</span>\nodejs\;<span class="variable">%AppData%</span>\npm;<span class="variable">%ProgramFiles%</span>\Git\<span class="built_in">cmd</span>;<span class="variable">%PATH%</span>&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> [<span class="number">2</span>/<span class="number">7</span>] 正在配置 Git 身份与安全信任...</span><br><span class="line"><span class="keyword">call</span> git config --global user.name &quot;<span class="variable">%githubUser%</span>&quot;</span><br><span class="line"><span class="keyword">call</span> git config --global user.email &quot;<span class="variable">%githubEmail%</span>&quot;</span><br><span class="line">:: 修复网络问题：尝试关闭 Git 的 SSL 验证（防止 Connection Reset）</span><br><span class="line"><span class="keyword">call</span> git config --global http.sslVerify false</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exist</span> &quot;<span class="variable">%USERPROFILE%</span>\.ssh&quot; <span class="built_in">mkdir</span> &quot;<span class="variable">%USERPROFILE%</span>\.ssh&quot;</span><br><span class="line">ssh-keyscan github.com &gt;&gt; &quot;<span class="variable">%USERPROFILE%</span>\.ssh\known_hosts&quot; <span class="number">2</span>&gt;<span class="built_in">nul</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> [<span class="number">3</span>/<span class="number">7</span>] 正在初始化 Hexo (网络波动时请稍候)...</span><br><span class="line"><span class="built_in">echo</span> [进度: ■■■□□□□ <span class="number">45</span><span class="variable">%%]</span></span><br><span class="line">:: 解决 Connection reset 问题：如果 init 失败，提示用户检查网络</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exist</span> myblog (</span><br><span class="line">    <span class="keyword">call</span> npx hexo-cli init myblog || (<span class="built_in">echo</span> [!] 网络连接失败，请检查梯子或重试 &amp;&amp; <span class="built_in">pause</span> &amp;&amp; <span class="keyword">exit</span>)</span><br><span class="line">)</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> [<span class="number">4</span>/<span class="number">7</span>] 正在安装必要依赖...</span><br><span class="line">:: 使用加速镜像安装依赖</span><br><span class="line"><span class="keyword">call</span> npm install --registry=https://registry.npmmirror.com --silent</span><br><span class="line"><span class="keyword">call</span> npm install hexo-deployer-git --save --silent</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> [<span class="number">5</span>/<span class="number">7</span>] 正在适配仓库路径并修改配置...</span><br><span class="line">powershell -Command &quot;$u=&#x27;<span class="variable">%githubUser%</span>&#x27;; $r=&#x27;<span class="variable">%repoName%</span>&#x27;; $c=Get-Content _config.yml -Raw; <span class="keyword">if</span>($r -eq \&quot;$u.github.io\&quot;)&#123; $url=&#x27;https://&#x27;+$u+&#x27;.github.io&#x27;; $root=&#x27;/&#x27;; &#125; <span class="keyword">else</span> &#123; $url=&#x27;https://&#x27;+$u+&#x27;.github.io/&#x27;+$r; $root=&#x27;/&#x27;+$r+&#x27;/&#x27;; &#125;; $c = $c -<span class="built_in">replace</span> &#x27;url: .*&#x27;, \&quot;url: $url\&quot;; $c = $c -<span class="built_in">replace</span> &#x27;root: .*&#x27;, \&quot;root: $root\&quot;; $c = $c -<span class="built_in">replace</span> &#x27;(?ms)deploy:.*&#x27;, \&quot;deploy:`n  <span class="built_in">type</span>: git`n  repo: git@github.com:$u/$r.git`n  branch: main\&quot;; <span class="built_in">Set</span>-Content _config.yml $c&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> [<span class="number">6</span>/<span class="number">7</span>] 正在处理 SSH 密钥...</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exist</span> &quot;<span class="variable">%USERPROFILE%</span>\.ssh\id_rsa.pub&quot; (</span><br><span class="line">    ssh-keygen -t rsa -b <span class="number">4096</span> -C &quot;<span class="variable">%githubEmail%</span>&quot; -N &quot;&quot; -f &quot;<span class="variable">%USERPROFILE%</span>\.ssh\id_rsa&quot;</span><br><span class="line">)</span><br><span class="line"><span class="built_in">type</span> &quot;<span class="variable">%USERPROFILE%</span>\.ssh\id_rsa.pub&quot; | clip</span><br><span class="line"><span class="built_in">start</span> https://github.com/settings/keys</span><br><span class="line"><span class="built_in">echo</span> [+] 我们已为您自动复制在剪切板，请在网页点击New ssh key后，粘贴密钥，保存后，勾选全部可勾选项，回到这里按任意键。</span><br><span class="line"><span class="built_in">pause</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> [<span class="number">7</span>/<span class="number">7</span>] 正在执行最终发布...</span><br><span class="line"><span class="built_in">echo</span> [进度: ■■■■■■■ <span class="number">100</span><span class="variable">%%]</span></span><br><span class="line"><span class="keyword">call</span> npx hexo g -d</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> ======================================================</span><br><span class="line"><span class="built_in">echo</span> ✨ 部署完成！请在下方网页将 Branch 改为 main 并 Save。</span><br><span class="line"><span class="built_in">echo</span> ======================================================</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">start</span> https://github.com/<span class="variable">%githubUser%</span>/<span class="variable">%repoName%</span>/settings/pages</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> &quot;finalUrl=https://<span class="variable">%githubUser%</span>.github.io/<span class="variable">%repoName%</span>/&quot;</span><br><span class="line"><span class="keyword">if</span> &quot;<span class="variable">%repoName%</span>&quot;==&quot;<span class="variable">%githubUser%</span>.github.io&quot; <span class="built_in">set</span> &quot;finalUrl=https://<span class="variable">%githubUser%</span>.github.io&quot;</span><br><span class="line"><span class="built_in">echo</span> 博客地址: <span class="variable">%finalUrl%</span></span><br><span class="line"><span class="built_in">echo</span> 等待一分钟后点击任意键自动访问。</span><br><span class="line"><span class="built_in">pause</span></span><br><span class="line"><span class="built_in">start</span> <span class="variable">%finalUrl%</span></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
+<li><strong>以管理员身份运行</strong>：必须右键点击脚本文件，选择”以管理员身份运行”，否则可能无法安装Git和Node.js</li>
+<li><strong>网络连接</strong>：确保网络连接稳定，建议使用VPN</li>
+<li><strong>GitHub账号</strong>：确保你有一个GitHub账号，并且已经验证了邮箱</li>
+<li><strong>仓库名</strong>：如果使用个人主页，仓库名必须是<code>用户名.github.io</code></li>
+<li><strong>耐心等待</strong>：脚本执行过程中请耐心等待，不要中途关闭窗口</li>
+<li><strong>错误处理</strong>：如果遇到错误，请仔细阅读错误提示，按照提示解决问题</li>
+</ol>
+<h3 id="常见问题与解决方案"><a href="#常见问题与解决方案" class="headerlink" title="常见问题与解决方案"></a>常见问题与解决方案</h3><h4 id="问题1：脚本运行时提示”winget不是内部或外部命令”"><a href="#问题1：脚本运行时提示”winget不是内部或外部命令”" class="headerlink" title="问题1：脚本运行时提示”winget不是内部或外部命令”"></a>问题1：脚本运行时提示”winget不是内部或外部命令”</h4><p><strong>解决方案</strong>：</p>
+<ul>
+<li>确保你的Windows版本是Windows 10 1809或更高版本</li>
+<li>打开Microsoft Store，搜索并安装”App Installer”</li>
+<li>重新运行脚本</li>
+</ul>
+<h4 id="问题2：网络连接失败，提示”Connection-reset”"><a href="#问题2：网络连接失败，提示”Connection-reset”" class="headerlink" title="问题2：网络连接失败，提示”Connection reset”"></a>问题2：网络连接失败，提示”Connection reset”</h4><p><strong>解决方案</strong>：</p>
+<ul>
+<li>检查你的VPN连接是否正常</li>
+<li>尝试关闭防火墙或杀毒软件</li>
+<li>重新运行脚本</li>
+</ul>
+<h4 id="问题3：部署失败，提示”Permission-denied”"><a href="#问题3：部署失败，提示”Permission-denied”" class="headerlink" title="问题3：部署失败，提示”Permission denied”"></a>问题3：部署失败，提示”Permission denied”</h4><p><strong>解决方案</strong>：</p>
+<ul>
+<li>确保你已经正确添加了SSH密钥到GitHub</li>
+<li>检查SSH密钥是否正确生成</li>
+<li>重新运行脚本，确保以管理员身份运行</li>
+</ul>
+<h4 id="问题4：博客访问404"><a href="#问题4：博客访问404" class="headerlink" title="问题4：博客访问404"></a>问题4：博客访问404</h4><p><strong>解决方案</strong>：</p>
+<ul>
+<li>确保仓库名是<code>用户名.github.io</code></li>
+<li>等待5-10分钟，GitHub Pages需要时间更新</li>
+<li>检查GitHub Pages设置中的Branch是否为<code>main</code></li>
+</ul>
+<h3 id="脚本升级与更新"><a href="#脚本升级与更新" class="headerlink" title="脚本升级与更新"></a>脚本升级与更新</h3><p>这个脚本会持续更新，以适应GitHub和Hexo的变化。如果你在使用过程中遇到问题，可以查看脚本的最新版本或提交issue。</p>
+<h3 id="扩展与自定义"><a href="#扩展与自定义" class="headerlink" title="扩展与自定义"></a>扩展与自定义</h3><p>部署完成后，你可以：</p>
+<ol>
+<li>进入<code>myblog</code>文件夹，编辑博客内容</li>
+<li>安装Hexo主题，美化你的博客</li>
+<li>添加插件，扩展博客功能</li>
+<li>自定义配置，打造个性化博客</li>
+</ol>
+<h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>Hexo一键部署脚本的目的是让更多人能够轻松拥有自己的博客，无需担心复杂的命令和配置。博客是一个记录生活、分享知识的好地方，希望这个脚本能够帮助你开启博客之旅！</p>
+<p>如果你在使用过程中遇到任何问题，欢迎在评论区留言，我会尽力帮助你解决。</p>
+<p>祝你博客搭建成功！🎉</p>
+<hr>
+<p><strong>作者</strong>：Ta0X1<br><strong>发布日期</strong>：2026-01-21<br><strong>更新日期</strong>：2026-01-21<br><strong>版权声明</strong>：本教程和脚本仅供学习使用，请勿用于商业用途</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.taoxi.ink">Ta0X1</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.taoxi.ink/2026/01/21/2026-01-21-hexo-auto-deploy/">https://blog.taoxi.ink/2026/01/21/2026-01-21-hexo-auto-deploy/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.taoxi.ink" target="_blank">Ta0X1 | 一年写</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a><a class="post-meta__tags" href="/tags/%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2/">一键部署</a><a class="post-meta__tags" href="/tags/%E8%84%9A%E6%9C%AC/">脚本</a><a class="post-meta__tags" href="/tags/GitHub-Pages/">GitHub Pages</a></div><div class="post-share"><div class="social-share" data-image="https://po1.taoxi.ink//26ca7949b3b1583cbdaeb49a0b5ec039.jpg" data-sites="wechat,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>感谢您的支持</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://po1.taoxi.ink//d5ed025e3c7002d22591bb7ea50d71c7.jpg" target="_blank"><img class="post-qr-code-img" src="https://po1.taoxi.ink//d5ed025e3c7002d22591bb7ea50d71c7.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/01/10/steamtools/" title="SteamTools+OneKey使用指南"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">SteamTools+OneKey使用指南</div></div><div class="info-2"><div class="info-item-1">SteamTools使用指南 MUSIC-恋人             声明: 本文由个人撰写后经Gemini3逐字润色后发布。   本指南主要介绍SteamTools的功能和使用方法，如果你想要了解其原理，请参考本文末尾的原理部分。本文任何文字均为个人经验，转载注明出处！  一、下载SteamToolsSteamTools是一款用于管理Steam游戏的工具，通过它可以实现游戏的快速解锁和下载。下面是详细的下载和安装步骤： 1. 访问官方网站下载安装包首先，我们需要从官方网站获取SteamTools的最新安装包。 Steamtools   点击下载页面中的「安装版(推荐)」即可开始下载。如果因为网络原因无法访问官方网站，本站末尾将会提供备用下载链接。  2. 运行安装程序下载完成后，找到下载的安装文件，双击运行它。  安装过程非常简单，建议直接点击「下一步」完成安装 重要提示：安装目录请不要使用中文，以免出现兼容性问题   3. 启动SteamTools安装完成后，会出现安装成功的提示窗口。  勾选「运行SteamTools」选项，然后点击「完成」按钮 这样SteamTools就...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/09/03/hello-world/" title="Hexo入门指南 - Hello World博客搭建教程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-09-03</div><div class="info-item-2">Hexo入门指南 - Hello World博客搭建教程</div></div><div class="info-2"><div class="info-item-1">欢迎使用 Hexo！这是你的第一篇文章。你可以通过修改 source/_posts/hello-world.md 来编辑它。 快速开始创建一篇新文章1hexo new &quot;My New Post&quot;  更多信息请查看 Writing。 运行服务器1hexo server  更多信息请查看 Server。 生成静态文件1hexo generate  更多信息请查看 Generating。 部署到远程站点1hexo deploy  更多信息请查看 Deployment。 </div></div></div></a><a class="pagination-related" href="/2025/09/06/2025-09-06-Moban/" title="Hexo博客Post Matter后端配置指南"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-09-06</div><div class="info-item-2">Hexo博客Post Matter后端配置指南</div></div><div class="info-2"><div class="info-item-1">本文仅用于后端配置Post Matter. </div></div></div></a><a class="pagination-related" href="/2023/09/24/2023-09-25-beiqiang/" title="被墙"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-24</div><div class="info-item-2">被墙</div></div><div class="info-2"><div class="info-item-1">前言GFW检测让Notion的图片无法正常的访问，目前只能通过第三方的图床，然后利用{嵌入}，嵌入进博客，但是这样很麻烦，而且也不一定能够长久。 Hexo我已经准备使用HEXO+Github了，以前部署网站时候的文件还在，不过hexo的加载速度有点慢，可能需要以后的慢慢优化了。 博客其实也就是自己写着留下一点回忆，看的人也不是很多，写下去的动力也并不大了。 如果没有，说不定互联网会更好一些吧。 目前的环境，太困难了。 </div></div></div></a><a class="pagination-related" href="/2023/06/04/2023-06-05-bloghi/" title="Hexo博客DPlayer视频播放器插件安装与使用教程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-04</div><div class="info-item-2">Hexo博客DPlayer视频播放器插件安装与使用教程</div></div><div class="info-2"><div class="info-item-1">可以说说你的故事：阻碍、努力、结果成果，意外与转折。 安装 安装 hexo-tag-dplayer 插件十分简单，只需要在博客目录执行 1 npm install hexo-tag-dplayer -s 语法这是Markdown的语法格式 1 &#96;&#96;&#96;&#123;&#37; dplayer “url&#x3D;https://dl.sm9.top/Video/2018/KeyCastOW.mp4“ &#37;&#125; 123456其他配置示例。1 ```&amp;#123;&amp;#37; dplayer &quot;url=https://dl.sm9.top/Video/2018/%E6%8E%98%E5%9C%B0%E6%B1%82%E5%8D%87_x264.mp4&quot; &quot; screenshot&quot; &quot;loop=yes&quot; &quot;id=46190A32F63DFF2CF0A3BB0F3293636C&quot; &quot;api=https://api.prprpr.me/dplayer/&q...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://po1.taoxi.ink//26ca7949b3b1583cbdaeb49a0b5ec039.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Ta0X1</div><div class="author-info-description">陶西的个人博客</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">131</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/sinhoole"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/sinhoole" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:zhang060809@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">重新运营！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo%E5%8D%9A%E5%AE%A2%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E8%84%9A%E6%9C%AC"><span class="toc-number">1.</span> <span class="toc-text">Hexo博客一键部署脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%AD%E5%BB%BA%E7%9A%84GitHub-Pages%E5%8D%9A%E5%AE%A2"><span class="toc-number">1.1.</span> <span class="toc-text">小白也能轻松搭建的GitHub Pages博客</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFHexo%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E8%84%9A%E6%9C%AC%EF%BC%9F"><span class="toc-number">1.1.1.</span> <span class="toc-text">什么是Hexo一键部署脚本？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E5%8A%9F%E8%83%BD%E4%B8%8E%E4%BC%98%E5%8A%BF"><span class="toc-number">1.1.2.</span> <span class="toc-text">脚本功能与优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.1.3.</span> <span class="toc-text">脚本工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.4.</span> <span class="toc-text">详细使用步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A41%EF%BC%9A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">步骤1：准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A42%EF%BC%9A%E5%88%9B%E5%BB%BA%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">步骤2：创建脚本文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A43%EF%BC%9A%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC"><span class="toc-number">1.1.4.3.</span> <span class="toc-text">步骤3：运行脚本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A44%EF%BC%9A%E7%AD%89%E5%BE%85%E9%83%A8%E7%BD%B2%E5%AE%8C%E6%88%90"><span class="toc-number">1.1.4.4.</span> <span class="toc-text">步骤4：等待部署完成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A45%EF%BC%9A%E6%B7%BB%E5%8A%A0SSH%E5%AF%86%E9%92%A5%E5%88%B0GitHub"><span class="toc-number">1.1.4.5.</span> <span class="toc-text">步骤5：添加SSH密钥到GitHub</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A46%EF%BC%9A%E5%AE%8C%E6%88%90%E9%83%A8%E7%BD%B2"><span class="toc-number">1.1.4.6.</span> <span class="toc-text">步骤6：完成部署</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="toc-number">1.1.5.</span> <span class="toc-text">完整源代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.1.6.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.7.</span> <span class="toc-text">常见问题与解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%981%EF%BC%9A%E8%84%9A%E6%9C%AC%E8%BF%90%E8%A1%8C%E6%97%B6%E6%8F%90%E7%A4%BA%E2%80%9Dwinget%E4%B8%8D%E6%98%AF%E5%86%85%E9%83%A8%E6%88%96%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4%E2%80%9D"><span class="toc-number">1.1.7.1.</span> <span class="toc-text">问题1：脚本运行时提示”winget不是内部或外部命令”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%982%EF%BC%9A%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%EF%BC%8C%E6%8F%90%E7%A4%BA%E2%80%9DConnection-reset%E2%80%9D"><span class="toc-number">1.1.7.2.</span> <span class="toc-text">问题2：网络连接失败，提示”Connection reset”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%983%EF%BC%9A%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A5%EF%BC%8C%E6%8F%90%E7%A4%BA%E2%80%9DPermission-denied%E2%80%9D"><span class="toc-number">1.1.7.3.</span> <span class="toc-text">问题3：部署失败，提示”Permission denied”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%984%EF%BC%9A%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE404"><span class="toc-number">1.1.7.4.</span> <span class="toc-text">问题4：博客访问404</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E5%8D%87%E7%BA%A7%E4%B8%8E%E6%9B%B4%E6%96%B0"><span class="toc-number">1.1.8.</span> <span class="toc-text">脚本升级与更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.9.</span> <span class="toc-text">扩展与自定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E"><span class="toc-number">1.1.10.</span> <span class="toc-text">写在最后</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/21/2026-01-21-hexo-auto-deploy/" title="Hexo博客一键部署脚本 - 小白也能轻松搭建">Hexo博客一键部署脚本 - 小白也能轻松搭建</a><time datetime="2026-01-20T16:00:00.000Z" title="发表于 2026-01-21 00:00:00">2026-01-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/10/steamtools/" title="SteamTools+OneKey使用指南">SteamTools+OneKey使用指南</a><time datetime="2026-01-09T16:00:00.000Z" title="发表于 2026-01-10 00:00:00">2026-01-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/09/2026-01-09-%E8%A5%BF%E5%8E%86%E5%B9%B4%E8%AE%B0/" title="西历年记 - 元旦郑州好友相聚回忆录">西历年记 - 元旦郑州好友相聚回忆录</a><time datetime="2026-01-08T16:00:00.000Z" title="发表于 2026-01-09 00:00:00">2026-01-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/09/rdzi/" title="人是他自己 - 关于个体身份认同的哲学思考">人是他自己 - 关于个体身份认同的哲学思考</a><time datetime="2026-01-08T16:00:00.000Z" title="发表于 2026-01-09 00:00:00">2026-01-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/08/2026-01-08-%E8%AE%BAAI%E9%80%94%E7%BA%AA%E8%A6%81/" title="论AI途纪要 - AI与人类关系的哲学思考">论AI途纪要 - AI与人类关系的哲学思考</a><time datetime="2026-01-07T19:47:00.000Z" title="发表于 2026-01-08 03:47:00">2026-01-08</time></div></div></div></div></div></div></main><footer id="footer" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Ta0X1</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.3</a></span></div><div class="footer_custom_text">2025-12-16重建</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.3"></script><script src="/js/main.js?v=5.5.3"></script><script src="/js/tw_cn.js?v=5.5.3"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        loader: {
+          load: [
+            // Four font extension packages (optional)
+            //- '[tex]/bbm',
+            //- '[tex]/bboldx',
+            //- '[tex]/dsfont',
+            '[tex]/mhchem'
+          ],
+          paths: {
+            'mathjax-newcm': '[mathjax]/../@mathjax/mathjax-newcm-font',
+
+            //- // Four font extension packages (optional)
+            //- 'mathjax-bbm-extension': '[mathjax]/../@mathjax/mathjax-bbm-font-extension',
+            //- 'mathjax-bboldx-extension': '[mathjax]/../@mathjax/mathjax-bboldx-font-extension',
+            //- 'mathjax-dsfont-extension': '[mathjax]/../@mathjax/mathjax-dsfont-font-extension',
+            'mathjax-mhchem-extension': '[mathjax]/../@mathjax/mathjax-mhchem-font-extension'
+          }
+        },
+        output: {
+          font: 'mathjax-newcm',
+        },
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+          packages: {
+            '[+]': [
+              'mhchem'
+            ]
+          }
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          menuOptions: {
+            settings: {
+              enrich: false  // Turn off Braille and voice narration text automatic generation
+            }
+          },
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://waline.taoxi.ink/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      comment: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client@3.8.0/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client@3.8.0/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="欢迎阅读本站" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.3"></script></div></div></body></html>

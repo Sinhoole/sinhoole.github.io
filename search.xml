@@ -1492,4 +1492,126 @@
         <tag>游戏工具</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Hexo博客一键部署脚本 - 小白也能轻松搭建</title>
+    <url>/2026/01/21/2026-01-21-hexo-auto-deploy/</url>
+    <content><![CDATA[<h1 id="Hexo博客一键部署脚本"><a href="#Hexo博客一键部署脚本" class="headerlink" title="Hexo博客一键部署脚本"></a>Hexo博客一键部署脚本</h1><h2 id="小白也能轻松搭建的GitHub-Pages博客"><a href="#小白也能轻松搭建的GitHub-Pages博客" class="headerlink" title="小白也能轻松搭建的GitHub Pages博客"></a>小白也能轻松搭建的GitHub Pages博客</h2><h3 id="什么是Hexo一键部署脚本？"><a href="#什么是Hexo一键部署脚本？" class="headerlink" title="什么是Hexo一键部署脚本？"></a>什么是Hexo一键部署脚本？</h3><p>Hexo一键部署脚本是一个自动化工具，能够帮助你在几分钟内完成从环境配置到博客上线的全过程。这个脚本特别适合刚接触博客搭建的小白用户，无需手动输入复杂命令，只需按照提示填写几个信息，就能轻松拥有自己的GitHub Pages博客。</p>
+<h3 id="脚本功能与优势"><a href="#脚本功能与优势" class="headerlink" title="脚本功能与优势"></a>脚本功能与优势</h3><ul>
+<li>🚀 <strong>全自动部署</strong>：从环境检查到博客上线，全程自动化</li>
+<li>📦 <strong>自动安装依赖</strong>：自动检查并安装Git和Node.js</li>
+<li>🔧 <strong>智能配置</strong>：自动配置Git身份、Hexo设置和SSH密钥</li>
+<li>🌐 <strong>网络优化</strong>：使用国内镜像加速，解决网络连接问题</li>
+<li>💡 <strong>错误处理</strong>：提供清晰的错误提示和解决方案</li>
+<li>📱 <strong>小白友好</strong>：只需输入GitHub用户名和邮箱，其余全自动化</li>
+</ul>
+<h3 id="脚本工作原理"><a href="#脚本工作原理" class="headerlink" title="脚本工作原理"></a>脚本工作原理</h3><ol>
+<li><strong>环境检查</strong>：检查并安装Git和Node.js</li>
+<li><strong>Git配置</strong>：设置Git用户名、邮箱和SSL配置</li>
+<li><strong>Hexo初始化</strong>：创建Hexo博客项目</li>
+<li><strong>依赖安装</strong>：安装必要的npm包</li>
+<li><strong>配置修改</strong>：自动修改Hexo配置文件</li>
+<li><strong>SSH处理</strong>：生成SSH密钥并复制到剪贴板</li>
+<li><strong>部署发布</strong>：生成静态文件并部署到GitHub Pages</li>
+</ol>
+<h3 id="详细使用步骤"><a href="#详细使用步骤" class="headerlink" title="详细使用步骤"></a>详细使用步骤</h3><h4 id="步骤1：准备工作"><a href="#步骤1：准备工作" class="headerlink" title="步骤1：准备工作"></a>步骤1：准备工作</h4><ol>
+<li>确保你的电脑是Windows系统（脚本仅支持Windows）</li>
+<li>拥有一个GitHub账号（没有的话先去注册）</li>
+<li>稳定的网络连接（建议使用VPN，因为需要访问GitHub）</li>
+</ol>
+<h4 id="步骤2：创建脚本文件"><a href="#步骤2：创建脚本文件" class="headerlink" title="步骤2：创建脚本文件"></a>步骤2：创建脚本文件</h4><ol>
+<li>在桌面上创建一个新的文本文件</li>
+<li>将下面的完整源代码复制粘贴到文本文件中</li>
+<li>将文件扩展名从<code>.txt</code>改为<code>.bat</code>（例如：<code>hexo-deploy.bat</code>）</li>
+</ol>
+<h4 id="步骤3：运行脚本"><a href="#步骤3：运行脚本" class="headerlink" title="步骤3：运行脚本"></a>步骤3：运行脚本</h4><ol>
+<li>右键点击创建好的<code>.bat</code>文件</li>
+<li>选择”以管理员身份运行”（重要！否则可能无法安装软件）</li>
+<li>按照屏幕提示输入信息：<ul>
+<li>GitHub用户名：你的GitHub账号名称</li>
+<li>GitHub邮箱：你的GitHub注册邮箱</li>
+<li>仓库名：直接回车使用默认的<code>用户名.github.io</code></li>
+</ul>
+</li>
+</ol>
+<h4 id="步骤4：等待部署完成"><a href="#步骤4：等待部署完成" class="headerlink" title="步骤4：等待部署完成"></a>步骤4：等待部署完成</h4><p>脚本会自动执行以下操作：</p>
+<ol>
+<li>安装Git和Node.js（如果没有的话）</li>
+<li>初始化Hexo博客</li>
+<li>配置GitHub连接</li>
+<li>生成并复制SSH密钥</li>
+</ol>
+<h4 id="步骤5：添加SSH密钥到GitHub"><a href="#步骤5：添加SSH密钥到GitHub" class="headerlink" title="步骤5：添加SSH密钥到GitHub"></a>步骤5：添加SSH密钥到GitHub</h4><p>当脚本提示你需要添加SSH密钥时：</p>
+<ol>
+<li>浏览器会自动打开GitHub的SSH密钥设置页面</li>
+<li>点击”New SSH key”按钮</li>
+<li>在”Title”字段输入一个名称（例如：<code>My PC</code>）</li>
+<li>在”Key”字段粘贴已复制的SSH密钥（脚本已经自动复制到剪贴板）</li>
+<li>点击”Add SSH key”保存</li>
+<li>回到脚本窗口，按任意键继续</li>
+</ol>
+<h4 id="步骤6：完成部署"><a href="#步骤6：完成部署" class="headerlink" title="步骤6：完成部署"></a>步骤6：完成部署</h4><ol>
+<li>脚本会自动部署博客到GitHub Pages</li>
+<li>部署完成后，浏览器会打开GitHub Pages设置页面</li>
+<li>确保”Branch”选择为<code>main</code>，然后点击”Save”</li>
+<li>等待约1分钟后，博客即可访问</li>
+</ol>
+<h3 id="完整源代码"><a href="#完整源代码" class="headerlink" title="完整源代码"></a>完整源代码</h3><figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line">:: 使用 <span class="number">65001</span> 强制 UTF-<span class="number">8</span> 编码，防止乱码导致命令碎裂</span><br><span class="line"><span class="built_in">chcp</span> <span class="number">65001</span> &gt;<span class="built_in">nul</span></span><br><span class="line"><span class="built_in">title</span> Hexo 博客全自动助手 - 稳定修复版</span><br><span class="line"><span class="built_in">color</span> <span class="number">0</span>b</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> ======================================================</span><br><span class="line"><span class="built_in">echo</span>           🚀 Hexo + GitHub 博客一键搭建助手.Ta0X1</span><br><span class="line"><span class="built_in">echo</span> ======================================================</span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">:: <span class="number">1</span>. 采集信息</span><br><span class="line"><span class="built_in">set</span> /p githubUser= [?] <span class="number">1</span>. 请输入 GitHub 用户名: </span><br><span class="line"><span class="built_in">set</span> /p githubEmail= [?] <span class="number">2</span>. 请输入 GitHub 邮箱: </span><br><span class="line"><span class="built_in">set</span> /p repoName= [?] <span class="number">3</span>. 请输入仓库名 (直接回车为 <span class="variable">%githubUser%</span>.github.io): </span><br><span class="line"><span class="keyword">if</span> &quot;<span class="variable">%repoName%</span>&quot;==&quot;&quot; <span class="built_in">set</span> repoName=<span class="variable">%githubUser%</span>.github.io</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> ------------------------------------------------------</span><br><span class="line"><span class="built_in">echo</span> [<span class="number">1</span>/<span class="number">7</span>] 正在检查环境 (Git 和 Node.js)...</span><br><span class="line"><span class="built_in">echo</span> [进度: ■□□□□□□ <span class="number">15</span><span class="variable">%%]</span></span><br><span class="line"></span><br><span class="line">:: 环境检查与实时刷新 <span class="built_in">Path</span></span><br><span class="line">where node &gt;<span class="built_in">nul</span> <span class="number">2</span>&gt;<span class="built_in">nul</span> || (<span class="built_in">echo</span>    - 安装 Node.js... &amp;&amp; winget install OpenJS.NodeJS --source winget --quiet)</span><br><span class="line">where git &gt;<span class="built_in">nul</span> <span class="number">2</span>&gt;<span class="built_in">nul</span> || (<span class="built_in">echo</span>    - 安装 Git... &amp;&amp; winget install Git.Git --source winget --quiet)</span><br><span class="line"><span class="built_in">set</span> &quot;<span class="built_in">PATH</span>=<span class="variable">%ProgramFiles%</span>\nodejs\;<span class="variable">%AppData%</span>\npm;<span class="variable">%ProgramFiles%</span>\Git\<span class="built_in">cmd</span>;<span class="variable">%PATH%</span>&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> [<span class="number">2</span>/<span class="number">7</span>] 正在配置 Git 身份与安全信任...</span><br><span class="line"><span class="keyword">call</span> git config --global user.name &quot;<span class="variable">%githubUser%</span>&quot;</span><br><span class="line"><span class="keyword">call</span> git config --global user.email &quot;<span class="variable">%githubEmail%</span>&quot;</span><br><span class="line">:: 修复网络问题：尝试关闭 Git 的 SSL 验证（防止 Connection Reset）</span><br><span class="line"><span class="keyword">call</span> git config --global http.sslVerify false</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exist</span> &quot;<span class="variable">%USERPROFILE%</span>\.ssh&quot; <span class="built_in">mkdir</span> &quot;<span class="variable">%USERPROFILE%</span>\.ssh&quot;</span><br><span class="line">ssh-keyscan github.com &gt;&gt; &quot;<span class="variable">%USERPROFILE%</span>\.ssh\known_hosts&quot; <span class="number">2</span>&gt;<span class="built_in">nul</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> [<span class="number">3</span>/<span class="number">7</span>] 正在初始化 Hexo (网络波动时请稍候)...</span><br><span class="line"><span class="built_in">echo</span> [进度: ■■■□□□□ <span class="number">45</span><span class="variable">%%]</span></span><br><span class="line">:: 解决 Connection reset 问题：如果 init 失败，提示用户检查网络</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exist</span> myblog (</span><br><span class="line">    <span class="keyword">call</span> npx hexo-cli init myblog || (<span class="built_in">echo</span> [!] 网络连接失败，请检查梯子或重试 &amp;&amp; <span class="built_in">pause</span> &amp;&amp; <span class="keyword">exit</span>)</span><br><span class="line">)</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> [<span class="number">4</span>/<span class="number">7</span>] 正在安装必要依赖...</span><br><span class="line">:: 使用加速镜像安装依赖</span><br><span class="line"><span class="keyword">call</span> npm install --registry=https://registry.npmmirror.com --silent</span><br><span class="line"><span class="keyword">call</span> npm install hexo-deployer-git --save --silent</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> [<span class="number">5</span>/<span class="number">7</span>] 正在适配仓库路径并修改配置...</span><br><span class="line">powershell -Command &quot;$u=&#x27;<span class="variable">%githubUser%</span>&#x27;; $r=&#x27;<span class="variable">%repoName%</span>&#x27;; $c=Get-Content _config.yml -Raw; <span class="keyword">if</span>($r -eq \&quot;$u.github.io\&quot;)&#123; $url=&#x27;https://&#x27;+$u+&#x27;.github.io&#x27;; $root=&#x27;/&#x27;; &#125; <span class="keyword">else</span> &#123; $url=&#x27;https://&#x27;+$u+&#x27;.github.io/&#x27;+$r; $root=&#x27;/&#x27;+$r+&#x27;/&#x27;; &#125;; $c = $c -<span class="built_in">replace</span> &#x27;url: .*&#x27;, \&quot;url: $url\&quot;; $c = $c -<span class="built_in">replace</span> &#x27;root: .*&#x27;, \&quot;root: $root\&quot;; $c = $c -<span class="built_in">replace</span> &#x27;(?ms)deploy:.*&#x27;, \&quot;deploy:`n  <span class="built_in">type</span>: git`n  repo: git@github.com:$u/$r.git`n  branch: main\&quot;; <span class="built_in">Set</span>-Content _config.yml $c&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> [<span class="number">6</span>/<span class="number">7</span>] 正在处理 SSH 密钥...</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exist</span> &quot;<span class="variable">%USERPROFILE%</span>\.ssh\id_rsa.pub&quot; (</span><br><span class="line">    ssh-keygen -t rsa -b <span class="number">4096</span> -C &quot;<span class="variable">%githubEmail%</span>&quot; -N &quot;&quot; -f &quot;<span class="variable">%USERPROFILE%</span>\.ssh\id_rsa&quot;</span><br><span class="line">)</span><br><span class="line"><span class="built_in">type</span> &quot;<span class="variable">%USERPROFILE%</span>\.ssh\id_rsa.pub&quot; | clip</span><br><span class="line"><span class="built_in">start</span> https://github.com/settings/keys</span><br><span class="line"><span class="built_in">echo</span> [+] 我们已为您自动复制在剪切板，请在网页点击New ssh key后，粘贴密钥，保存后，勾选全部可勾选项，回到这里按任意键。</span><br><span class="line"><span class="built_in">pause</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> [<span class="number">7</span>/<span class="number">7</span>] 正在执行最终发布...</span><br><span class="line"><span class="built_in">echo</span> [进度: ■■■■■■■ <span class="number">100</span><span class="variable">%%]</span></span><br><span class="line"><span class="keyword">call</span> npx hexo g -d</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> ======================================================</span><br><span class="line"><span class="built_in">echo</span> ✨ 部署完成！请在下方网页将 Branch 改为 main 并 Save。</span><br><span class="line"><span class="built_in">echo</span> ======================================================</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">start</span> https://github.com/<span class="variable">%githubUser%</span>/<span class="variable">%repoName%</span>/settings/pages</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> &quot;finalUrl=https://<span class="variable">%githubUser%</span>.github.io/<span class="variable">%repoName%</span>/&quot;</span><br><span class="line"><span class="keyword">if</span> &quot;<span class="variable">%repoName%</span>&quot;==&quot;<span class="variable">%githubUser%</span>.github.io&quot; <span class="built_in">set</span> &quot;finalUrl=https://<span class="variable">%githubUser%</span>.github.io&quot;</span><br><span class="line"><span class="built_in">echo</span> 博客地址: <span class="variable">%finalUrl%</span></span><br><span class="line"><span class="built_in">echo</span> 等待一分钟后点击任意键自动访问。</span><br><span class="line"><span class="built_in">pause</span></span><br><span class="line"><span class="built_in">start</span> <span class="variable">%finalUrl%</span></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
+<li><strong>以管理员身份运行</strong>：必须右键点击脚本文件，选择”以管理员身份运行”，否则可能无法安装Git和Node.js</li>
+<li><strong>网络连接</strong>：确保网络连接稳定，建议使用VPN</li>
+<li><strong>GitHub账号</strong>：确保你有一个GitHub账号，并且已经验证了邮箱</li>
+<li><strong>仓库名</strong>：如果使用个人主页，仓库名必须是<code>用户名.github.io</code></li>
+<li><strong>耐心等待</strong>：脚本执行过程中请耐心等待，不要中途关闭窗口</li>
+<li><strong>错误处理</strong>：如果遇到错误，请仔细阅读错误提示，按照提示解决问题</li>
+</ol>
+<h3 id="常见问题与解决方案"><a href="#常见问题与解决方案" class="headerlink" title="常见问题与解决方案"></a>常见问题与解决方案</h3><h4 id="问题1：脚本运行时提示”winget不是内部或外部命令”"><a href="#问题1：脚本运行时提示”winget不是内部或外部命令”" class="headerlink" title="问题1：脚本运行时提示”winget不是内部或外部命令”"></a>问题1：脚本运行时提示”winget不是内部或外部命令”</h4><p><strong>解决方案</strong>：</p>
+<ul>
+<li>确保你的Windows版本是Windows 10 1809或更高版本</li>
+<li>打开Microsoft Store，搜索并安装”App Installer”</li>
+<li>重新运行脚本</li>
+</ul>
+<h4 id="问题2：网络连接失败，提示”Connection-reset”"><a href="#问题2：网络连接失败，提示”Connection-reset”" class="headerlink" title="问题2：网络连接失败，提示”Connection reset”"></a>问题2：网络连接失败，提示”Connection reset”</h4><p><strong>解决方案</strong>：</p>
+<ul>
+<li>检查你的VPN连接是否正常</li>
+<li>尝试关闭防火墙或杀毒软件</li>
+<li>重新运行脚本</li>
+</ul>
+<h4 id="问题3：部署失败，提示”Permission-denied”"><a href="#问题3：部署失败，提示”Permission-denied”" class="headerlink" title="问题3：部署失败，提示”Permission denied”"></a>问题3：部署失败，提示”Permission denied”</h4><p><strong>解决方案</strong>：</p>
+<ul>
+<li>确保你已经正确添加了SSH密钥到GitHub</li>
+<li>检查SSH密钥是否正确生成</li>
+<li>重新运行脚本，确保以管理员身份运行</li>
+</ul>
+<h4 id="问题4：博客访问404"><a href="#问题4：博客访问404" class="headerlink" title="问题4：博客访问404"></a>问题4：博客访问404</h4><p><strong>解决方案</strong>：</p>
+<ul>
+<li>确保仓库名是<code>用户名.github.io</code></li>
+<li>等待5-10分钟，GitHub Pages需要时间更新</li>
+<li>检查GitHub Pages设置中的Branch是否为<code>main</code></li>
+</ul>
+<h3 id="脚本升级与更新"><a href="#脚本升级与更新" class="headerlink" title="脚本升级与更新"></a>脚本升级与更新</h3><p>这个脚本会持续更新，以适应GitHub和Hexo的变化。如果你在使用过程中遇到问题，可以查看脚本的最新版本或提交issue。</p>
+<h3 id="扩展与自定义"><a href="#扩展与自定义" class="headerlink" title="扩展与自定义"></a>扩展与自定义</h3><p>部署完成后，你可以：</p>
+<ol>
+<li>进入<code>myblog</code>文件夹，编辑博客内容</li>
+<li>安装Hexo主题，美化你的博客</li>
+<li>添加插件，扩展博客功能</li>
+<li>自定义配置，打造个性化博客</li>
+</ol>
+<h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>Hexo一键部署脚本的目的是让更多人能够轻松拥有自己的博客，无需担心复杂的命令和配置。博客是一个记录生活、分享知识的好地方，希望这个脚本能够帮助你开启博客之旅！</p>
+<p>如果你在使用过程中遇到任何问题，欢迎在评论区留言，我会尽力帮助你解决。</p>
+<p>祝你博客搭建成功！🎉</p>
+<hr>
+<p><strong>作者</strong>：Ta0X1<br><strong>发布日期</strong>：2026-01-21<br><strong>更新日期</strong>：2026-01-21<br><strong>版权声明</strong>：本教程和脚本仅供学习使用，请勿用于商业用途</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>Hexo</tag>
+        <tag>一键部署</tag>
+        <tag>脚本</tag>
+        <tag>GitHub Pages</tag>
+      </tags>
+  </entry>
 </search>
