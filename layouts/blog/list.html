@@ -1,0 +1,55 @@
+{{- define "main" }}
+
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+</header>
+
+{{- $months := dict "01" "一月" "02" "二月" "03" "三月" "04" "四月" "05" "五月" "06" "六月" "07" "七月" "08" "八月" "09" "九月" "10" "十月" "11" "十一月" "12" "十二月" }}
+
+{{- $pages := where site.RegularPages "Type" "blog" }}
+{{- $pages = $pages.ByDate.Reverse }}
+
+{{- $currentYear := "" }}
+{{- $currentMonth := "" }}
+
+{{- range $pages }}
+  {{- $year := .Date.Format "2006" }}
+  {{- $monthNum := .Date.Format "01" }}
+  {{- $month := index $months $monthNum }}
+
+  {{- if ne $year $currentYear }}
+    <h2 class="post-year" id="{{ $year }}">{{ $year }}</h2>
+    {{- $currentYear = $year }}
+    {{- $currentMonth = "" }}
+  {{- end }}
+
+  {{- if ne $month $currentMonth }}
+    <h3 class="post-month" id="{{ $year }}-{{ $monthNum }}">{{ $month }}</h3>
+    {{- $currentMonth = $month }}
+  {{- end }}
+
+  <div class="post-line">
+    <h4>
+      <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+    </h4>
+    <small>
+      {{- .Date.Format "2006 年 1 月 2 日" }}
+      {{- if site.Params.ShowReadingTime }}&nbsp;·&nbsp;{{ .ReadingTime }} 分钟{{ end }}
+      {{- if site.Params.ShowWordCount }}&nbsp;·&nbsp;{{ .WordCount }} 字{{ end }}
+      &nbsp;·&nbsp;{{ site.Params.author }}
+    </small>
+  </div>
+{{- end }}
+
+<style>
+.post-line { padding: 4px 0; }
+.post-line h4 { margin: 0; font-size: 1.02em; font-weight: 450; }
+.post-line small { color: var(--secondary); }
+.post-line a { color: var(--primary); text-decoration: none; }
+.post-line a:hover { text-decoration: underline; }
+.post-year { margin-top: 24px; margin-bottom: 8px; font-size: 1.4em; }
+.post-month { margin-top: 14px; margin-bottom: 4px; font-size: 1.1em; color: var(--secondary); }
+.page-header { margin-bottom: 0; }
+</style>
+
+{{- end }}

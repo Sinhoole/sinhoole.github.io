@@ -1,0 +1,112 @@
+baseURL = 'https://blog.taoxi.ink/'
+locale = 'zh-CN'
+defaultContentLanguage = 'zh'
+hasCJKLanguage = true
+title = 'Ta0X1 | 一年写'
+theme = 'PaperMod'
+enableRobotsTXT = true
+timezone = 'Asia/Shanghai'
+copyright = '© 2025-2026 Ta0X1 | 一年写'
+
+[outputs]
+home = ['HTML', 'RSS', 'JSON']
+
+[pagination]
+pagerSize = 10
+
+[taxonomies]
+tag = 'tags'
+category = 'categories'
+
+[permalinks]
+blog = '/:year/:month/:day/:slug/'
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[params]
+description = '可惜你懒惰又好胜'
+author = 'Ta0X1'
+keywords = ['Ta0X1', '一年写', '博客', '个人博客']
+DateFormat = '2006-01-02'
+defaultTheme = 'light'
+disableThemeToggle = true
+disableSpecial1stPost = true
+disableAnchoredHeadings = true
+ShowReadingTime = true
+ShowWordCount = true
+ShowFullTextinRSS = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowSearch = true
+comments = true
+
+[params.profileMode]
+enabled = true
+title = 'Ta0X1'
+subtitle = '难走才是上坡路'
+imageUrl = ''
+imageTitle = ''
+
+[params.editPost]
+URL = 'https://github.com/Sinhoole/sinhoole.github.io/blob/main/content'
+Text = '编辑此页'
+appendFilePath = true
+
+[[params.socialIcons]]
+name = 'github'
+url = 'https://github.com/Sinhoole'
+
+[[params.socialIcons]]
+name = 'email'
+url = 'mailto:zhang60809@qq.com'
+
+[[params.socialIcons]]
+name = 'bilibili'
+url = 'https://space.bilibili.com/547777207'
+
+[[menu.main]]
+name = '文章'
+url = '/blog/'
+weight = 10
+
+[[menu.main]]
+name = '标签'
+url = '/tags/'
+weight = 20
+
+[[menu.main]]
+name = '摄影'
+url = '/photo/'
+weight = 30
+
+[[menu.main]]
+name = '友链'
+url = '/link/'
+weight = 40
+
+[[menu.main]]
+name = '关于'
+url = '/about/'
+weight = 50
+
+[[menu.main]]
+name = '搜索'
+url = '/search/'
+weight = 60
+
+[params.Comment.giscus]
+enable = true
+repo = 'sinhoole/cuisds'
+repoId = 'R_kgDOSy2ZLQ'
+category = 'Announcements'
+categoryId = 'DIC_kwDOSy2ZLc4C-ojB'
+mapping = 'pathname'
+strict = '0'
+reactionsEnabled = '1'
+emitMetadata = '0'
+inputPosition = 'top'
+theme = 'noborder_light'
+lang = 'zh-CN'
+loading = 'lazy'

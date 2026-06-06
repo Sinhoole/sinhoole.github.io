@@ -1,0 +1,30 @@
+{{- define "main" }}
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+  </header>
+  <div class="post-content md-content">
+    {{ .Content }}
+    {{- $linksData := site.Data.links -}}
+    {{- range $linksData }}
+    <h2>{{ .class_name }}</h2>
+    <p>{{ .class_desc }}</p>
+    <div class="link-list">
+      {{- range .link_list }}
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)">
+        {{- with .avatar }}
+        <img src="{{ . }}" alt="" style="width:48px;height:48px;border-radius:50%">
+        {{- end }}
+        <div>
+          <a href="{{ .link }}" target="_blank" rel="noopener"><strong>{{ .name }}</strong></a>
+          {{- with .descr }}
+          <br><small>{{ . }}</small>
+          {{- end }}
+        </div>
+      </div>
+      {{- end }}
+    </div>
+    {{- end }}
+  </div>
+</article>
+{{- end }}
