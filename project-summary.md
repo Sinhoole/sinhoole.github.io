@@ -166,10 +166,11 @@ appendFilePath = true
 
 ## 八、字体
 
-- 自用字体：**京華老宋体**（静态文件位于 [static/fonts/京華老宋体.ttf](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/static/fonts/京華老宋体.ttf)）
-- `@font-face` 声明在 [assets/css/extended/custom.css](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/assets/css/extended/custom.css) 中
-- 字体名 `Jinghua Lao Song`，全局 `!important` 确保覆盖 PaperMod 默认样式
+- 自用字体：**纳米老宋**（NanoOldSong），通过 ZeoSeven CDN 加载
+- CDN 引用：`@import url("https://fontsapi.zeoseven.com/467/main/result.css")`
+- 字体名 `NanoOldSong-A`，全局 `!important` 确保覆盖 PaperMod 默认样式
 - 代码块同样使用该字体
+- **不再使用本地 TTF 文件**（原 31MB 文件已删除，网站体积从 37MB → 6.2MB）
 
 ---
 
@@ -256,7 +257,7 @@ hugo server --bind 127.0.0.1 --port 1313 --baseURL http://localhost:1313/ --disa
 ## 十四、Git 仓库
 
 - 远程：`origin https://github.com/sinhoole/sinhoole.github.io.git`
-- 分支：`master`
+- 分支：`main`
 - `.gitignore` 排除：`public/`、`hexorepo/`、`.hugo_build.lock`
 
-注意：当前环境可能无法直接连接 GitHub（`Failed to connect to github.com`），如需推送需在你的本机执行 `git push -u origin master`。
+注意：当前环境可能无法直接连接 GitHub（`Failed to connect to github.com`），如需推送需在你的本机执行 `git push -u origin main`。

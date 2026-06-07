@@ -1,6 +1,6 @@
 # 先构建
 Write-Host "🏗️  构建站点..." -ForegroundColor Yellow
-hugo
+hugo --gc --minify
 
 if ($LASTEXITCODE -ne 0) {
     Write-Host "❌ 构建失败，请检查错误信息" -ForegroundColor Red
@@ -20,7 +20,7 @@ git push
 
 if ($LASTEXITCODE -eq 0) {
     Write-Host "✅ 已成功发布！" -ForegroundColor Green
-    Write-Host "   https://sinhoole.github.io" -ForegroundColor Cyan
+    Write-Host "   https://blog.taoxi.ink" -ForegroundColor Cyan
 } else {
     Write-Host "❌ 推送失败，请手动执行 git push" -ForegroundColor Red
 }

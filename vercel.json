@@ -1,8 +1,17 @@
 {
+  "buildCommand": "hugo --gc --minify",
   "build": {
     "env": {
       "HUGO_VERSION": "0.162.1"
     }
   },
-  "framework": "hugo"
+  "framework": "hugo",
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
 }

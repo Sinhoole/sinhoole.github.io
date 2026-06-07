@@ -1,13 +1,8 @@
-@font-face {
-  font-family: 'Jinghua Lao Song';
-  src: url('/fonts/%E4%BA%AC%E8%8F%AF%E8%80%81%E5%AE%8B%E4%BD%93.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+/* 纳米老宋体 - CDN 引入 */
+@import url("https://fontsapi.zeoseven.com/467/main/result.css");
 
 body {
-  font-family: 'Jinghua Lao Song', '京華老宋体', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  font-family: 'NanoOldSong-A', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Noto Sans CJK SC',
     'WenQuanYi Micro Hei', sans-serif !important;
 }
@@ -24,7 +19,7 @@ body {
 .post-content pre,
 .post-content code,
 .post-content code span {
-  font-family: 'Jinghua Lao Song', '京華老宋体', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  font-family: 'NanoOldSong-A', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Noto Sans CJK SC',
     'WenQuanYi Micro Hei', sans-serif !important;
 }
