@@ -46,8 +46,10 @@ comments = true
 enabled = true
 title = 'Ta0X1'
 subtitle = '难走才是上坡路'
-imageUrl = ''
-imageTitle = ''
+imageUrl = 'https://img.cdn1.vip/i/6a257fb8170f8_1780842424.webp'
+imageTitle = 'avatar'
+imageWidth = 120
+imageHeight = 120
 
 [params.editPost]
 URL = 'https://github.com/Sinhoole/sinhoole.github.io/blob/main/content'
