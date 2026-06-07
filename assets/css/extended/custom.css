@@ -1,5 +1,4 @@
-/* 纳米老宋体 - CDN 引入 */
-@import url("https://fontsapi.zeoseven.com/467/main/result.css");
+/* 纳米老宋体 - 通过 head/custom.html 的 link 标签加载，此处仅作字体声明 */
 
 body {
   font-family: 'NanoOldSong-A', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -27,3 +26,12 @@ body {
 .search-results .search-entry { font-family: inherit; }
 
 #menu .active { font-weight: 600; }
+
+/* 背景水印字体 - 增大字号并降低透明度 */
+#watermark {
+  font-family: 'NanoOldSong-A', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Noto Sans CJK SC',
+    'WenQuanYi Micro Hei', sans-serif !important;
+  font-size: 1.2em !important;
+  opacity: 0.08 !important;
+}
