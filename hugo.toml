@@ -98,17 +98,6 @@ name = '搜索'
 url = '/search/'
 weight = 60
 
-[params.Comment.giscus]
-enable = true
-repo = 'sinhoole/cuisds'
-repoId = 'R_kgDOSy2ZLQ'
-category = 'Announcements'
-categoryId = 'DIC_kwDOSy2ZLc4C-ojB'
-mapping = 'pathname'
-strict = '0'
-reactionsEnabled = '1'
-emitMetadata = '0'
-inputPosition = 'top'
-theme = 'noborder_light'
-lang = 'zh-CN'
-loading = 'lazy'
+[params.twikoo]
+envId = 'https://twikoo.taoxi.ink'
+version = '1.7.11'

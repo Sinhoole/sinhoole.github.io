@@ -1,21 +1,19 @@
-{{- /* Comments */ -}}
-{{- if .Site.Params.Comment.giscus.enable -}}
-<div class="giscus-comment">
-  <script src="https://giscus.app/client.js"
-    data-repo="{{ .Site.Params.Comment.giscus.repo }}"
-    data-repo-id="{{ .Site.Params.Comment.giscus.repoId }}"
-    data-category="{{ .Site.Params.Comment.giscus.category }}"
-    data-category-id="{{ .Site.Params.Comment.giscus.categoryId }}"
-    data-mapping="{{ .Site.Params.Comment.giscus.mapping }}"
-    data-strict="{{ .Site.Params.Comment.giscus.strict }}"
-    data-reactions-enabled="{{ .Site.Params.Comment.giscus.reactionsEnabled }}"
-    data-emit-metadata="{{ .Site.Params.Comment.giscus.emitMetadata }}"
-    data-input-position="{{ .Site.Params.Comment.giscus.inputPosition }}"
-    data-theme="{{ .Site.Params.Comment.giscus.theme }}"
-    data-lang="{{ .Site.Params.Comment.giscus.lang }}"
-    data-loading="{{ .Site.Params.Comment.giscus.loading }}"
-    crossorigin="anonymous"
-    async>
+{{- /* Twikoo Comments */ -}}
+{{- if (.Param "comments") }}
+<div class="twikoo-comment">
+  <div class="pagination__title">
+    <span class="pagination__title-h" style="font-size:1rem;font-weight:500;">评论</span>
+    <hr />
+  </div>
+  <div id="tcomment"></div>
+  <script src="https://cdn.jsdelivr.net/npm/twikoo@{{ .Site.Params.twikoo.version }}/dist/twikoo.all.min.js"></script>
+  <script>
+    twikoo.init({
+      envId: "{{ .Site.Params.twikoo.envId }}",
+      el: "#tcomment",
+      lang: "zh-CN",
+      path: window.location.pathname,
+    });
   </script>
 </div>
 {{- end }}
