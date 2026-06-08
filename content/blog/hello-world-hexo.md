@@ -1,7 +1,8 @@
 +++
 date = '2026-06-06T16:22:34+08:00'
 draft = false
-title = 'Hello World Hugo'
+title = 'Hugo测试文章'
+
 +++
 
 
@@ -12,3 +13,79 @@ title = 'Hello World Hugo'
 
 Ty.
 
+![图片上传测试](https://cdn.jsdelivr.net/gh/UieTego/Po1@main/image-20260608120746800.png)
+
+# 这是标题一级
+
+## 这是标题二级
+
+---
+
+**这是文本加粗** *这是文本斜体*  ***这是文本粗斜体***
+
+这是分界线
+
+---
+
+---
+
+---
+
+~~这是删除线文本~~
+
+<u>这是下划线文本</u>
+
+这是脚注[^1]
+
+`这是行内代码标注`
+
+这是<mark>高亮</mark>
+
+- 这是无序列表项
+
+1. 这是有序列表项
+
+- 这是嵌套列表
+  - 二级嵌套
+
+- [x] 这是已完成复选框
+- [ ] 这是未完成复选框
+
+> 这是一个引用行
+>
+> 这是长引用
+
+``` powershell
+hugo new site My-blog
+git push
+```
+
+这是一个链接[陶西](https://blog.taoxi.ink “难走才是上坡路”)
+
+这是一个参考引用链接[github][]
+
+
+
+[github]:  https://github.com
+
+
+
+这是一个锚点[回去](##这是标题二级)
+
+
+| 这是 | 表格 |
+| :--: | ---- |
+|  1   | 2    |
+|  3   | 4    |
+
+`Kbd`标签使用
+
+<kbd>Ctrl</kbd>
+
+`SUP`标签使用
+
+<SUP>H</SUP>
+
+本文章用于测试图片上传、Hugo部署、基础markdown语法。
+
+[^1]: 这是脚注1。
