@@ -1,18 +1,15 @@
 ---
 title: 'Codex+Switch'
-date: 2026-6-8
+date: 2026-06-08
 draft: false
 tags:
-
   - AI
   - Codex
   - Switchcc
   - 思考
-    categories:
+categories:
   - AI
 ---
-
-
 
 # 优雅地使用Codex
 
