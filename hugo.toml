@@ -45,7 +45,7 @@ comments = true
 [params.profileMode]
 enabled = true
 title = 'Ta0X1'
-subtitle = ' Kelly Criterion : f=(b*p-q)/b '
+subtitle = ' Kelly Criterion : Fraction = (Odds x Win - Loss) / Odds '
 imageUrl = 'https://cdn.jsdelivr.net/gh/UieTego/Po1@main/4efd79245bcaf124be908d2ac2549c01.jpg'
 imageTitle = 'avatar'
 imageWidth = 120
