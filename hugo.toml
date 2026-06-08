@@ -2,11 +2,11 @@ baseURL = 'https://blog.taoxi.ink/'
 locale = 'zh-CN'
 defaultContentLanguage = 'zh'
 hasCJKLanguage = true
-title = 'Ta0X1 | 一年写'
+title = 'Ta0X1 の Blog'
 theme = 'PaperMod'
 enableRobotsTXT = true
 timezone = 'Asia/Shanghai'
-copyright = '© 2025-2026 Ta0X1 | 一年写'
+copyright = '© 2025-2026 Ta0X1 の Blog'
 
 [outputs]
 home = ['HTML', 'RSS', 'JSON']
@@ -45,8 +45,8 @@ comments = true
 [params.profileMode]
 enabled = true
 title = 'Ta0X1'
-subtitle = '难走才是上坡路'
-imageUrl = 'https://img.cdn1.vip/i/6a2581cceb62c1780842956.jpeg'
+subtitle = ' Kelly Criterion : f=(b*p-q)/b '
+imageUrl = 'https://cdn.jsdelivr.net/gh/UieTego/Po1@main/4efd79245bcaf124be908d2ac2549c01.jpg'
 imageTitle = 'avatar'
 imageWidth = 120
 imageHeight = 120
