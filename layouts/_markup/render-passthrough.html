@@ -1,0 +1,10 @@
+{{- $opts := dict "output" "htmlAndMathml" "displayMode" (eq .Type "block") "throwOnError" false }}
+{{- with try (transform.ToMath .Inner $opts) }}
+  {{- with .Err }}
+    {{- warnf "公式渲染失败: %s (位置: %s)" . $.Position }}
+    <pre><code>{{ .Inner }}</code></pre>
+  {{- else }}
+    {{- .Value }}
+    {{- $.Page.Store.Set "hasMath" true }}
+  {{- end }}
+{{- end -}}

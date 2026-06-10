@@ -24,6 +24,12 @@ blog = '/:year/:month/:day/:slug/'
 [markup.goldmark.renderer]
 unsafe = true
 
+[markup.goldmark.extensions.passthrough]
+enable = true
+[markup.goldmark.extensions.passthrough.delimiters]
+block = [['\[', '\]'], ['$$', '$$']]
+inline = [['\(', '\)']]
+
 [params]
 description = '可惜你懒惰又好胜'
 author = 'Ta0X1'
