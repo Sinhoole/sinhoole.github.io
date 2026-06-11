@@ -43,5 +43,4 @@ layout: "page"
 
 金额并不高，不敢大胆止盈。
 
-<!-- ⚠️ 注意：下方图片为本地路径，部署后无法显示，请上传至 CDN 后替换链接 -->
-![image-20260611225704486](C:\Users\sinho\AppData\Roaming\Typora\typora-user-images\image-20260611225704486.png)
+![](https://cdn.jsdelivr.net/gh/UieTego/Po1@main/20260611231019295.png)
