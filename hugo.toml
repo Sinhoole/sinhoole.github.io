@@ -85,9 +85,10 @@ url = '/tags/'
 weight = 20
 
 [[menu.main]]
-name = '摄影'
-url = '/photo/'
+name = '交易'
+url = '/trading/'
 weight = 30
+identifier = 'trading'
 
 [[menu.main]]
 name = '友链'
