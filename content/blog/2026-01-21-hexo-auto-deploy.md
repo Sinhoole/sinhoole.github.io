@@ -1,5 +1,5 @@
 ---
-title: 'Hexo博客一键部署脚本'
+title: 'Hexo博客一键部署脚本.已过期'
 date: 2026-01-21
 lastmod: 2026-01-21
 draft: false

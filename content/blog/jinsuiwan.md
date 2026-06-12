@@ -3,7 +3,7 @@ title: '今岁完'
 date: 2025-12-31
 lastmod: 2025-12-31
 draft: false
-description: '西历年末岁尾的思考与随想，探讨元旦的意义、西历法的选择以及岁末年初的感悟，记录一年结束时的心境与对新年的期许。'
+description: ''
 keywords:
   - '今岁完'
   - '元旦'

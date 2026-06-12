@@ -3,7 +3,7 @@ title: 'steam注册'
 date: '2023-07-22 16:00:00'
 lastmod: '2025-09-06 09:00:04'
 draft: false
-description: '详细讲解Steam平台的注册、安装、下载流程以及使用注意事项，帮助新手玩家快速上手全球最大的PC数字游戏发行平台'
+description: ''
 keywords:
   - 'Steam注册'
   - 'Steam安装'

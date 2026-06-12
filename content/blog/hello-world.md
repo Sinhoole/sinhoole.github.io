@@ -3,7 +3,7 @@ title: 'Hexo入门指南'
 date: '2025-09-03 00:00:00'
 lastmod: '2025-09-03 00:00:00'
 draft: false
-description: '详细介绍Hexo博客的入门使用方法，包括创建新文章、运行本地服务器、生成静态文件和部署到远程站点的完整流程，帮助初学者快速上手Hexo博客系统。'
+description: ''
 keywords:
   - 'Hexo入门指南'
   - 'Hexo博客搭建'
