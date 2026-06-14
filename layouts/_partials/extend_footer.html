@@ -1,0 +1,80 @@
+{{- /* 代码块自动折叠 */ -}}
+<script>
+(function() {
+  const MAX_LINES = 20;           // 超过多少行自动折叠
+  const COLLAPSED_LINES = 10;     // 折叠时显示多少行
+
+  function initCodeFold() {
+    // PaperMod 代码块外层是 .highlight > pre > code
+    const highlights = document.querySelectorAll('.highlight');
+    highlights.forEach(function(hl) {
+      const pre = hl.querySelector('pre');
+      if (!pre) return;
+      const code = pre.querySelector('code');
+      if (!code) return;
+
+      // 计算行数
+      const lines = code.textContent.split('\n').length;
+      if (lines <= MAX_LINES) return;
+
+      // 已处理过则跳过
+      if (hl.dataset.folded) return;
+      hl.dataset.folded = 'true';
+
+      // 创建包裹容器
+      const wrapper = document.createElement('div');
+      wrapper.className = 'code-fold-wrapper';
+      wrapper.style.cssText = 'position:relative; margin:1em 0;';
+
+      // 折叠按钮
+      const btn = document.createElement('button');
+      btn.className = 'code-fold-btn';
+      btn.textContent = '展开代码 (' + lines + ' 行)';
+      btn.style.cssText = [
+        'position:sticky',
+        'bottom:0',
+        'left:0',
+        'width:100%',
+        'padding:6px 0',
+        'background:var(--tertiary, #f0f0f0)',
+        'border:1px solid var(--border, #ddd)',
+        'border-top:1px dashed var(--border, #ddd)',
+        'cursor:pointer',
+        'font-size:13px',
+        'color:var(--primary, #555)',
+        'text-align:center',
+        'display:block',
+        'z-index:2',
+      ].join(';');
+
+      // 折叠状态：限制高度
+      let collapsed = true;
+      pre.style.maxHeight = (COLLAPSED_LINES * 1.6) + 'em';
+      pre.style.overflow = 'hidden';
+      pre.style.transition = 'max-height 0.3s ease';
+
+      btn.addEventListener('click', function() {
+        collapsed = !collapsed;
+        if (collapsed) {
+          pre.style.maxHeight = (COLLAPSED_LINES * 1.6) + 'em';
+          btn.textContent = '展开代码 (' + lines + ' 行)';
+        } else {
+          pre.style.maxHeight = 'none';
+          btn.textContent = '收起代码';
+        }
+      });
+
+      // 用 wrapper 包裹 pre + btn
+      hl.style.position = 'relative';
+      hl.appendChild(btn);
+    });
+  }
+
+  // 页面加载后执行，支持 PJAX（PaperMod 搜索页等）
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCodeFold);
+  } else {
+    initCodeFold();
+  }
+})();
+</script>
