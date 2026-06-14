@@ -19,7 +19,7 @@ tag = 'tags'
 category = 'categories'
 
 [permalinks]
-blog = '/:year/:month/:day/:slug/'
+blog = '/p/:contentbasename/'
 
 [markup.goldmark.renderer]
 unsafe = true
