@@ -47,6 +47,8 @@ ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
 ShowSearch = true
 comments = true
+ShowToc = true
+TocOpen = true
 
 [params.profileMode]
 enabled = true
