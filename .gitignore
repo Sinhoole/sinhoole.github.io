@@ -4,6 +4,5 @@ hexorepo/
 *.log
 .DS_Store
 Thumbs.db
-static/fonts/
 .codebuddy/
 .workbuddy/
