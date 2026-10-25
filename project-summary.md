@@ -1,6 +1,6 @@
 # Hugo 博客迁移与配置 —— 完整项目总结
 
-> 项目路径：`C:\Users\sinho\Desktop\CodingBlog\my-blog`
+> 项目路径：`C:\SpaceFloder\HugoBlog\CodingBlog\my-blog`
 > 仓库：`sinhoole/sinhoole.github.io`
 > 正式域名：`https://blog.taoxi.ink`
 
@@ -18,9 +18,9 @@
 
 - 原 Hexo `source/_posts` 共 **44 篇**文章 → Hugo `content/blog/` **45 篇**（含额外测试文）
 - 迁移方式：
-  - 第一批标准文章：用 [scripts/migrate_hexo_first_batch.js](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/scripts/migrate_hexo_first_batch.js) 批量处理并清理 AI 副标题
-  - AI 副标题清理脚本：[scripts/trim_ai_titles.js](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/scripts/trim_ai_titles.js)
-  - 特殊文章 `steamtools.md`（含 Hexo `{% btn %}` 语法）：用 [scripts/migrate_special_steamtools.js](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/scripts/migrate_special_steamtools.js) 将按钮语法转为普通 Markdown 链接
+  - 第一批标准文章：用 [scripts/migrate_hexo_first_batch.js](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/scripts/migrate_hexo_first_batch.js) 批量处理并清理 AI 副标题
+  - AI 副标题清理脚本：[scripts/trim_ai_titles.js](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/scripts/trim_ai_titles.js)
+  - 特殊文章 `steamtools.md`（含 Hexo `{% btn %}` 语法）：用 [scripts/migrate_special_steamtools.js](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/scripts/migrate_special_steamtools.js) 将按钮语法转为普通 Markdown 链接
 - 特殊映射：`2025-09-04-laojunshan.md` → `laojunshan.md`
 - 文章 permalink 格式：`/:year/:month/:day/:slug/`（与 Hexo 一致）
 
@@ -28,18 +28,18 @@
 
 | 页面 | Hugo 路径 | 说明 |
 |---|---|---|
-| 关于 | [content/about/index.md](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/content/about/index.md) | 从 Hexo `source/about/index.md` 迁移 |
-| 游记→文章 | [content/blog/bingxu-19.md](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/content/blog/bingxu-19.md) | 原 `tour` 页面改为文章发布 |
-| 音乐 | [content/music/index.md](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/content/music/index.md) | 含网易云音乐 iframe |
-| 摄影 | [content/photo/index.md](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/content/photo/index.md) | 图库入口页 |
-| 未镜 | [content/weijing/index.md](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/content/weijing/index.md) | 自媒体页面 |
-| 自画像 | [content/self/index.md](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/content/self/index.md) | 自拍记录页 |
-| 专栏 | [content/post/index.md](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/content/post/index.md) | 游戏/搞钱专栏索引 |
-| 大份制造机 | [content/projects/rdtl.md](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/content/projects/rdtl.md) | AI 写作项目 |
-| 财务报告 | [content/financial-report/index.md](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/content/financial-report/index.md) | 投资记录 |
-| 友链 | [content/link/index.md](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/content/link/index.md) | 自定义 `layouts/links/single.html` + [data/links.yml](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/data/links.yml) |
-| 搜索 | [content/search/index.md](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/content/search/index.md) | PaperMod 原生搜索 |
-| 标签 | [content/tags/_index.md](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/content/tags/_index.md) | 标题为「标签」 |
+| 关于 | [content/about/index.md](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/content/about/index.md) | 从 Hexo `source/about/index.md` 迁移 |
+| 游记→文章 | [content/blog/bingxu-19.md](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/content/blog/bingxu-19.md) | 原 `tour` 页面改为文章发布 |
+| 音乐 | [content/music/index.md](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/content/music/index.md) | 含网易云音乐 iframe |
+| 摄影 | [content/photo/index.md](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/content/photo/index.md) | 图库入口页 |
+| 未镜 | [content/weijing/index.md](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/content/weijing/index.md) | 自媒体页面 |
+| 自画像 | [content/self/index.md](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/content/self/index.md) | 自拍记录页 |
+| 专栏 | [content/post/index.md](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/content/post/index.md) | 游戏/搞钱专栏索引 |
+| 大份制造机 | [content/projects/rdtl.md](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/content/projects/rdtl.md) | AI 写作项目 |
+| 财务报告 | [content/financial-report/index.md](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/content/financial-report/index.md) | 投资记录 |
+| 友链 | [content/link/index.md](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/content/link/index.md) | 自定义 `layouts/links/single.html` + [data/links.yml](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/data/links.yml) |
+| 搜索 | [content/search/index.md](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/content/search/index.md) | PaperMod 原生搜索 |
+| 标签 | [content/tags/_index.md](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/content/tags/_index.md) | 标题为「标签」 |
 
 ### 2.3 不迁移的内容
 
@@ -49,7 +49,7 @@
 
 ## 三、站点配置
 
-配置文件：[hugo.toml](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/hugo.toml)
+配置文件：[hugo.toml](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/hugo.toml)
 
 ### 3.1 站点基本信息
 
@@ -129,7 +129,7 @@ appendFilePath = true
 - 仓库：`sinhoole/cuisds`
 - 分类：`Announcements`
 - 主题：`noborder_light`
-- 模板：[layouts/_partials/comments.html](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/layouts/_partials/comments.html)
+- 模板：[layouts/_partials/comments.html](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/layouts/_partials/comments.html)
 
 注意事项：
 - Giscus 偶尔会报 `Unable to fetch token from Valkey` —— 这是服务端临时故障，等几分钟自动恢复
@@ -141,25 +141,25 @@ appendFilePath = true
 
 ### 7.1 文章列表页
 
-[layouts/blog/list.html](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/layouts/blog/list.html)
+[layouts/blog/list.html](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/layouts/blog/list.html)
 - 简约清单风格，按年份→月份两级归档
 - 显示：标题、日期、阅读时长、字数、作者
 - 无卡片 / 无封面图 / 无摘要
 
 ### 7.2 菜单（相对链接修复）
 
-[layouts/_partials/header.html](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/layouts/_partials/header.html)
+[layouts/_partials/header.html](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/layouts/_partials/header.html)
 - 覆盖 PaperMod 默认 header，将菜单链接从 `absLangURL` 改为 `relLangURL`
 - 解决本地预览时菜单跳转到 `blog.taoxi.ink` 的问题
 
 ### 7.3 友链页
 
-[layouts/links/single.html](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/layouts/links/single.html)
-- 从 [data/links.yml](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/data/links.yml) 渲染友链
+[layouts/links/single.html](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/layouts/links/single.html)
+- 从 [data/links.yml](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/data/links.yml) 渲染友链
 
 ### 7.4 评论模板
 
-[layouts/_partials/comments.html](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/layouts/_partials/comments.html)
+[layouts/_partials/comments.html](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/layouts/_partials/comments.html)
 - Giscus 配置通过 `hugo.toml` 的 `[params.Comment.giscus]` 管理
 
 ---
@@ -179,9 +179,9 @@ appendFilePath = true
 ### 9.1 PaperMod 弃用警告
 
 已修复 3 处模板：
-- [opengraph.html](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/themes/PaperMod/layouts/_partials/templates/opengraph.html)：`LanguageCode` → `Locale`
-- [baseof.html](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/themes/PaperMod/layouts/baseof.html)：`LanguageDirection` → `Direction`
-- [rss.xml](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/themes/PaperMod/layouts/rss.xml)：`LanguageCode` → `Locale`
+- [opengraph.html](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/themes/PaperMod/layouts/_partials/templates/opengraph.html)：`LanguageCode` → `Locale`
+- [baseof.html](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/themes/PaperMod/layouts/baseof.html)：`LanguageDirection` → `Direction`
+- [rss.xml](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/themes/PaperMod/layouts/rss.xml)：`LanguageCode` → `Locale`
 
 ### 9.2 字体 CDN 加载失败
 
@@ -199,7 +199,7 @@ appendFilePath = true
 
 ### 10.1 创建新文章
 
-[new-post.ps1](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/new-post.ps1)
+[new-post.ps1](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/new-post.ps1)
 
 ```powershell
 .\new-post.ps1
@@ -213,7 +213,7 @@ appendFilePath = true
 
 ### 10.2 发布
 
-[deploy.ps1](file:///c:/Users/sinho/Desktop/CodingBlog/my-blog/deploy.ps1)
+[deploy.ps1](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/deploy.ps1)
 
 ```powershell
 .\deploy.ps1
@@ -234,7 +234,7 @@ appendFilePath = true
 ## 十二、本地的 Hugo 服务器启动
 
 ```powershell
-cd C:\Users\sinho\Desktop\CodingBlog\my-blog
+cd C:\SpaceFloder\HugoBlog\CodingBlog\my-blog
 hugo server --bind 127.0.0.1 --port 1313 --baseURL http://localhost:1313/ --disableFastRender
 ```
 
@@ -246,18 +246,21 @@ hugo server --bind 127.0.0.1 --port 1313 --baseURL http://localhost:1313/ --disa
 
 | 工具 | 版本 / 说明 |
 |---|---|
-| Hugo | v0.162.1（extended） |
-| 主题 | PaperMod（git submodule） |
-| 字体 | 京華老宋体（本地 TTF） |
-| 评论 | Giscus（基于 GitHub Discussions） |
+| Hugo | v0.162.1（extended；`vercel.json` 的 `HUGO_VERSION` 固定为此版本） |
+| 主题 | PaperMod（git submodule，实际工作目录是 `themes/PaperMod`） |
+| 字体 | LXGWBright（本地 `static/fonts/LXGWBright-Regular.woff2`，由 `assets/css/extended/custom.css` 的 `@font-face` 加载） |
+| 评论 | Twikoo（`https://twikoo.taoxi.ink`，Vercel + MongoDB） |
 | 搜索 | PaperMod 内置 Fuse.js |
+| 公式 | Goldmark passthrough + KaTeX（`layouts/_markup/render-passthrough.html`） |
 
 ---
 
 ## 十四、Git 仓库
 
-- 远程：`origin https://github.com/sinhoole/sinhoole.github.io.git`
+- 远程：`origin https://github.com/sinhoole/sinhoole.github.io.git`（也可切换成 SSH：`git@github.com:Sinhoole/sinhoole.github.io.git`）
 - 分支：`main`
-- `.gitignore` 排除：`public/`、`hexorepo/`、`.hugo_build.lock`
+- `.gitignore` 排除：`public/`、`hexorepo/`、`.hugo_build.lock`、`.codebuddy/`、`.workbuddy/`
 
-注意：当前环境可能无法直接连接 GitHub（`Failed to connect to github.com`），如需推送需在你的本机执行 `git push -u origin main`。
+网络说明：`origin` 已改为 SSH（`git@github.com:Sinhoole/sinhoole.github.io.git`），并在 `~/.ssh/config` 里让 `github.com` 走 `ssh.github.com:443`，所以**推送不依赖 Clash**（已实测直连 GitHub 可用）。原来的 `http.https://github.com.proxy = socks5://127.0.0.1:7897` 已删除——它会在 Clash 没启动时让 git 直接失败。
+
+本地脚本：`deploy.ps1`、`new-post.ps1`、`News.bat` 已改为用脚本自身位置定位仓库（`$PSScriptRoot` / `%~dp0`），换电脑或整体移动目录后不用再改路径。

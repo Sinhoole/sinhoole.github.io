@@ -1,8 +1,8 @@
 @echo off
 chcp 65001 >nul
 
-:: 文章目录（请根据你的实际路径确认）
-set "targetDir=C:\Users\sinho\Desktop\CodingBlog\my-blog\content\blog"
+:: 文章目录：始终使用本脚本所在目录（%~dp0 自带结尾反斜杠）
+set "targetDir=%~dp0content\blog"
 
 :: 确保目录存在
 if not exist "%targetDir%" mkdir "%targetDir%"

@@ -1,6 +1,12 @@
 # deploy.ps1 — 构建 + 提交 + 推送
 $ErrorActionPreference = "Stop"
-$blogDir = "C:\Users\sinho\Desktop\CodingBlog\my-blog"
+# 始终以脚本所在目录为仓库根目录，避免换电脑/移动文件夹后路径失效
+$blogDir = $PSScriptRoot
+
+if (-not (Get-Command hugo -ErrorAction SilentlyContinue)) {
+    Write-Host "hugo not found in PATH. 请先安装 Hugo 或把 hugo.exe 所在目录加入 PATH。" -ForegroundColor Red
+    exit 1
+}
 
 Write-Host "`n[1/3] Hugo building..." -ForegroundColor Cyan
 Push-Location $blogDir
