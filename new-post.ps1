@@ -1,4 +1,4 @@
-# new-post.ps1 — 新建博客文章（文件名：YYYYMMDD.md）
+﻿# new-post.ps1 — 新建博客文章（文件名：YYYYMMDD.md）
 param(
     [Parameter(Mandatory = $true)]
     [string]$Title

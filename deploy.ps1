@@ -1,4 +1,4 @@
-# deploy.ps1 — 构建 + 提交 + 推送
+﻿# deploy.ps1 — 构建 + 提交 + 推送
 $ErrorActionPreference = "Stop"
 # 始终以脚本所在目录为仓库根目录，避免换电脑/移动文件夹后路径失效
 $blogDir = $PSScriptRoot
