@@ -197,29 +197,29 @@ appendFilePath = true
 
 ## 十、部署脚本
 
+入口都是**双击 `.bat`**，具体逻辑放在 `scripts\` 里（`.ps1` 存成 UTF-8 with BOM，否则 PS 5.1 会把中文按 GBK 解码而解析失败）。
+
 ### 10.1 创建新文章
 
-[new-post.ps1](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/new-post.ps1)
-
-```powershell
-.\new-post.ps1
-```
+双击 [NewPost.bat](NewPost.bat) → 实现在 [scripts/new-post.ps1](scripts/new-post.ps1)
 
 流程：
-1. 输入标题（或传参 `.\new-post.ps1 -Title "我的文章"`）
-2. 自动生成 `content/blog/2026-xx-xx-标题.md`
-3. 自动用 Typora 打开
-4. 写完将 `draft: true` 改为 `draft: false`
+1. 控制台提示输入标题（也可命令行：`.\scripts\new-post.ps1 -Title "标题" [-Tags "a,b"] [-Categories "随笔"]`）
+2. 生成 `content/blog/YYYYMMDD.md`；同一天第二篇自动变 `YYYYMMDD-01.md`、`-02.md`
+3. 写入 PaperMod front matter：`title / date / draft: false`（**默认不是草稿**）`/ author / tags / categories / ShowToc / TocOpen / ShowReadingTime / ShowWordCount / ShowBreadCrumbs / ShowPostNavLinks / comments / searchHidden`，并预留注释掉的 `cover` 块
+4. 正文写入占位文字，随后自动用 Typora 打开（找不到 Typora 就交给系统默认程序）
+5. 文件为无 BOM 的 UTF-8，避免 YAML front matter 解析异常
 
 ### 10.2 发布
 
-[deploy.ps1](file:///c:/SpaceFloder/HugoBlog/CodingBlog/my-blog/deploy.ps1)
+双击 [Deploy.bat](Deploy.bat) → 实现在 [scripts/deploy.ps1](scripts/deploy.ps1)
 
-```powershell
-.\deploy.ps1
-```
-
-流程：`hugo` 构建 → `git add / commit / push`
+流程：
+1. 检查 `hugo` / `git` 是否在 PATH
+2. `hugo --gc --minify` 构建，失败即中止（不会提交半成品）
+3. `git add -A`，有改动才 `git commit`（默认信息 `更新博客 YYYY-MM-DD HH:mm`，可用 `-Message` 覆盖）
+4. `git push` 到 `origin/main`，Vercel 自动重新构建
+5. 推送前若检测到 `github.com` 解析成 `198.18.x`（Clash TUN 模式），会提前提示；推送失败时也会给出排错方向
 
 ---
 

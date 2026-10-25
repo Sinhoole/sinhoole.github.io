@@ -1,26 +1,14 @@
 @echo off
 chcp 65001 >nul
-echo ========================================
-echo  博客推送脚本（仅提交+推送）
-echo ========================================
-echo.
+cd /d "%~dp0"
 
-echo [1/2] 提交到 Git...
-git add -A
-git commit -m "更新博客"
-echo.
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\deploy.ps1"
 
-echo [2/2] 推送到 GitHub...
-git push
-if %errorlevel% equ 0 (
-    echo.
-    echo [成功] 已推送到远程仓库！
-    echo        https://blog.taoxi.ink
+echo.
+if errorlevel 1 (
+    echo [失败] 部署未完成，请看上面的提示。
 ) else (
-    echo.
-    echo [错误] 推送失败，请检查网络或仓库状态。
-    echo 若尚未提交，可先手动 git add / git commit 再试。
+    echo [完成] 已推送到 GitHub，Vercel 将自动构建。
 )
-
 echo.
 pause
