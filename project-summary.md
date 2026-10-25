@@ -257,10 +257,12 @@ hugo server --bind 127.0.0.1 --port 1313 --baseURL http://localhost:1313/ --disa
 
 ## 十四、Git 仓库
 
-- 远程：`origin https://github.com/sinhoole/sinhoole.github.io.git`（也可切换成 SSH：`git@github.com:Sinhoole/sinhoole.github.io.git`）
+- 远程：`origin git@github.com:Sinhoole/sinhoole.github.io.git`（SSH，2026-10-25 由 HTTPS 切换）
 - 分支：`main`
 - `.gitignore` 排除：`public/`、`hexorepo/`、`.hugo_build.lock`、`.codebuddy/`、`.workbuddy/`
 
-网络说明：`origin` 已改为 SSH（`git@github.com:Sinhoole/sinhoole.github.io.git`），并在 `~/.ssh/config` 里让 `github.com` 走 `ssh.github.com:443`，所以**推送不依赖 Clash**（已实测直连 GitHub 可用）。原来的 `http.https://github.com.proxy = socks5://127.0.0.1:7897` 已删除——它会在 Clash 没启动时让 git 直接失败。
+网络说明：`origin` 走 SSH，`~/.ssh/config` 里让 `github.com` 走 `ssh.github.com:443`，**推送不依赖 Clash**。原来的 `http.https://github.com.proxy = socks5://127.0.0.1:7897` 已删除——它在 Clash 没启动时会让 git 直接失败。
 
-本地脚本：`deploy.ps1`、`new-post.ps1`、`News.bat` 已改为用脚本自身位置定位仓库（`$PSScriptRoot` / `%~dp0`），换电脑或整体移动目录后不用再改路径。
+⚠️ **推送前请确认 Clash 的「虚拟网卡（TUN）模式」是关闭的**：实测开着 TUN 时所有域名被解析成 `198.18.0.x`（fake-ip），SSH 报 `Connection closed by 198.18.0.x port 443`；关掉 TUN 后立刻恢复正常。系统代理模式不影响推送。
+
+本地脚本：`deploy.ps1`、`new-post.ps1`、`News.bat` 已改为用脚本自身位置定位仓库（`$PSScriptRoot` / `%~dp0`），换电脑或整体移动目录后不用再改路径。两个 `.ps1` 存成 **UTF-8 with BOM**——无 BOM 时 PowerShell 5.1 会把中文按 GBK 解码，导致 `powershell -File deploy.ps1` 直接解析失败。
