@@ -1,11 +1,12 @@
 ﻿#Requires -Version 5.1
 <#
 .SYNOPSIS
-    新建一篇 PaperMod 文章（YYYYMMDD.md），写入完整 front matter，draft 直接为 false，并自动打开编辑。
+    新建一篇 PaperMod 文章（YYYYMMDDHHMMSS.md），写入完整 front matter，draft 直接为 false，并自动打开编辑。
 
 .DESCRIPTION
-    文件名遵循本仓库约定：content/blog/YYYYMMDD.md；同一天第二篇起用 YYYYMMDD-01.md、-02.md……
-    permalink 由 hugo.toml 的 `blog = '/p/:contentbasename/'` 决定，所以改文件名会影响链接。
+    文件名是本机当前时间的 14 位时间戳：content/blog/20261012112345.md。
+    同一秒内重复生成才会加后缀 -01；permalink 由 hugo.toml 的 `blog = '/p/:contentbasename/'` 决定，
+    所以文件名的前 14 位就是文章链接。
 
 .EXAMPLE
     .\scripts\new-post.ps1 -Title "山与海"
@@ -49,13 +50,13 @@ $tagList  = Split-List $Tags
 $catList  = Split-List $Categories
 $summary  = if ($Summary) { $Summary.Trim() } else { '' }
 
-# ---------- 文件名：YYYYMMDD.md，同日避免覆盖 ----------
-$day  = Get-Date -Format 'yyyyMMdd'
-$name = $day
-$file = Join-Path $blogDir "$name.md"
+# ---------- 文件名：YYYYMMDDHHMMSS.md（14 位时间戳），同一秒内重复才加 -01 ----------
+$stamp = Get-Date -Format 'yyyyMMddHHmmss'
+$name  = $stamp
+$file  = Join-Path $blogDir "$name.md"
 $n = 1
 while (Test-Path $file) {
-    $name = '{0}-{1:D2}' -f $day, $n
+    $name = '{0}-{1:D2}' -f $stamp, $n
     $file = Join-Path $blogDir "$name.md"
     $n++
 }

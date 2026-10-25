@@ -205,7 +205,7 @@ appendFilePath = true
 
 流程：
 1. 控制台提示输入标题（也可命令行：`.\scripts\new-post.ps1 -Title "标题" [-Tags "a,b"] [-Categories "随笔"]`）
-2. 生成 `content/blog/YYYYMMDD.md`；同一天第二篇自动变 `YYYYMMDD-01.md`、`-02.md`
+2. 生成 `content/blog/YYYYMMDDHHMMSS.md`（本机当前时间的 14 位时间戳，如 `20261012112345.md`）；同一秒内重复生成才会加 `-01` 后缀
 3. 写入 PaperMod front matter：`title / date / draft: false`（**默认不是草稿**）`/ author / tags / categories / ShowToc / TocOpen / ShowReadingTime / ShowWordCount / ShowBreadCrumbs / ShowPostNavLinks / comments / searchHidden`，并预留注释掉的 `cover` 块
 4. 正文写入占位文字，随后自动用 Typora 打开（找不到 Typora 就交给系统默认程序）
 5. 文件为无 BOM 的 UTF-8，避免 YAML front matter 解析异常
